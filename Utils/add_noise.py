@@ -52,7 +52,7 @@ def process_files_in_directory(input_dir, output_dir):
         for file_name in files:
             if file_name.endswith('.txt'):
                 input_file_path = os.path.join(root, file_name)
-                output_file_path = os.path.join(current_output_dir, file_name)
+                output_file_path = os.path.join(current_output_dir, 'noise_' + file_name)
 
                 x_coords, y_coords, matrix_values = read_data_from_file(input_file_path)
 
@@ -64,8 +64,8 @@ def process_files_in_directory(input_dir, output_dir):
                 print(f"Noisy matrix saved to {output_file_path}")
 
 
-input_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_to_TsyF'
-output_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_after_noise'
+input_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_train_after_mixup'
+output_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_train_after_noise'
 
 process_files_in_directory(input_dir, output_dir)
 

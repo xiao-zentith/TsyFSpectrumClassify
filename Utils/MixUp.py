@@ -146,8 +146,8 @@ def main(input_folder, output_folder):
 
 
 # 设置输入和输出文件夹路径
-input_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_to_TsyF'
-output_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset-after_mixup'
+input_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_train'
+output_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_train_after_mixup'
 
 # 调用主函数
 main(input_folder, output_folder)

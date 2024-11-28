@@ -72,8 +72,8 @@ def batch_process(input_dir, output_dir):
 
 # 主函数
 def main():
-    input_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_to_TsyF'  # 替换为你的输入文件夹路径
-    output_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_after_norm'  # 替换为你的输出文件夹路径
+    input_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_test_origin'  # 替换为你的输入文件夹路径
+    output_dir = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset\dataset_test'  # 替换为你的输出文件夹路径
     batch_process(input_dir, output_dir)
 
 
