@@ -1,11 +1,9 @@
 import os
 import numpy as np
-from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, recall_score, f1_score, classification_report, precision_recall_curve, \
     roc_curve, auc, confusion_matrix
 from sklearn.preprocessing import label_binarize
 from sklearn.decomposition import PCA
-from sklearn.multiclass import OneVsRestClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
@@ -214,9 +212,6 @@ train_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset\dataset
 test_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset\dataset_test'
 
 main(train_folder, test_folder)
-
-
-
 
 
 

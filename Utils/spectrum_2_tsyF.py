@@ -46,7 +46,7 @@ def process_folder(folder_path, output_folder_path):
     # 遍历文件夹
     for root, dirs, files in os.walk(folder_path):
         for file in files:
-            if file.endswith('.txt'):
+            if file.lower().endswith('.txt'):
                 file_path = os.path.join(root, file)
                 result_matrix, horizontal_coords = process_data(file_path)
 
@@ -67,6 +67,6 @@ def process_folder(folder_path, output_folder_path):
 
 
 # 假设你的TXT文件所在的文件夹路径是'data_folder'
-input_folder_path = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_after_extract'
-output_folder_path = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_to_TsyF'
+input_folder_path = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_extract'
+output_folder_path = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_TsyF'
 process_folder(input_folder_path, output_folder_path)

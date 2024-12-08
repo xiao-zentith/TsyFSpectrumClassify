@@ -239,8 +239,8 @@ def main(train_folder, test_folder):
 
 
 # 设置输入文件夹路径
-train_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset\dataset_train'
-test_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset\dataset_test'
+train_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_train_norm'
+test_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_test_norm'
 
 # 调用主函数
 main(train_folder, test_folder)

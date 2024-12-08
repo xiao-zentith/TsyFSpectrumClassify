@@ -8,54 +8,40 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
-from torchvision import transforms
 
 
 class ImageDataset(Dataset):
-    def __init__(self, X, y, transform=None):
-        self.X = torch.tensor(X, dtype=torch.float32).unsqueeze(1)  # Add channel dimension
+    def __init__(self, X, y):
+        self.X = torch.tensor(X, dtype=torch.float32)  # No need to add channel dimension for LSTM
         self.y = torch.tensor(y, dtype=torch.long)
-        self.transform = transform
 
     def __len__(self):
         return len(self.X)
 
     def __getitem__(self, idx):
-        x = self.X[idx]
-        y = self.y[idx]
-        if self.transform:
-            x = self.transform(x)
-        return x, y
+        return self.X[idx], self.y[idx]
 
 
-class SimpleCNN(nn.Module):
-    def __init__(self, image_size, num_channels, num_classes):
-        super(SimpleCNN, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=num_channels, out_channels=32, kernel_size=3, stride=1, padding=1)
-        self.bn1 = nn.BatchNorm2d(32)
-        self.relu = nn.ReLU()
-        self.pool = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
-        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=1)
-        self.bn2 = nn.BatchNorm2d(64)
-        self.fc1 = nn.Linear(64 * (image_size // 4) * (image_size // 4), 256)
-        self.dropout = nn.Dropout(0.5)
-        self.fc2 = nn.Linear(256, num_classes)
+class SimpleLSTM(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(SimpleLSTM, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lstm1 = nn.LSTM(input_size, hidden_size, num_layers=1, batch_first=True)
+        self.lstm2 = nn.LSTM(hidden_size, hidden_size, num_layers=1, batch_first=True)
+        self.fc = nn.Linear(hidden_size, num_classes)
 
     def forward(self, x):
-        x = self.conv1(x)
-        x = self.bn1(x)
-        x = self.relu(x)
-        x = self.pool(x)
-        x = self.conv2(x)
-        x = self.bn2(x)
-        x = self.relu(x)
-        x = self.pool(x)
-        x = x.view(x.size(0), -1)  # Flatten the tensor
-        x = self.fc1(x)
-        x = self.relu(x)
-        x = self.dropout(x)
-        x = self.fc2(x)
-        return x
+        h0_1 = torch.zeros(1, x.size(0), self.hidden_size).to(x.device)
+        c0_1 = torch.zeros(1, x.size(0), self.hidden_size).to(x.device)
+        out, _ = self.lstm1(x, (h0_1, c0_1))
+
+        h0_2 = torch.zeros(1, x.size(0), self.hidden_size).to(x.device)
+        c0_2 = torch.zeros(1, x.size(0), self.hidden_size).to(x.device)
+        out, _ = self.lstm2(out, (h0_2, c0_2))
+
+        out = self.fc(out[:, -1, :])  # Take the last time step's output
+        return out
 
 
 def read_matrix_from_file(file_path):
@@ -158,23 +144,20 @@ def main(train_folder, test_folder):
     n_classes = len(label_map)
 
     # Assuming all matrices have the same size
-    image_size = X_train.shape[1]
-    num_channels = 1  # Since we are treating each matrix as a single channel grayscale image
+    sequence_length = X_train.shape[1]
+    input_size = X_train.shape[2]
 
-    transform = transforms.Compose([
-        transforms.RandomHorizontalFlip(),
-        transforms.RandomVerticalFlip(),
-        transforms.ColorJitter(brightness=0.1, contrast=0.1),
-    ])
-
-    train_dataset = ImageDataset(X_train, y_train, transform=transform)
+    train_dataset = ImageDataset(X_train, y_train)
     test_dataset = ImageDataset(X_test, y_test)
 
     train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = SimpleCNN(image_size=image_size, num_channels=num_channels, num_classes=n_classes).to(device)
+    hidden_size = 64
+    num_layers = 2
+    model = SimpleLSTM(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers, num_classes=n_classes).to(
+        device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=50, gamma=0.1)

@@ -29,7 +29,7 @@ class ImageDataset(Dataset):
 
 
 class SimpleCNN(nn.Module):
-    def __init__(self, image_size, num_channels, num_classes):
+    def __init__(self, image_size, num_channels):
         super(SimpleCNN, self).__init__()
         self.conv1 = nn.Conv2d(in_channels=num_channels, out_channels=32, kernel_size=3, stride=1, padding=1)
         self.bn1 = nn.BatchNorm2d(32)
@@ -37,9 +37,8 @@ class SimpleCNN(nn.Module):
         self.pool = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
         self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=1)
         self.bn2 = nn.BatchNorm2d(64)
-        self.fc1 = nn.Linear(64 * (image_size // 4) * (image_size // 4), 256)
+        self.fc1 = nn.Linear(64 * (image_size // 4) * (image_size // 4), 128)
         self.dropout = nn.Dropout(0.5)
-        self.fc2 = nn.Linear(256, num_classes)
 
     def forward(self, x):
         x = self.conv1(x)
@@ -53,6 +52,37 @@ class SimpleCNN(nn.Module):
         x = x.view(x.size(0), -1)  # Flatten the tensor
         x = self.fc1(x)
         x = self.relu(x)
+        x = self.dropout(x)
+        return x
+
+
+class FeatureExtractor(nn.Module):
+    def __init__(self):
+        super(FeatureExtractor, self).__init__()
+
+    def forward(self, x):
+        # Example traditional feature extraction: mean and std of the matrix
+        mean_features = torch.mean(x, dim=(2, 3))
+        std_features = torch.std(x, dim=(2, 3))
+        features = torch.cat((mean_features, std_features), dim=1)
+        return features
+
+
+class DualChannelModel(nn.Module):
+    def __init__(self, image_size, num_channels, num_classes):
+        super(DualChannelModel, self).__init__()
+        self.cnn = SimpleCNN(image_size, num_channels)
+        self.feature_extractor = FeatureExtractor()
+        self.fc1 = nn.Linear(128 + 2, 256)  # 128 from CNN + 2 from FeatureExtractor
+        self.dropout = nn.Dropout(0.5)
+        self.fc2 = nn.Linear(256, num_classes)
+
+    def forward(self, x):
+        cnn_features = self.cnn(x)
+        extracted_features = self.feature_extractor(x)
+        combined_features = torch.cat((cnn_features, extracted_features), dim=1)
+        x = self.fc1(combined_features)
+        x = torch.relu(x)
         x = self.dropout(x)
         x = self.fc2(x)
         return x
@@ -174,12 +204,12 @@ def main(train_folder, test_folder):
     test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = SimpleCNN(image_size=image_size, num_channels=num_channels, num_classes=n_classes).to(device)
+    model = DualChannelModel(image_size=image_size, num_channels=num_channels, num_classes=n_classes).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=50, gamma=0.1)
 
-    num_epochs = 300
+    num_epochs = 500
     best_val_loss = float('inf')
     for epoch in range(num_epochs):
         train_loss = train_model(model, train_loader, criterion, optimizer, scheduler, device)

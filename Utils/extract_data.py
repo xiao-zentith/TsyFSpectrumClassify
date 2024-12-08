@@ -39,6 +39,6 @@ def process_folder(folder_path, output_folder):
             print(f"Processed {item} into {output_file}")
 
 # 调用函数，传入文件夹路径和输出文件夹路径
-folder_path = r'C:\Users\xiao\Desktop\论文汇总\data\dataset'  # 替换为你的文件夹路径
-output_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset_after_extract'  # 替换为输出文件夹的路径
+folder_path = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_origin'  # 替换为你的文件夹路径
+output_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_extract'  # 替换为输出文件夹的路径
 process_folder(folder_path, output_folder)
