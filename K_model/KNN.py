@@ -1,14 +1,16 @@
 import os
 import numpy as np
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, recall_score, f1_score, classification_report, precision_recall_curve, \
     roc_curve, auc, confusion_matrix
 from sklearn.preprocessing import label_binarize
-from sklearn.decomposition import PCA
 from sklearn.multiclass import OneVsRestClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.preprocessing import StandardScaler
+
+from Utils.augment_data import AugmentData
 
 
 def read_matrix_from_file(file_path):
@@ -38,11 +40,12 @@ def load_data(input_folder):
     """
     加载所有数据并返回特征和标签
     :param input_folder: 输入文件夹路径
-    :return: 特征数组, 标签数组, 标签映射字典
+    :return: 特征数组, 标签数组, 标签映射字典, 文件路径列表
     """
     features = []
     labels = []
     label_map = {}
+    file_paths = []
 
     for label_idx, label in enumerate(os.listdir(input_folder)):
         label_map[label] = label_idx
@@ -66,28 +69,13 @@ def load_data(input_folder):
 
             features.append(feature_vector)
             labels.append(label_idx)
+            file_paths.append(file_path)
 
     # 将列表转换为numpy数组
     X = np.array(features)
     y = np.array(labels)
 
-    return X, y, label_map
-
-
-def perform_feature_engineering(X):
-    """
-    进行特征工程操作，包括PCA降维
-    :param X: 原始特征数组
-    :return: 处理后的特征数组
-    """
-    print(f"Original shape of X: {X.shape}")
-
-    # PCA降维
-    pca = PCA(n_components=min(3, X.shape[1]))  # 保留最多3个特征
-    X_pca = pca.fit_transform(X)
-
-    print(f"Shape of X after PCA: {X_pca.shape}")
-    return X_pca
+    return X, y, label_map, file_paths
 
 
 def plot_classification_metrics(y_true, y_pred, y_scores, n_classes, label_map, classifier):
@@ -153,72 +141,199 @@ def plot_classification_metrics(y_true, y_pred, y_scores, n_classes, label_map, 
     plt.ylabel('True Label')
     plt.title('Confusion Matrix')
 
-    # 特征重要性（示例）
-    plt.subplot(1, 4, 4)
-    try:
-        # 假设使用的是KNeighborsClassifier，没有feature_importances_
-        # 如果使用其他支持feature_importances_的模型，可以取消注释下面的代码
-        # feature_importance = np.mean(np.abs(classifier.estimators_[0].weights_), axis=0)
-        # plt.bar(range(len(feature_importance)), feature_importance)
-        plt.text(0.5, 0.5, 'KNN does not provide feature importance', horizontalalignment='center',
-                 verticalalignment='center', fontsize=12)
-    except AttributeError:
-        plt.text(0.5, 0.5, 'Model does not provide feature importance', horizontalalignment='center',
-                 verticalalignment='center', fontsize=12)
-
-    plt.xlabel('Feature Index')
-    plt.ylabel('Importance')
-    plt.title('Feature Importance')
-
     plt.tight_layout()
     plt.show()
 
 
-def main(train_folder, test_folder):
+def load_augmented_data(output_folder):
+    """
+    加载增强后的数据并返回特征和标签
+    :param output_folder: 输出文件夹路径
+    :return: 特征数组, 标签数组, 标签映射字典
+    """
+    features = []
+    labels = []
+    label_map = {}
+
+    for label_idx, label in enumerate(os.listdir(output_folder)):
+        label_map[label] = label_idx
+        label_folder = os.path.join(output_folder, label)
+
+        if not os.path.isdir(label_folder):
+            continue
+
+        for txt_file in os.listdir(label_folder):
+            if not txt_file.endswith('.txt'):
+                continue
+
+            file_path = os.path.join(label_folder, txt_file)
+            x_coords, y_coords, matrix = read_matrix_from_file(file_path)
+
+            # 展平矩阵为特征向量
+            feature_vector = matrix.flatten()
+
+            # 将横坐标和纵坐标展平并添加到特征向量中
+            feature_vector = np.concatenate((x_coords, y_coords, feature_vector))
+
+            features.append(feature_vector)
+            labels.append(label_idx)
+
+    # 将列表转换为numpy数组
+    X = np.array(features)
+    y = np.array(labels)
+
+    return X, y, label_map
+
+
+def main(data_folder, num_runs=10):
     """
     主函数，加载数据、训练模型并评估性能
-    :param train_folder: 训练集文件夹路径
-    :param test_folder: 测试集文件夹路径
+    :param data_folder: 数据集文件夹路径
+    :param num_runs: 运行次数
     """
-    # 加载训练集和测试集
-    X_train, y_train, label_map = load_data(train_folder)
-    X_test, y_test, _ = load_data(test_folder)
-    n_classes = len(label_map)
+    all_accuracies = []
+    all_recalls = []
+    all_f1s = []
 
-    # 进行特征工程
-    X_train = perform_feature_engineering(X_train)
-    X_test = perform_feature_engineering(X_test)
+    for run in range(num_runs):
+        random_seed = 42 + run  # 使用不同的随机种子
+        print(f"\nRun {run + 1}/{num_runs} with seed {random_seed}")
 
-    # 将标签二值化
-    y_train_bin = label_binarize(y_train, classes=list(range(n_classes)))
-    y_test_bin = label_binarize(y_test, classes=list(range(n_classes)))
+        # 加载数据集
+        X, y, label_map, file_paths = load_data(data_folder)
+        n_classes = len(label_map)
 
-    # 使用GridSearchCV自动寻找最佳K值
-    knn = KNeighborsClassifier()
-    param_grid = {'n_neighbors': np.arange(1, 21)}
-    grid_search = GridSearchCV(knn, param_grid, cv=5, scoring='accuracy')
-    grid_search.fit(X_train, y_train_bin)
+        # 初始化StratifiedKFold
+        cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=random_seed)
 
-    best_k = grid_search.best_params_['n_neighbors']
-    print(f"Best K value found: {best_k}")
+        # 存储每个fold的结果
+        accuracies = []
+        recalls = []
+        f1s = []
 
-    # 使用最佳K值进行预测
-    best_knn = KNeighborsClassifier(n_neighbors=best_k)
-    classifier = OneVsRestClassifier(best_knn)
-    y_scores = classifier.fit(X_train, y_train_bin).predict_proba(X_test)
-    y_pred = classifier.predict(X_test)
+        temp_folder = 'temp_augmented'
+        if not os.path.exists(temp_folder):
+            os.makedirs(temp_folder)
 
-    # 转换预测结果为单个类别标签
-    y_pred_labels = np.argmax(y_pred, axis=1)
-    y_true_labels = np.argmax(y_test_bin, axis=1)
+        augmenter = AugmentData()
 
-    # 绘制分类指标图
-    plot_classification_metrics(y_true_labels, y_pred_labels, y_scores, n_classes, label_map, classifier)
+        for fold_idx, (train_index, test_index) in enumerate(cv.split(X, y)):
+            print(f"Fold {fold_idx + 1}/{cv.get_n_splits()}")
 
+            X_train, X_test = X[train_index], X[test_index]
+            y_train, y_test = y[train_index], y[test_index]
+            train_files = [file_paths[idx] for idx in train_index]
+
+            # 清空临时文件夹
+            for root, dirs, files in os.walk(temp_folder, topdown=False):
+                for name in files:
+                    os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+
+            # 创建临时文件夹结构以存放增强数据
+            for label in os.listdir(data_folder):
+                label_folder = os.path.join(data_folder, label)
+                temp_label_folder = os.path.join(temp_folder, label)
+
+                if not os.path.isdir(label_folder):
+                    continue
+
+                if not os.path.exists(temp_label_folder):
+                    os.makedirs(temp_label_folder)
+
+            # 复制训练文件到临时文件夹
+            for file_path in train_files:
+                folder_name = os.path.basename(os.path.dirname(file_path))
+                temp_subfolder = os.path.join(temp_folder, folder_name)
+                output_file_path = os.path.join(temp_subfolder, os.path.basename(file_path))
+
+                with open(file_path, 'r') as infile, open(output_file_path, 'w') as outfile:
+                    outfile.write(infile.read())
+
+            # 对训练集进行数据增强
+            augmenter.process_data(temp_folder, temp_folder, random_seed)
+
+            # 加载增强后的训练数据
+            X_train_augmented, y_train_augmented, _ = load_augmented_data(temp_folder)
+
+            # 确保增强后的训练数据数量与预期一致
+            assert len(X_train_augmented) == len(y_train_augmented), "Number of augmented training samples mismatch"
+
+            # 将标签二值化
+            y_train_bin = label_binarize(y_train_augmented, classes=list(range(n_classes)))
+            y_test_bin = label_binarize(y_test, classes=list(range(n_classes)))
+
+            # # 数据归一化
+            scaler = StandardScaler()
+            # X_train_augmented_scaled = scaler.fit_transform(X_train_augmented)
+            # X_test_scaled = scaler.fit_transform(X_test)
+            X_train_augmented_scaled = X_train_augmented
+            X_test_scaled = X_test
+
+            # 使用GridSearchCV自动寻找最佳K值
+            knn = KNeighborsClassifier()
+            param_grid = {'n_neighbors': np.arange(1, 21)}
+            grid_search = GridSearchCV(knn, param_grid, cv=3, scoring='accuracy')
+            grid_search.fit(X_train_augmented_scaled, y_train_bin)
+
+            best_k = grid_search.best_params_['n_neighbors']
+            print(f"Best k for Fold {fold_idx + 1}: {best_k}")
+
+            # 使用最佳K值进行预测
+            best_knn = KNeighborsClassifier(n_neighbors=best_k)
+            classifier = OneVsRestClassifier(best_knn)
+            y_scores = classifier.fit(X_train_augmented_scaled, y_train_bin).predict_proba(X_test_scaled)
+            y_pred = classifier.predict(X_test_scaled)
+
+            # 转换预测结果为单个类别标签
+            y_pred_labels = np.argmax(y_pred, axis=1)
+            y_true_labels = np.argmax(y_test_bin, axis=1)
+
+            # 计算评估指标
+            accuracy = accuracy_score(y_true_labels, y_pred_labels)
+            recall = recall_score(y_true_labels, y_pred_labels, average='weighted')
+            f1 = f1_score(y_true_labels, y_pred_labels, average='weighted')
+
+            accuracies.append(accuracy)
+            recalls.append(recall)
+            f1s.append(f1)
+
+            print(f"Fold {fold_idx + 1} - Accuracy: {accuracy:.4f}, Recall: {recall:.4f}, F1 Score: {f1:.4f}")
+
+            # 打印混淆矩阵
+            cm = confusion_matrix(y_true_labels, y_pred_labels)
+            print(f"Confusion Matrix for Fold {fold_idx + 1}:")
+            print(cm)
+
+        # 清理临时文件夹
+        for root, dirs, files in os.walk(temp_folder, topdown=False):
+            for name in files:
+                os.remove(os.path.join(root, name))
+            for name in dirs:
+                os.rmdir(os.path.join(root, name))
+        os.rmdir(temp_folder)
+
+        # 输出当前运行的结果
+        print(f"\nRun {run + 1} Average Accuracy: {np.mean(accuracies):.4f} ± {np.std(accuracies):.4f}")
+        print(f"Run {run + 1} Average Recall: {np.mean(recalls):.4f} ± {np.std(recalls):.4f}")
+        print(f"Run {run + 1} Average F1 Score: {np.mean(f1s):.4f} ± {np.std(f1s):.4f}")
+
+        # 存储当前运行的结果以便后续计算总体平均值
+        all_accuracies.extend(accuracies)
+        all_recalls.extend(recalls)
+        all_f1s.extend(f1s)
+
+    # 输出最终结果
+    print(f"\nOverall Average Accuracy: {np.mean(all_accuracies):.4f} ± {np.std(all_accuracies):.4f}")
+    print(f"Overall Average Recall: {np.mean(all_recalls):.4f} ± {np.std(all_recalls):.4f}")
+    print(f"Overall Average F1 Score: {np.mean(all_f1s):.4f} ± {np.std(all_f1s):.4f}")
 
 # 设置输入文件夹路径
-train_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_train_norm'
-test_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_test_norm'
+data_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_TsyF'
 
 # 调用主函数
-main(train_folder, test_folder)
+main(data_folder, num_runs=10)
+
+
+
