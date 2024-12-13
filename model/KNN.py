@@ -185,9 +185,9 @@ def main(train_folder, test_folder):
     X_test, y_test, _ = load_data(test_folder)
     n_classes = len(label_map)
 
-    # 进行特征工程
-    X_train = perform_feature_engineering(X_train)
-    X_test = perform_feature_engineering(X_test)
+    # # 进行特征工程
+    # X_train = perform_feature_engineering(X_train)
+    # X_test = perform_feature_engineering(X_test)
 
     # 将标签二值化
     y_train_bin = label_binarize(y_train, classes=list(range(n_classes)))
