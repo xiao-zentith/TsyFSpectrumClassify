@@ -6,11 +6,9 @@ from sklearn.metrics import accuracy_score, recall_score, f1_score, classificati
     roc_curve, auc, confusion_matrix
 from sklearn.preprocessing import label_binarize
 from sklearn.multiclass import OneVsRestClassifier
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 
-from Utils.augment_data import AugmentData
+from preprocess.augment_data import AugmentData
 
 
 def read_matrix_from_file(file_path):
@@ -76,74 +74,6 @@ def load_data(input_folder):
     y = np.array(labels)
 
     return X, y, label_map, file_paths
-
-
-def plot_classification_metrics(y_true, y_pred, y_scores, n_classes, label_map, classifier):
-    """
-    绘制分类指标图，包括P-R曲线、ROC曲线及其AUC值和混淆矩阵
-    :param y_true: 真实标签
-    :param y_pred: 预测标签
-    :param y_scores: 分类得分
-    :param n_classes: 类别数量
-    :param label_map: 标签映射字典
-    :param classifier: 训练好的分类器
-    """
-    # 计算准确率、召回率、F1分数
-    accuracy = accuracy_score(y_true, y_pred)
-    recall = recall_score(y_true, y_pred, average='weighted')
-    f1 = f1_score(y_true, y_pred, average='weighted')
-
-    print(f"Accuracy: {accuracy:.4f}")
-    print(f"Recall: {recall:.4f}")
-    print(f"F1 Score: {f1:.4f}")
-    print("\nClassification Report:")
-    print(classification_report(y_true, y_pred, target_names=label_map.keys()))
-
-    # P-R曲线
-    plt.figure(figsize=(24, 8))
-
-    # ROC曲线
-    plt.subplot(1, 4, 1)
-    fpr = dict()
-    tpr = dict()
-    roc_auc = dict()
-    for i in range(n_classes):
-        fpr[i], tpr[i], _ = roc_curve(y_true == i, y_scores[:, i])
-        roc_auc[i] = auc(fpr[i], tpr[i])
-        plt.plot(fpr[i], tpr[i], label=f'Class {list(label_map.keys())[i]} (area = {roc_auc[i]:.2f})')
-
-    plt.plot([0, 1], [0, 1], 'k--')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver Operating Characteristic')
-    plt.legend(loc="lower right")
-
-    # P-R曲线
-    plt.subplot(1, 4, 2)
-    precision = dict()
-    recall = dict()
-    for i in range(n_classes):
-        precision[i], recall[i], _ = precision_recall_curve(y_true == i, y_scores[:, i])
-        plt.plot(recall[i], precision[i], label=f'Class {list(label_map.keys())[i]}')
-
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title('Precision-Recall curve')
-    plt.legend(loc="best")
-
-    # 混淆矩阵
-    plt.subplot(1, 4, 3)
-    cm = confusion_matrix(y_true, y_pred)
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=label_map.keys(), yticklabels=label_map.keys())
-    plt.xlabel('Predicted Label')
-    plt.ylabel('True Label')
-    plt.title('Confusion Matrix')
-
-    plt.tight_layout()
-    plt.show()
-
 
 def load_augmented_data(output_folder):
     """
@@ -214,6 +144,9 @@ def main(data_folder, num_runs=10):
         temp_folder = 'temp_augmented'
         if not os.path.exists(temp_folder):
             os.makedirs(temp_folder)
+        test_norm_folder = 'temp_test'
+        if not os.path.exists(test_norm_folder):
+            os.makedirs(test_norm_folder)
 
         augmenter = AugmentData()
 
@@ -329,8 +262,10 @@ def main(data_folder, num_runs=10):
     print(f"Overall Average Recall: {np.mean(all_recalls):.4f} ± {np.std(all_recalls):.4f}")
     print(f"Overall Average F1 Score: {np.mean(all_f1s):.4f} ± {np.std(all_f1s):.4f}")
 
+    #调用plot方法展示结果
+
 # 设置输入文件夹路径
-data_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_TsyF'
+data_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\dataset_EEM'
 
 # 调用主函数
 main(data_folder, num_runs=10)
