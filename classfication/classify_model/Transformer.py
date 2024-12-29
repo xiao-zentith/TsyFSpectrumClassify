@@ -1,22 +1,22 @@
 import os
 import numpy as np
 from sklearn.model_selection import StratifiedKFold
-from sklearn.metrics import accuracy_score, recall_score, f1_score, classification_report, confusion_matrix
-from sklearn.preprocessing import label_binarize, StandardScaler
+from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix
+from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
-from torchvision import transforms
 import shutil
-from Utils.augment_data import AugmentData
+
+from preprocess.augment_data import AugmentData
 
 
 class ImageDataset(Dataset):
     def __init__(self, X, y, transform=None):
-        self.X = torch.tensor(X, dtype=torch.float32).unsqueeze(1)  # Add channel dimension
+        self.X = torch.tensor(X, dtype=torch.float32)  # No need to add channel dimension
         self.y = torch.tensor(y, dtype=torch.long)
         self.transform = transform
 
@@ -30,34 +30,22 @@ class ImageDataset(Dataset):
             x = self.transform(x)
         return x, y
 
-class SimpleCNN(nn.Module):
-    def __init__(self, image_size, num_channels, num_classes):
-        super(SimpleCNN, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=num_channels, out_channels=32, kernel_size=3, stride=1, padding=1)
-        self.bn1 = nn.BatchNorm2d(32)
-        self.relu = nn.ReLU()
-        self.pool = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
-        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=1)
-        self.bn2 = nn.BatchNorm2d(64)
-        self.fc1 = nn.Linear(64 * (image_size // 4) * (image_size // 4), 256)
-        self.dropout = nn.Dropout(0.5)
-        self.fc2 = nn.Linear(256, num_classes)
+
+class SimpleTransformer(nn.Module):
+    def __init__(self, input_dim, num_classes, d_model=64, nhead=8, num_layers=2):
+        super(SimpleTransformer, self).__init__()
+        self.embedding = nn.Linear(input_dim, d_model)
+        encoder_layer = nn.TransformerEncoderLayer(d_model=d_model, nhead=nhead)
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+        self.fc = nn.Linear(d_model, num_classes)
 
     def forward(self, x):
-        x = self.conv1(x)
-        x = self.bn1(x)
-        x = self.relu(x)
-        x = self.pool(x)
-        x = self.conv2(x)
-        x = self.bn2(x)
-        x = self.relu(x)
-        x = self.pool(x)
-        x = x.view(x.size(0), -1)  # Flatten the tensor
-        x = self.fc1(x)
-        x = self.relu(x)
-        x = self.dropout(x)
-        x = self.fc2(x)
+        x = self.embedding(x)
+        x = self.transformer_encoder(x)
+        x = x.mean(dim=1)  # Average pooling over the sequence length
+        x = self.fc(x)
         return x
+
 
 def read_matrix_from_file(file_path):
     with open(file_path, 'r') as file:
@@ -72,6 +60,7 @@ def read_matrix_from_file(file_path):
         data_matrix.append(parts[1:])
 
     return np.array(x_coords), np.array(y_coords), np.array(data_matrix)
+
 
 def load_data(input_folder):
     features = []
@@ -95,13 +84,15 @@ def load_data(input_folder):
             # Normalize the matrix values between 0 and 1
             matrix = (matrix - matrix.min()) / (matrix.max() - matrix.min())
 
-            features.append(matrix)
+            features.append(matrix.flatten())  # Flatten the matrix to 1D
             labels.append(label_idx)
 
     X = np.array(features)
     y = np.array(labels)
 
     return X, y, label_map
+
+
 def plot_confusion_matrix(y_true, y_pred, n_classes, label_map, fold_number):
     cm = confusion_matrix(y_true, y_pred)
     plt.figure(figsize=(12, 8))
@@ -110,6 +101,7 @@ def plot_confusion_matrix(y_true, y_pred, n_classes, label_map, fold_number):
     plt.ylabel('True Label')
     plt.title(f'Confusion Matrix for Fold {fold_number}')
     plt.show()
+
 
 def train_model(model, dataloader, criterion, optimizer, scheduler, device):
     model.train()
@@ -124,6 +116,7 @@ def train_model(model, dataloader, criterion, optimizer, scheduler, device):
         running_loss += loss.item()
     scheduler.step()
     return running_loss / len(dataloader)
+
 
 def evaluate_model(model, dataloader, criterion, device):
     model.eval()
@@ -150,21 +143,11 @@ def evaluate_model(model, dataloader, criterion, device):
 
 def zscore_normalize(X_train, X_val, X_test):
     scaler = StandardScaler()
-    # Flatten each sample for normalization
-    X_train_flat = X_train.reshape(X_train.shape[0], -1)
-    X_val_flat = X_val.reshape(X_val.shape[0], -1)
-    X_test_flat = X_test.reshape(X_test.shape[0], -1)
-
     # Fit on training data only
-    scaler.fit(X_train_flat)
-    X_train_normalized_flat = scaler.transform(X_train_flat)
-    X_val_normalized_flat = scaler.transform(X_val_flat)
-    X_test_normalized_flat = scaler.transform(X_test_flat)
-
-    # Reshape back to original shape
-    X_train_normalized = X_train_normalized_flat.reshape(X_train.shape)
-    X_val_normalized = X_val_normalized_flat.reshape(X_val.shape)
-    X_test_normalized = X_test_normalized_flat.reshape(X_test.shape)
+    scaler.fit(X_train)
+    X_train_normalized = scaler.transform(X_train)
+    X_val_normalized = scaler.transform(X_val)
+    X_test_normalized = scaler.transform(X_test)
 
     return X_train_normalized, X_val_normalized, X_test_normalized
 
@@ -196,9 +179,6 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
             X_train, X_val = X_train_val[train_indices], X_train_val[val_indices]
             y_train, y_val = y_train_val[train_indices], y_train_val[val_indices]
 
-            # Apply augmentation here if needed before normalizing
-            # For now, we assume no additional augmentation steps are required after loading
-
             # Perform Z-score normalization
             X_train_normalized, X_val_normalized, _ = zscore_normalize(X_train, X_val, X_test)
 
@@ -209,7 +189,7 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
             val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            model = SimpleCNN(image_size=X_train.shape[1], num_channels=1, num_classes=len(label_map)).to(device)
+            model = SimpleTransformer(input_dim=X_train.shape[1], num_classes=len(label_map)).to(device)
             criterion = nn.CrossEntropyLoss()
             optimizer = optim.Adam(model.parameters(), lr=0.001)
             scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=50, gamma=0.1)
@@ -225,10 +205,10 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
 
                 print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}')
 
-        final_model = SimpleCNN(image_size=X_train.shape[1], num_channels=1, num_classes=len(label_map)).to(device)
+        final_model = SimpleTransformer(input_dim=X_train.shape[1], num_classes=len(label_map)).to(device)
         final_model.load_state_dict(best_model_state)
 
-        # Perform Z-score normalization for the entire dataset before splitting into test set
+        # Perform Z-score normalization for the entire dataset_raw before splitting into test set
         X_train_val_normalized, _, X_test_normalized = zscore_normalize(X_train_val, X_val, X_test)
 
         test_dataset = ImageDataset(X_test_normalized, y_test)
@@ -248,16 +228,15 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
 
         # Plot confusion matrix for each fold
         plot_confusion_matrix(y_true, y_pred, len(label_map), label_map, i + 1)
-
         shutil.rmtree(temp_folder)
 
     avg_accuracy = np.mean(accuracies)
     avg_recall = np.mean(recalls)
     avg_f1 = np.mean(f1_scores)
-
     print(f"Average Accuracy: {avg_accuracy:.4f}")
     print(f"Average Recall: {avg_recall:.4f}")
     print(f"Average F1 Score: {avg_f1:.4f}")
+
 
 dataset_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_TsyF'
 nested_k_fold_cross_validation(dataset_folder)

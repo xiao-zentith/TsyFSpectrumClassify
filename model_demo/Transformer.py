@@ -34,6 +34,7 @@ class SimpleTransformer(nn.Module):
         x = self.embedding(x)
         x = x.unsqueeze(1)  # Add sequence length dimension (batch_size, seq_len=1, d_model)
         x = self.transformer_encoder(x).squeeze(1)  # Remove sequence length dimension
+        x = self.transformer_encoder(x).squeeze(1)  # Remove sequence length dimension
         x = self.fc(x)
         return x
 
@@ -181,8 +182,8 @@ def main(train_folder, test_folder):
     X_test, y_test, _ = load_data(test_folder)
     n_classes = len(label_map)
 
-    X_train = perform_feature_engineering(X_train)
-    X_test = perform_feature_engineering(X_test)
+    # X_train = perform_feature_engineering(X_train)
+    # X_test = perform_feature_engineering(X_test)
 
     y_train_bin = label_binarize(y_train, classes=list(range(n_classes)))
     y_test_bin = label_binarize(y_test, classes=list(range(n_classes)))
@@ -208,8 +209,8 @@ def main(train_folder, test_folder):
 
     plot_classification_metrics(y_true, y_pred, y_scores, n_classes, label_map)
 
-train_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset\dataset_train'
-test_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset\dataset_test'
+train_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_train'
+test_folder = r'C:\Users\xiao\Desktop\论文汇总\data\dataset\dataset_test'
 
 main(train_folder, test_folder)
 

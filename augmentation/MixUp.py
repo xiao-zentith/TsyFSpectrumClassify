@@ -79,7 +79,7 @@ class MatrixMixupProcessor:
             src_file_path = os.path.join(input_label_folder, txt_file)
             dst_file_path = os.path.join(output_label_folder, txt_file)
             shutil.copy(src_file_path, dst_file_path)
-            print(f"原始文件 {src_file_path} 已复制到 {dst_file_path}")
+            # print(f"原始文件 {src_file_path} 已复制到 {dst_file_path}")
 
     def process_label_folder(self, input_label_folder, output_label_folder):
         """
@@ -132,7 +132,7 @@ class MatrixMixupProcessor:
 
                     # 记录已处理的组合
                     processed_pairs.add((i, j))
-                    print(f"混合矩阵已保存到 {output_file_path}，使用的λ值为 {lam}")
+                    # print(f"混合矩阵已保存到 {output_file_path}，使用的λ值为 {lam}")
 
     def main(self):
         """
@@ -160,8 +160,8 @@ class ExternalClass:
 
 # 示例调用
 if __name__ == "__main__":
-    input_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_TsyF'
-    output_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_mixup'
+    input_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\dataset_EEM'
+    output_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\EEM_mixup'
     random_seed = 42  # 设置随机种子以保证结果可重复
     external_instance = ExternalClass(input_folder, output_folder, random_seed)
     external_instance.run_processing()

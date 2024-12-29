@@ -73,13 +73,13 @@ class NormProcessor:
 
     # 对外提供的接口
     def process_folders(self):
-        self.batch_process(input_folder, output_folder)
+        self.batch_process(self.input_folder, self.output_folder)
 
 
 # 示例调用
 if __name__ == '__main__':
-    input_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_noise'  # 替换为你的输入文件夹路径
-    output_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_norm'  # 替换为你的输出文件夹路径
+    input_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\EEM_noise'  # 替换为你的输入文件夹路径
+    output_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\EEM_norm'  # 替换为你的输出文件夹路径
     processor = NormProcessor(input_folder, output_folder)
     processor.process_folders()
 

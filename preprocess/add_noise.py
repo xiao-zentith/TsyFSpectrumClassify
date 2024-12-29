@@ -2,6 +2,7 @@ import os
 import numpy as np
 import shutil
 
+
 class NoiseProcessor:
     def __init__(self, input_folder, output_folder, seed=None):
         self.input_folder = input_folder
@@ -65,20 +66,22 @@ class NoiseProcessor:
 
                     x_coords, y_coords, matrix_values = self.read_data_from_file(input_file_path)
 
-                    print(f"Processing file: {input_file_path}")
+                    # print(f"Processing file: {input_file_path}")
 
                     noisy_matrix = self.add_noise_to_matrix(matrix_values)
 
                     self.save_noisy_matrix_to_file(x_coords, y_coords, noisy_matrix, output_file_path)
-                    print(f"Noisy matrix saved to {output_file_path}")
+                    # print(f"Noisy matrix saved to {output_file_path}")
 
                     # Copy the original file to the output directory
                     self.copy_original_file(input_file_path, current_output_dir)
 
 
 # Example usage:
-# processor = NoiseProcessor(r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_mixup', r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_noise', seed=42)
-# processor.process_files_in_directory()
+input_path = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\EEM_mixup'
+output_path = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\EEM_noise'
+processor = NoiseProcessor(input_path, output_path, seed=42)
+processor.process_files_in_directory()
 
 
 

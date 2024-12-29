@@ -1,7 +1,7 @@
 import shutil
-from Utils.MixUp import ExternalClass
-from Utils.ZScore_norm import NormProcessor
-from Utils.add_noise import NoiseProcessor
+from augmentation.MixUp import ExternalClass
+from preprocess.ZScore_norm import NormProcessor
+from preprocess.add_noise import NoiseProcessor
 
 
 class AugmentData:
@@ -18,24 +18,24 @@ class AugmentData:
         mixup_processor = ExternalClass(self.input_folder, mixup_output_folder, self.random_seed)
         mixup_processor.run_processing()
 
-        # 第二步：添加噪声
-        noise_adder = NoiseProcessor(mixup_output_folder, self.output_folder, self.random_seed)
-        noise_adder.process_files_in_directory()
-
         # # 第二步：添加噪声
-        # noise_output_folder = f"{self.output_folder}/noise"
-        # noise_adder = NoiseProcessor(mixup_output_folder, noise_output_folder, self.random_seed)
+        # noise_adder = NoiseProcessor(mixup_output_folder, self.output_folder, self.random_seed)
         # noise_adder.process_files_in_directory()
+
+        # 第二步：添加噪声
+        noise_output_folder = f"{self.output_folder}/noise"
+        noise_adder = NoiseProcessor(mixup_output_folder, noise_output_folder, self.random_seed)
+        noise_adder.process_files_in_directory()
 
         # 删除 MixUp 的输出文件夹
         shutil.rmtree(mixup_output_folder)
 
-        # # 第三步：Z-Score 归一化
-        # zscore_normalizer = NormProcessor(noise_output_folder, self.output_folder)
-        # zscore_normalizer.process_folders()
-        #
-        # # 删除 噪声 添加的输出文件夹
-        # shutil.rmtree(noise_output_folder)
+        # 第三步：Z-Score 归一化
+        zscore_normalizer = NormProcessor(noise_output_folder, self.output_folder)
+        zscore_normalizer.process_folders()
+
+        # 删除 噪声 添加的输出文件夹
+        shutil.rmtree(noise_output_folder)
 
 
 # 示例使用

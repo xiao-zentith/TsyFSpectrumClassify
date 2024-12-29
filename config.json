@@ -1,0 +1,7 @@
+{
+  "dataset_raw" : "../dataset/dataset_raw/C6 + FITC",
+  "dataset_processed" : "../dataset/dataset_preprocess/C6 + FITC",
+  "dataset_target1" : "../dataset/dataset_target/Component1",
+  "dataset_target2" : "../dataset/dataset_target/Component2",
+  "dataset_result" : "../dataset/dataset_result"
+}
