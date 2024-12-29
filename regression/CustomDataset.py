@@ -1,8 +1,6 @@
-import numpy as np
 import pandas as pd
 import torch
-import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 
 
 class CustomDataset(Dataset):
@@ -14,9 +12,11 @@ class CustomDataset(Dataset):
 
     def __getitem__(self, idx):
         item = self.data_list[idx]
-        input_df = pd.read_excel(item['input'], header=None)
-        output_df1 = pd.read_excel(item['targets'][0], header=None)
-        output_df2 = pd.read_excel(item['targets'][1], header=None)
+
+        # Read Excel files skipping the first row and excluding the first column
+        input_df = pd.read_excel(item['input'], header=None, usecols=lambda x: x != 0, skiprows=1)
+        output_df1 = pd.read_excel(item['targets'][0], header=None, usecols=lambda x: x != 0, skiprows=1)
+        output_df2 = pd.read_excel(item['targets'][1], header=None, usecols=lambda x: x != 0, skiprows=1)
 
         # Convert to NumPy array
         input_matrix = input_df.to_numpy()
@@ -29,3 +29,6 @@ class CustomDataset(Dataset):
         output_tensor2 = torch.from_numpy(output_matrix2).float().unsqueeze(0)
 
         return input_tensor, output_tensor1, output_tensor2
+
+
+

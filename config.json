@@ -3,5 +3,11 @@
   "dataset_processed" : "../dataset/dataset_preprocess/C6 + FITC",
   "dataset_target1" : "../dataset/dataset_target/Component1",
   "dataset_target2" : "../dataset/dataset_target/Component2",
-  "dataset_result" : "../dataset/dataset_result"
+  "dataset_result" : "../dataset/dataset_result",
+  "data_split" : {
+    "train" : 0.7,
+    "val" : 0.2,
+    "test" : 0.1
+  },
+  "is_cross_validation" : true
 }

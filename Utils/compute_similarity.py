@@ -2,6 +2,9 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import StandardScaler
 
+from Utils.read_npz import read_npz_file
+
+
 def read_spectra_matrix(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
@@ -50,13 +53,15 @@ if __name__ == "__main__":
     file_path1 = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_mixup\C6\mixed_C15_extracted.txt_with_C25_extracted.txt.txt'
     file_path2 = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_mixup\C6\C20_extracted.txt'
 
-    # 读取矩阵数据
-    x_coords1, y_coords1, matrix1 = read_spectra_matrix(file_path1)
-    x_coords2, y_coords2, matrix2 = read_spectra_matrix(file_path2)
+    # # 读取矩阵数据
+    # x_coords1, y_coords1, matrix1 = read_spectra_matrix(file_path1)
+    # x_coords2, y_coords2, matrix2 = read_spectra_matrix(file_path2)
+    #
+    # # 检查横坐标和纵坐标是否相同
+    # if not np.allclose(x_coords1, x_coords2) or not np.allclose(y_coords1, y_coords2):
+    #     raise ValueError("两个矩阵的横坐标或纵坐标不匹配")
 
-    # 检查横坐标和纵坐标是否相同
-    if not np.allclose(x_coords1, x_coords2) or not np.allclose(y_coords1, y_coords2):
-        raise ValueError("两个矩阵的横坐标或纵坐标不匹配")
+    matrix1, matrix2 = read_npz_file(r'C:\Users\xiao\PycharmProjects\TsyFSpectrumClassify\dataset\dataset_result\fold_2\test_sample_1_data.npz')
 
     # 标准化矩阵
     scaler = StandardScaler()

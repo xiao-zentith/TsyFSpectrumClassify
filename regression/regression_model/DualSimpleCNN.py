@@ -23,7 +23,7 @@ class SimpleCNN(nn.Module):
         return x
 
 class DualSimpleCNN(nn.Module):
-    def __init__(self, in_channels=3, out_channels=1, features=[64, 128]):
+    def __init__(self, in_channels, out_channels, features=[64, 128]):
         super(DualSimpleCNN, self).__init__()
         self.cnn1 = SimpleCNN(in_channels=in_channels, out_channels=out_channels, features=features)
         self.cnn2 = SimpleCNN(in_channels=in_channels, out_channels=out_channels, features=features)

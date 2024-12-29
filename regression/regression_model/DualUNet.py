@@ -1,10 +1,11 @@
 import torch
 import torch.nn as nn
 from regression.regression_model.UNet import UNET
+from regression.regression_model.UNet_no_skip import UNETNoSkip
 
 
 class DualUNet(nn.Module):
-    def __init__(self, in_channels, out_channels, features=[64, 128, 256]):
+    def __init__(self, in_channels, out_channels, features=[16, 32, 64]):
         super(DualUNet, self).__init__()
         self.unet1 = UNET(in_channels=in_channels, out_channels=out_channels, features=features)
         self.unet2 = UNET(in_channels=in_channels, out_channels=out_channels, features=features)

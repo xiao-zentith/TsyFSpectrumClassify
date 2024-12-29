@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from regression.CustomDataset import CustomDataset
+from regression.regression_model.DualSimpleCNN import DualSimpleCNN
 from regression.regression_model.DualUNet import DualUNet
 
 
@@ -17,7 +18,7 @@ def train_model(fold_data, num_epochs=50, batch_size=4, learning_rate=1e-3):
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
-    model = DualUNet(in_channels=1, out_channels=1).cuda()
+    model = DualSimpleCNN(in_channels=1, out_channels=1)
 
     mse_criterion = nn.MSELoss()
     mae_criterion = nn.L1Loss()
@@ -142,7 +143,7 @@ def visualize_results(test_data, model):
 
 
 if __name__ == "__main__":
-    with open(r'C:\Users\xiao\PycharmProjects\TsyFSpectrumClassify\dataset_info.json', 'r') as f:
+    with open('../dataset_info.json', 'r') as f:
         dataset_info = json.load(f)
 
     best_models = []

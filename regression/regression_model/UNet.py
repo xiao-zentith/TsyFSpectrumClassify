@@ -2,20 +2,22 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class DoubleConv(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(DoubleConv, self).__init__()
         self.conv = nn.Sequential(
             nn.Conv2d(in_channels, out_channels, 3, 1, 1, bias=False),
-            nn.BatchNorm2d(out_channels),
+            # nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
             nn.Conv2d(out_channels, out_channels, 3, 1, 1, bias=False),
-            nn.BatchNorm2d(out_channels),
+            # nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True)
         )
 
     def forward(self, x):
         return self.conv(x)
+
 
 class UNET(nn.Module):
     def __init__(self, in_channels, out_channels, features):
@@ -30,16 +32,19 @@ class UNET(nn.Module):
             in_channels = feature
 
         # Bottleneck layer
-        self.bottleneck = DoubleConv(features[-1], features[-1]*2)
+        self.bottleneck = DoubleConv(features[-1], features[-1] * 2)
 
         # Up part of UNET
         for feature in reversed(features):
             self.ups.append(
-                nn.ConvTranspose2d(feature*2, feature, kernel_size=2, stride=2)
+                nn.ConvTranspose2d(feature * 2, feature, kernel_size=2, stride=2)
             )
-            self.ups.append(DoubleConv(feature*2, feature))
+            self.ups.append(DoubleConv(feature * 2, feature))
 
         self.final_conv = nn.Conv2d(features[0], out_channels, kernel_size=1)
+
+        # 添加一个1x1卷积层来学习缩放比例
+        self.scale_layer = nn.Conv2d(out_channels, out_channels, kernel_size=1, bias=False)
 
     def forward(self, x):
         skip_connections = []
@@ -54,15 +59,21 @@ class UNET(nn.Module):
 
         for idx in range(0, len(self.ups), 2):
             x = self.ups[idx](x)
-            skip_connection = skip_connections[idx//2]
+            skip_connection = skip_connections[idx // 2]
 
             if x.shape != skip_connection.shape:
                 x = F.interpolate(x, size=skip_connection.shape[2:], mode='bilinear', align_corners=True)
 
             concat_skip = torch.cat((skip_connection, x), dim=1)
-            x = self.ups[idx+1](concat_skip)
+            x = self.ups[idx + 1](concat_skip)
 
-        return self.final_conv(x)
+        x = self.final_conv(x)
+
+        # 应用缩放层
+        scale_factor = self.scale_layer(torch.ones_like(x))
+        scaled_out = x * scale_factor
+
+        return scaled_out
 
 # Example usage
 if __name__ == "__main__":
