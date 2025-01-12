@@ -1,6 +1,13 @@
-from sklearn.metrics import classification_report, precision_recall_curve, roc_curve, auc
+from sklearn.metrics import classification_report, precision_recall_curve, roc_curve, auc, precision_score
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+import numpy as np
+from sklearn.model_selection import StratifiedKFold, GridSearchCV
+from sklearn.preprocessing import label_binarize, StandardScaler
+from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.multiclass import OneVsRestClassifier
 
 from classfication.classify_model.KNN import load_augmented_data
 from preprocess.augment_data import AugmentData
@@ -115,13 +122,6 @@ def plot_classification_metrics(y_true, y_pred, y_scores, n_classes, label_map, 
     plt.tight_layout()
     plt.show()
 
-import os
-import numpy as np
-from sklearn.model_selection import StratifiedKFold, GridSearchCV
-from sklearn.preprocessing import label_binarize, StandardScaler
-from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.multiclass import OneVsRestClassifier
 
 def main(data_folder, num_runs=10):
     """
@@ -130,6 +130,7 @@ def main(data_folder, num_runs=10):
     :param num_runs: 运行次数
     """
     all_accuracies = []
+    all_precisions = []
     all_recalls = []
     all_f1s = []
 
@@ -146,6 +147,7 @@ def main(data_folder, num_runs=10):
 
         # 存储每个fold的结果
         accuracies = []
+        precisions = []
         recalls = []
         f1s = []
 
@@ -232,10 +234,12 @@ def main(data_folder, num_runs=10):
 
             # 计算评估指标
             accuracy = accuracy_score(y_true_labels, y_pred_labels)
+            precision = precision_score(y_true_labels, y_pred_labels, average='weighted')
             recall = recall_score(y_true_labels, y_pred_labels, average='weighted')
             f1 = f1_score(y_true_labels, y_pred_labels, average='weighted')
 
             accuracies.append(accuracy)
+            precisions.append(precision)
             recalls.append(recall)
             f1s.append(f1)
 
@@ -256,6 +260,7 @@ def main(data_folder, num_runs=10):
 
         # 输出当前运行的结果
         print(f"\nRun {run + 1} Average Accuracy: {np.mean(accuracies):.4f} ± {np.std(accuracies):.4f}")
+        print(f"Run {run + 1} Average Precision: {np.mean(precisions):.4f} ± {np.std(precisions):.4f}")
         print(f"Run {run + 1} Average Recall: {np.mean(recalls):.4f} ± {np.std(recalls):.4f}")
         print(f"Run {run + 1} Average F1 Score: {np.mean(f1s):.4f} ± {np.std(f1s):.4f}")
 
@@ -267,11 +272,12 @@ def main(data_folder, num_runs=10):
     # 输出所有运行的最终结果
     print("\nOverall Results:")
     print(f"Average Accuracy: {np.mean(all_accuracies):.4f} ± {np.std(all_accuracies):.4f}")
+    print(f"Average Precision: {np.mean(all_precisions):.4f} ± {np.std(all_precisions):.4f}")
     print(f"Average Recall: {np.mean(all_recalls):.4f} ± {np.std(all_recalls):.4f}")
     print(f"Average F1 Score: {np.mean(all_f1s):.4f} ± {np.std(all_f1s):.4f}")
 
 # 设置数据集文件夹路径
-dataset_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_K\dataset_TsyF'
+dataset_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_K\dataset_TsyF'
 
 # 调用主函数
 main(dataset_folder)
