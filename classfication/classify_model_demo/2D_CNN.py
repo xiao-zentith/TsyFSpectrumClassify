@@ -1,7 +1,7 @@
 import os
 import numpy as np
 from sklearn.model_selection import StratifiedKFold
-from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix
+from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix, precision_score
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -10,6 +10,8 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
 import shutil
+
+from model_demo.Transformer_kimi import precision
 from preprocess.augment_data import AugmentData
 
 
@@ -32,15 +34,15 @@ class ImageDataset(Dataset):
 class SimpleCNN(nn.Module):
     def __init__(self, image_size, num_channels, num_classes):
         super(SimpleCNN, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=num_channels, out_channels=32, kernel_size=3, stride=1, padding=1)
-        self.bn1 = nn.BatchNorm2d(32)
+        self.conv1 = nn.Conv2d(in_channels=num_channels, out_channels=16, kernel_size=3, stride=1, padding=1)
+        self.bn1 = nn.BatchNorm2d(16)
         self.relu = nn.ReLU()
         self.pool = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
-        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=1)
-        self.bn2 = nn.BatchNorm2d(64)
-        self.fc1 = nn.Linear(64 * (image_size // 4) * (image_size // 4), 256)
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=32, kernel_size=3, stride=1, padding=1)
+        self.bn2 = nn.BatchNorm2d(32)
+        self.fc1 = nn.Linear(32 * (image_size // 4) * (image_size // 4), 128)
         self.dropout = nn.Dropout(0.5)
-        self.fc2 = nn.Linear(256, num_classes)
+        self.fc2 = nn.Linear(128, num_classes)
 
     def forward(self, x):
         x = self.conv1(x)
@@ -174,6 +176,7 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
     inner_cv = StratifiedKFold(n_splits=k_inner, shuffle=True, random_state=random_seed)
 
     accuracies = []
+    precisions = []
     recalls = []
     f1_scores = []
 
@@ -236,10 +239,12 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
         _, y_pred, y_true = evaluate_model(final_model, test_loader, criterion, device)
 
         accuracy = accuracy_score(y_true, y_pred)
+        precision = precision_score(y_true, y_pred, average='weighted')
         recall = recall_score(y_true, y_pred, average='weighted')
         f1 = f1_score(y_true, y_pred, average='weighted')
 
         accuracies.append(accuracy)
+        precisions.append(precision)
         recalls.append(recall)
         f1_scores.append(f1)
 
@@ -251,10 +256,12 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
         shutil.rmtree(temp_folder)
 
     avg_accuracy = np.mean(accuracies)
+    avg_precision = np.mean(precisions)
     avg_recall = np.mean(recalls)
     avg_f1 = np.mean(f1_scores)
 
     print(f"Average Accuracy: {avg_accuracy:.4f}")
+    print(f"Average Precision: {avg_precision:.4f}")
     print(f"Average Recall: {avg_recall:.4f}")
     print(f"Average F1 Score: {avg_f1:.4f}")
 
