@@ -7,7 +7,6 @@ from tkinter import filedialog, messagebox, colorchooser
 import matplotlib.colors as mcolors
 
 
-# 读取TXT文件中的二维矩阵数据
 def read_matrix_from_txt(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -19,6 +18,11 @@ def read_matrix_from_txt(file_path):
         for line in lines[1:]:
             row = [float(value) for value in line.strip().split()[1:]]
             matrix_data.append(row)
+
+        # Reverse the horizontal coordinates and corresponding data rows
+        # horizontal_coords.reverse()
+        # matrix_data.reverse()
+
         return np.array(matrix_data), horizontal_coords, vertical_coords
     except Exception as e:
         log_text.insert(tk.END, f"Error reading file {file_path}: {str(e)}\n")
@@ -216,12 +220,12 @@ title_entry = tk.Entry(title_frame, textvariable=title, width=50)
 title_entry.grid(row=0, column=1, sticky='ew')
 
 tk.Label(title_frame, text="X-axis Label:").grid(row=1, column=0, sticky='e')
-xlabel = tk.StringVar(value="Excitation spectra")
+xlabel = tk.StringVar(value="Excitation Spectrum/nm")
 xlabel_entry = tk.Entry(title_frame, textvariable=xlabel, width=50)
 xlabel_entry.grid(row=1, column=1, sticky='ew')
 
 tk.Label(title_frame, text="Y-axis Label:").grid(row=2, column=0, sticky='e')
-ylabel = tk.StringVar(value="Emission Spectrum")
+ylabel = tk.StringVar(value="Emission Spectrum/nm")
 ylabel_entry = tk.Entry(title_frame, textvariable=ylabel, width=50)
 ylabel_entry.grid(row=2, column=1, sticky='ew')
 

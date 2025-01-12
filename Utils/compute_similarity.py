@@ -61,7 +61,7 @@ if __name__ == "__main__":
     # if not np.allclose(x_coords1, x_coords2) or not np.allclose(y_coords1, y_coords2):
     #     raise ValueError("两个矩阵的横坐标或纵坐标不匹配")
 
-    matrix1, matrix2 = read_npz_file(r'C:\Users\xiao\PycharmProjects\TsyFSpectrumClassify\dataset\dataset_result\fold_2\test_sample_1_data.npz')
+    matrix1, matrix2 = read_npz_file(r'/dataset/dataset_result/C6 + FITC/fold_2\test_sample_1_data.npz')
 
     # 标准化矩阵
     scaler = StandardScaler()

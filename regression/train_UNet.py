@@ -6,23 +6,29 @@ from torch.utils.data import Dataset, DataLoader
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from scipy.stats import pearsonr
 
+# Assuming these imports are correct based on your project structure
 from regression.CustomDataset import CustomDataset
-from regression.regression_model.DualUNet import DualUNet
+from regression.regression_model.DualUNet_magic import DualUNetSharedEncoder
+from Utils.compute_pearson import pearson_corr_matrix  # Import the function from your module
 
-
-def train_model(fold_data, num_epochs=100, batch_size=5, learning_rate=1e-3):
+def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, patience=20):
     train_dataset = CustomDataset(fold_data['train'])
     val_dataset = CustomDataset(fold_data['validation'])
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
-    model = DualUNet(in_channels=1, out_channels=1)
+    model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
 
     mse_criterion = nn.MSELoss()
     mae_criterion = nn.L1Loss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+    best_val_loss = float('inf')
+    epochs_no_improve = 0
+    best_model_path = f'best_model_fold_{current_fold}.pth'
 
     for epoch in range(num_epochs):
         model.train()
@@ -36,10 +42,10 @@ def train_model(fold_data, num_epochs=100, batch_size=5, learning_rate=1e-3):
 
             preds1, preds2 = model(inputs)
 
-            mse_loss1 = mse_criterion(preds1, outputs1)
+            mse_loss1 = torch.sqrt(mse_criterion(preds1, outputs1))
             mae_loss1 = mae_criterion(preds1, outputs1)
 
-            mse_loss2 = mse_criterion(preds2, outputs2)
+            mse_loss2 = torch.sqrt(mse_criterion(preds2, outputs2))
             mae_loss2 = mae_criterion(preds2, outputs2)
 
             total_loss = mse_loss1 + mae_loss1 + mse_loss2 + mae_loss2
@@ -71,10 +77,10 @@ def train_model(fold_data, num_epochs=100, batch_size=5, learning_rate=1e-3):
 
                 preds1, preds2 = model(inputs)
 
-                mse_loss1 = mse_criterion(preds1, outputs1)
+                mse_loss1 = torch.sqrt(mse_criterion(preds1, outputs1))
                 mae_loss1 = mae_criterion(preds1, outputs1)
 
-                mse_loss2 = mse_criterion(preds2, outputs2)
+                mse_loss2 = torch.sqrt(mse_criterion(preds2, outputs2))
                 mae_loss2 = mae_criterion(preds2, outputs2)
 
                 val_running_mse_loss1 += mse_loss1.item() * inputs.size(0)
@@ -87,12 +93,25 @@ def train_model(fold_data, num_epochs=100, batch_size=5, learning_rate=1e-3):
         val_epoch_mse_loss2 = val_running_mse_loss2 / len(val_dataset)
         val_epoch_mae_loss2 = val_running_mae_loss2 / len(val_dataset)
 
+        val_total_loss = val_epoch_mse_loss1 + val_epoch_mae_loss1 + val_epoch_mse_loss2 + val_epoch_mae_loss2
+
         print(
             f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MSE Loss: {val_epoch_mse_loss1:.4f}, {val_epoch_mse_loss2:.4f}')
         print(
             f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MAE Loss: {val_epoch_mae_loss1:.4f}, {val_epoch_mae_loss2:.4f}')
 
-    return model
+        # Early stopping logic
+        if val_total_loss < best_val_loss:
+            best_val_loss = val_total_loss
+            epochs_no_improve = 0
+            torch.save(model.state_dict(), best_model_path)  # Save the best model
+        else:
+            epochs_no_improve += 1
+            if epochs_no_improve >= patience:
+                print(f"Early stopping after {epoch + 1} epochs")
+                break
+
+    return best_model_path
 
 
 def visualize_and_save_results(test_data, model, output_folder):
@@ -103,6 +122,9 @@ def visualize_and_save_results(test_data, model, output_folder):
         os.makedirs(output_folder)
 
     model.eval()
+    all_pearson_corrs_pred1 = []
+    all_pearson_corrs_pred2 = []
+
     with torch.no_grad():
         for i, (inputs, targets1, targets2) in enumerate(test_loader):
             inputs, targets1, targets2 = inputs, targets1, targets2
@@ -129,10 +151,6 @@ def visualize_and_save_results(test_data, model, output_folder):
             axes[0, 2].set_title('Predicted 1')
             axes[0, 2].axis('off')
 
-            axes[1, 0].imshow(input_np, cmap='viridis')
-            axes[1, 0].set_title('Input')
-            axes[1, 0].axis('off')
-
             axes[1, 1].imshow(target2_np, cmap='viridis')
             axes[1, 1].set_title('Target 2')
             axes[1, 1].axis('off')
@@ -150,24 +168,69 @@ def visualize_and_save_results(test_data, model, output_folder):
                      input=input_np, target1=target1_np, target2=target2_np,
                      pred1=pred1_np, pred2=pred2_np)
 
+            # # Calculate Pearson correlation coefficient
+            # corr_pred1, _ = pearsonr(target1_np.flatten(), pred1_np.flatten())
+            # corr_pred2, _ = pearsonr(target2_np.flatten(), pred2_np.flatten())
+            corr_pred1, _ = pearson_corr_matrix(target1_np, pred1_np)
+            corr_pred2, _ = pearson_corr_matrix(target2_np, pred2_np)
+
+            all_pearson_corrs_pred1.append(corr_pred1)
+            all_pearson_corrs_pred2.append(corr_pred2)
+
+    avg_corr_pred1 = np.mean(all_pearson_corrs_pred1)
+    avg_corr_pred2 = np.mean(all_pearson_corrs_pred2)
+
+    results = {
+        'average_pearson_corr_pred1': avg_corr_pred1,
+        'average_pearson_corr_pred2': avg_corr_pred2
+    }
+
+    with open(os.path.join(output_folder, 'results.json'), 'w') as f:
+        json.dump(results, f, indent=4)
+
 
 if __name__ == "__main__":
-    with open('../dataset_info.json', 'r') as f:
+    with open('../dataset/dataset_preprocess/C6 + hpts/dataset_info.json', 'r') as f:
         dataset_info = json.load(f)
 
     with open('../config.json', 'r') as config_file:
         config = json.load(config_file)
         output_folder = config.get("dataset_result", "results")
 
-    best_models = []
+    best_models_paths = []
     for current_fold in range(len(dataset_info)):
         fold_data = dataset_info[current_fold]
-        trained_model = train_model(fold_data)
-        best_models.append(trained_model)
+        best_model_path = train_model(fold_data)
+        best_models_paths.append(best_model_path)
+
+    overall_avg_corr_pred1 = 0
+    overall_avg_corr_pred2 = 0
+
+    for current_fold in range(len(dataset_info)):
+        best_model_path = best_models_paths[current_fold]
+        model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
+        model.load_state_dict(torch.load(best_model_path, weights_only=True))  # Load the best model safely
 
         # Assuming the last fold's test set is used for final evaluation
         test_data = dataset_info[current_fold]['test']
-        visualize_and_save_results(test_data, trained_model, os.path.join(output_folder, f'fold_{current_fold}'))
+        fold_output_folder = os.path.join(output_folder, f'fold_{current_fold}')
+        visualize_and_save_results(test_data, model, fold_output_folder)
+
+        with open(os.path.join(fold_output_folder, 'results.json'), 'r') as f:
+            fold_results = json.load(f)
+            overall_avg_corr_pred1 += fold_results['average_pearson_corr_pred1']
+            overall_avg_corr_pred2 += fold_results['average_pearson_corr_pred2']
+
+    overall_avg_corr_pred1 /= len(dataset_info)
+    overall_avg_corr_pred2 /= len(dataset_info)
+
+    overall_results = {
+        'overall_average_pearson_corr_pred1': overall_avg_corr_pred1,
+        'overall_average_pearson_corr_pred2': overall_avg_corr_pred2
+    }
+
+    with open(os.path.join(output_folder, 'overall_results.json'), 'w') as f:
+        json.dump(overall_results, f, indent=4)
 
 
 

@@ -3,77 +3,15 @@ import numpy as np
 from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, recall_score, f1_score, classification_report, precision_recall_curve, \
-    roc_curve, auc, confusion_matrix
+    roc_curve, auc, confusion_matrix, precision_score
 from sklearn.preprocessing import label_binarize
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import StandardScaler
 
 from preprocess.augment_data import AugmentData
+from Utils.read_matrix import read_matrix_from_file
+from Utils.load_data import load_data
 
-
-def read_matrix_from_file(file_path):
-    """
-    从TXT文件中读取数据并构建矩阵
-    :param file_path: 文件路径
-    :return: 横坐标数组, 纵坐标数组, 数据矩阵
-    """
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
-
-    # 提取横坐标
-    x_coords = list(map(float, lines[0].strip().split()))
-
-    # 提取纵坐标和数据矩阵
-    y_coords = []
-    data_matrix = []
-    for line in lines[1:]:
-        parts = list(map(float, line.strip().split()))
-        y_coords.append(parts[0])
-        data_matrix.append(parts[1:])
-
-    return np.array(x_coords), np.array(y_coords), np.array(data_matrix)
-
-
-def load_data(input_folder):
-    """
-    加载所有数据并返回特征和标签
-    :param input_folder: 输入文件夹路径
-    :return: 特征数组, 标签数组, 标签映射字典, 文件路径列表
-    """
-    features = []
-    labels = []
-    label_map = {}
-    file_paths = []
-
-    for label_idx, label in enumerate(os.listdir(input_folder)):
-        label_map[label] = label_idx
-        label_folder = os.path.join(input_folder, label)
-
-        if not os.path.isdir(label_folder):
-            continue
-
-        for txt_file in os.listdir(label_folder):
-            if not txt_file.endswith('.txt'):
-                continue
-
-            file_path = os.path.join(label_folder, txt_file)
-            x_coords, y_coords, matrix = read_matrix_from_file(file_path)
-
-            # 展平矩阵为特征向量
-            feature_vector = matrix.flatten()
-
-            # 将横坐标和纵坐标展平并添加到特征向量中
-            feature_vector = np.concatenate((x_coords, y_coords, feature_vector))
-
-            features.append(feature_vector)
-            labels.append(label_idx)
-            file_paths.append(file_path)
-
-    # 将列表转换为numpy数组
-    X = np.array(features)
-    y = np.array(labels)
-
-    return X, y, label_map, file_paths
 
 def load_augmented_data(output_folder):
     """
@@ -122,6 +60,7 @@ def main(data_folder, num_runs=10):
     :param num_runs: 运行次数
     """
     all_accuracies = []
+    all_precisions = []
     all_recalls = []
     all_f1s = []
 
@@ -138,6 +77,7 @@ def main(data_folder, num_runs=10):
 
         # 存储每个fold的结果
         accuracies = []
+        precisions = []
         recalls = []
         f1s = []
 
@@ -225,10 +165,12 @@ def main(data_folder, num_runs=10):
 
             # 计算评估指标
             accuracy = accuracy_score(y_true_labels, y_pred_labels)
+            precision = precision_score(y_true_labels, y_pred_labels, average='weighted')
             recall = recall_score(y_true_labels, y_pred_labels, average='weighted')
             f1 = f1_score(y_true_labels, y_pred_labels, average='weighted')
 
             accuracies.append(accuracy)
+            precisions.append(precision)
             recalls.append(recall)
             f1s.append(f1)
 
@@ -249,26 +191,29 @@ def main(data_folder, num_runs=10):
 
         # 输出当前运行的结果
         print(f"\nRun {run + 1} Average Accuracy: {np.mean(accuracies):.4f} ± {np.std(accuracies):.4f}")
+        print(f"Run {run + 1} Average Precision: {np.mean(precisions):.4f} ± {np.std(precisions):.4f}")
         print(f"Run {run + 1} Average Recall: {np.mean(recalls):.4f} ± {np.std(recalls):.4f}")
         print(f"Run {run + 1} Average F1 Score: {np.mean(f1s):.4f} ± {np.std(f1s):.4f}")
 
         # 存储当前运行的结果以便后续计算总体平均值
         all_accuracies.extend(accuracies)
+        all_precisions.extend(precisions)
         all_recalls.extend(recalls)
         all_f1s.extend(f1s)
 
     # 输出最终结果
     print(f"\nOverall Average Accuracy: {np.mean(all_accuracies):.4f} ± {np.std(all_accuracies):.4f}")
+    print(f"Overall Average Precision: {np.mean(all_precisions):.4f} ± {np.std(all_precisions):.4f}")
     print(f"Overall Average Recall: {np.mean(all_recalls):.4f} ± {np.std(all_recalls):.4f}")
     print(f"Overall Average F1 Score: {np.mean(all_f1s):.4f} ± {np.std(all_f1s):.4f}")
 
     #调用plot方法展示结果
 
 # 设置输入文件夹路径
-data_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\dataset_EEM'
+data_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_K\dataset_TsyF'
 
 # 调用主函数
-main(data_folder, num_runs=10)
+main(data_folder, num_runs=5)
 
 
 
