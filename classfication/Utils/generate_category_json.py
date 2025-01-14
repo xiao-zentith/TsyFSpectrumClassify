@@ -81,7 +81,7 @@ def main(config_file):
     processed_folder = config["dataset_processed"]
     data_split = config["data_split"]
     is_cross_validation = config["is_cross_validation"]
-    output_json = "dataset_info.json"
+    output_json = r"C:\Users\xiao\PycharmProjects\TsyFSpectrumClassify\dataset_classify/dataset_info.json"
 
     subfolders = [d for d in os.listdir(input_folder) if os.path.isdir(os.path.join(input_folder, d))]
     all_txt_files = []
@@ -129,7 +129,7 @@ def main(config_file):
         json.dump(dataset_info_list, f, indent=4)
 
 if __name__ == "__main__":
-    config_file = '../../dataset_classify/config.json'  # Update this path if necessary
+    config_file = r'C:\Users\xiao\PycharmProjects\TsyFSpectrumClassify\dataset_classify/config.json'  # Update this path if necessary
     main(config_file)
 
 

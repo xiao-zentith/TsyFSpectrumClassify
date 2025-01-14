@@ -30,14 +30,14 @@ def simple_data_split(xlsx_files, data_split):
 
 
 def nested_cross_validation(xlsx_files, data_split, processed_folder, target_folders):
-    outer_cv = KFold(n_splits=5, shuffle=True, random_state=42)
+    outer_cv = KFold(n_splits=4, shuffle=True, random_state=42)
     dataset_info_list = []
 
     for fold_idx, (train_val_indices, test_indices) in enumerate(outer_cv.split(xlsx_files)):
         train_val_files = [xlsx_files[i] for i in train_val_indices]
         test_files = [xlsx_files[i] for i in test_indices]
 
-        inner_cv = KFold(n_splits=5, shuffle=True, random_state=42)
+        inner_cv = KFold(n_splits=4, shuffle=True, random_state=42)
 
         for inner_fold_idx, (train_indices, val_indices) in enumerate(inner_cv.split(train_val_files)):
             train_files = [train_val_files[i] for i in train_indices]

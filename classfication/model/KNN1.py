@@ -81,8 +81,6 @@ def main(json_config_path, num_runs=5):
         dataset_info = json.load(config_file)
 
     for run in range(num_runs):
-        random_seed = 42 + run  # 使用不同的随机种子
-        print(f"\nRun {run + 1}/{num_runs} with seed {random_seed}")
 
         accuracies = []
         precisions = []
@@ -102,7 +100,7 @@ def main(json_config_path, num_runs=5):
             y_test_bin = label_binarize(y_test, classes=list(range(n_classes)))
 
             # 数据归一化
-            scaler = StandardScaler()
+            # scaler = StandardScaler()
             X_train_scaled = X_train
             X_test_scaled = X_test
 

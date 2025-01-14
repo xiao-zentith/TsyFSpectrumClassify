@@ -143,7 +143,7 @@ def visualize_results(test_data, model):
 
 
 if __name__ == "__main__":
-    with open('../dataset_info.json', 'r') as f:
+    with open('../dataset/dataset_preprocess/C6 + FITC/dataset_info.json', 'r') as f:
         dataset_info = json.load(f)
 
     best_models = []

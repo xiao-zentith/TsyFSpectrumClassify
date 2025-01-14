@@ -78,8 +78,8 @@ class NormProcessor:
 
 # 示例调用
 if __name__ == '__main__':
-    input_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\EEM_noise'  # 替换为你的输入文件夹路径
-    output_folder = r'C:\Users\xiao\Desktop\画大饼环节\data\dataset_EEM\EEM_norm'  # 替换为你的输出文件夹路径
+    input_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\dataset_EEM'  # 替换为你的输入文件夹路径
+    output_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\norm1'  # 替换为你的输出文件夹路径
     processor = NormProcessor(input_folder, output_folder)
     processor.process_folders()
 

@@ -46,9 +46,9 @@ def process_excel(input_file, output_folder_c1, output_folder_c2):
 
 
 # 使用示例
-input_file = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\matrix\2024-12-28 2-component result.xlsx'  # 替换为你的输入文件名
-output_folder_c1 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\Component1'  # 替换为你想要保存Weighted_C1文件的文件夹名
-output_folder_c2 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\Component2'  # 替换为你想要保存Weighted_C2文件的文件夹名
+input_file = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\FITC + hpts_Component\2025-01-12 2-component result.xlsx'  # 替换为你的输入文件名
+output_folder_c1 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\FITC + hpts_Component\Component1'  # 替换为你想要保存Weighted_C1文件的文件夹名
+output_folder_c2 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\FITC + hpts_Component\Component2'  # 替换为你想要保存Weighted_C2文件的文件夹名
 process_excel(input_file, output_folder_c1, output_folder_c2)
 
 

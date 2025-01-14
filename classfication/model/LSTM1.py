@@ -1,3 +1,4 @@
+import os
 import json
 import numpy as np
 from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix, precision_score
@@ -5,10 +6,14 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
+import shutil
+
 from Utils.read_matrix import read_matrix_from_file
 from classfication.Utils.ImageDataset import ImageDataset
 from classfication.Utils.plot import plot_confusion_matrix
-from classfication.model.SimpleCNN import SimpleCNN
+from classfication.model.SimpleLSTM import SimpleLSTM
+from classfication.model.SimpleTransformer import SimpleTransformer
+
 
 def train_model(model, dataloader, criterion, optimizer, scheduler, device):
     model.train()
@@ -23,6 +28,7 @@ def train_model(model, dataloader, criterion, optimizer, scheduler, device):
         running_loss += loss.item()
     scheduler.step()
     return running_loss / len(dataloader)
+
 
 def evaluate_model(model, dataloader, criterion, device):
     model.eval()
@@ -56,8 +62,10 @@ def nested_k_fold_cross_validation(json_path):
     precisions = []
     recalls = []
     f1_scores = []
+
     for i, fold_info in enumerate(dataset_info):
         print(f'Outer Fold {i + 1}/{len(dataset_info)}')
+
         X_train = [item['input'] for item in fold_info['train']]
         y_train = [label_map[item['category']] for item in fold_info['train']]
         X_val = [item['input'] for item in fold_info['validation']]
@@ -75,7 +83,15 @@ def nested_k_fold_cross_validation(json_path):
         val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        model = SimpleCNN(image_size=read_matrix_from_file(X_train[0])[2].shape[0], num_channels=1, num_classes=len(label_map)).to(device)
+
+        # Determine input dimension based on the first training sample
+        input_dim = read_matrix_from_file(X_train[0])[2].flatten().shape[0]
+        seq_length = read_matrix_from_file(X_train[0])[2].shape[0]  # Number of rows in the matrix
+
+        # Ensure that the number of heads divides the hidden dimension
+        hidden_dim = 64
+        model = SimpleLSTM(input_size=input_dim, hidden_size=hidden_dim,num_layers=2,
+                                  num_classes=len(label_map)).to(device)
         criterion = nn.CrossEntropyLoss()
         optimizer = optim.Adam(model.parameters(), lr=0.001)
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=50, gamma=0.1)
@@ -91,7 +107,8 @@ def nested_k_fold_cross_validation(json_path):
 
             print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}')
 
-        final_model = SimpleCNN(image_size=read_matrix_from_file(X_train[0])[2].shape[0], num_channels=1, num_classes=len(label_map)).to(device)
+        final_model = SimpleLSTM(input_size=input_dim, hidden_size=hidden_dim,num_layers=2,
+                                  num_classes=len(label_map)).to(device)
         final_model.load_state_dict(best_model_state)
 
         test_dataset = ImageDataset(X_test, y_test)
@@ -124,6 +141,7 @@ def nested_k_fold_cross_validation(json_path):
     print(f"Average Precision: {avg_precision:.4f}")
     print(f"Average Recall: {avg_recall:.4f}")
     print(f"Average F1 Score: {avg_f1:.4f}")
+
 
 json_path = r'../../dataset_classify/dataset_info.json'
 nested_k_fold_cross_validation(json_path)

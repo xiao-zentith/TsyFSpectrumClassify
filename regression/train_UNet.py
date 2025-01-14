@@ -6,12 +6,11 @@ from torch.utils.data import Dataset, DataLoader
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-from scipy.stats import pearsonr
+import torch.nn.functional as F
 
-# Assuming these imports are correct based on your project structure
+from Utils.cosine_similarity import cosine_similarity
 from regression.CustomDataset import CustomDataset
 from regression.regression_model.DualUNet_magic import DualUNetSharedEncoder
-from Utils.compute_pearson import pearson_corr_matrix  # Import the function from your module
 
 def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, patience=20):
     train_dataset = CustomDataset(fold_data['train'])
@@ -22,7 +21,7 @@ def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, pat
 
     model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
 
-    mse_criterion = nn.MSELoss()
+    rmse_criterion = nn.MSELoss()
     mae_criterion = nn.L1Loss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -32,8 +31,8 @@ def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, pat
 
     for epoch in range(num_epochs):
         model.train()
-        running_mse_loss1, running_mae_loss1 = 0.0, 0.0
-        running_mse_loss2, running_mae_loss2 = 0.0, 0.0
+        running_rmse_loss1, running_mae_loss1 = 0.0, 0.0
+        running_rmse_loss2, running_mae_loss2 = 0.0, 0.0
 
         for inputs, outputs1, outputs2 in train_loader:
             inputs, outputs1, outputs2 = inputs, outputs1, outputs2
@@ -42,34 +41,34 @@ def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, pat
 
             preds1, preds2 = model(inputs)
 
-            mse_loss1 = torch.sqrt(mse_criterion(preds1, outputs1))
+            rmse_loss1 = torch.sqrt(rmse_criterion(preds1, outputs1))
             mae_loss1 = mae_criterion(preds1, outputs1)
 
-            mse_loss2 = torch.sqrt(mse_criterion(preds2, outputs2))
+            rmse_loss2 = torch.sqrt(rmse_criterion(preds2, outputs2))
             mae_loss2 = mae_criterion(preds2, outputs2)
 
-            total_loss = mse_loss1 + mae_loss1 + mse_loss2 + mae_loss2
+            total_loss = rmse_loss1 + mae_loss1 + rmse_loss2 + mae_loss2
             total_loss.backward()
             optimizer.step()
 
-            running_mse_loss1 += mse_loss1.item() * inputs.size(0)
+            running_rmse_loss1 += rmse_loss1.item() * inputs.size(0)
             running_mae_loss1 += mae_loss1.item() * inputs.size(0)
-            running_mse_loss2 += mse_loss2.item() * inputs.size(0)
+            running_rmse_loss2 += rmse_loss2.item() * inputs.size(0)
             running_mae_loss2 += mae_loss2.item() * inputs.size(0)
 
-        epoch_mse_loss1 = running_mse_loss1 / len(train_dataset)
+        epoch_rmse_loss1 = running_rmse_loss1 / len(train_dataset)
         epoch_mae_loss1 = running_mae_loss1 / len(train_dataset)
-        epoch_mse_loss2 = running_mse_loss2 / len(train_dataset)
+        epoch_rmse_loss2 = running_rmse_loss2 / len(train_dataset)
         epoch_mae_loss2 = running_mae_loss2 / len(train_dataset)
 
         print(
-            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Train MSE Loss: {epoch_mse_loss1:.4f}, {epoch_mse_loss2:.4f}')
+            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Train rmse Loss: {epoch_rmse_loss1:.4f}, {epoch_rmse_loss2:.4f}')
         print(
             f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Train MAE Loss: {epoch_mae_loss1:.4f}, {epoch_mae_loss2:.4f}')
 
         model.eval()
-        val_running_mse_loss1, val_running_mae_loss1 = 0.0, 0.0
-        val_running_mse_loss2, val_running_mae_loss2 = 0.0, 0.0
+        val_running_rmse_loss1, val_running_mae_loss1 = 0.0, 0.0
+        val_running_rmse_loss2, val_running_mae_loss2 = 0.0, 0.0
 
         with torch.no_grad():
             for inputs, outputs1, outputs2 in val_loader:
@@ -77,26 +76,26 @@ def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, pat
 
                 preds1, preds2 = model(inputs)
 
-                mse_loss1 = torch.sqrt(mse_criterion(preds1, outputs1))
+                rmse_loss1 = torch.sqrt(rmse_criterion(preds1, outputs1))
                 mae_loss1 = mae_criterion(preds1, outputs1)
 
-                mse_loss2 = torch.sqrt(mse_criterion(preds2, outputs2))
+                rmse_loss2 = torch.sqrt(rmse_criterion(preds2, outputs2))
                 mae_loss2 = mae_criterion(preds2, outputs2)
 
-                val_running_mse_loss1 += mse_loss1.item() * inputs.size(0)
+                val_running_rmse_loss1 += rmse_loss1.item() * inputs.size(0)
                 val_running_mae_loss1 += mae_loss1.item() * inputs.size(0)
-                val_running_mse_loss2 += mse_loss2.item() * inputs.size(0)
+                val_running_rmse_loss2 += rmse_loss2.item() * inputs.size(0)
                 val_running_mae_loss2 += mae_loss2.item() * inputs.size(0)
 
-        val_epoch_mse_loss1 = val_running_mse_loss1 / len(val_dataset)
+        val_epoch_rmse_loss1 = val_running_rmse_loss1 / len(val_dataset)
         val_epoch_mae_loss1 = val_running_mae_loss1 / len(val_dataset)
-        val_epoch_mse_loss2 = val_running_mse_loss2 / len(val_dataset)
+        val_epoch_rmse_loss2 = val_running_rmse_loss2 / len(val_dataset)
         val_epoch_mae_loss2 = val_running_mae_loss2 / len(val_dataset)
 
-        val_total_loss = val_epoch_mse_loss1 + val_epoch_mae_loss1 + val_epoch_mse_loss2 + val_epoch_mae_loss2
+        val_total_loss = val_epoch_rmse_loss1 + val_epoch_mae_loss1 + val_epoch_rmse_loss2 + val_epoch_mae_loss2
 
         print(
-            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MSE Loss: {val_epoch_mse_loss1:.4f}, {val_epoch_mse_loss2:.4f}')
+            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val rmse Loss: {val_epoch_rmse_loss1:.4f}, {val_epoch_rmse_loss2:.4f}')
         print(
             f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MAE Loss: {val_epoch_mae_loss1:.4f}, {val_epoch_mae_loss2:.4f}')
 
@@ -122,8 +121,10 @@ def visualize_and_save_results(test_data, model, output_folder):
         os.makedirs(output_folder)
 
     model.eval()
-    all_pearson_corrs_pred1 = []
-    all_pearson_corrs_pred2 = []
+    all_cos_sim_pred1 = []
+    all_cos_sim_pred2 = []
+    all_rmse_pred1 = []
+    all_rmse_pred2 = []
 
     with torch.no_grad():
         for i, (inputs, targets1, targets2) in enumerate(test_loader):
@@ -168,21 +169,29 @@ def visualize_and_save_results(test_data, model, output_folder):
                      input=input_np, target1=target1_np, target2=target2_np,
                      pred1=pred1_np, pred2=pred2_np)
 
-            # # Calculate Pearson correlation coefficient
-            # corr_pred1, _ = pearsonr(target1_np.flatten(), pred1_np.flatten())
-            # corr_pred2, _ = pearsonr(target2_np.flatten(), pred2_np.flatten())
-            corr_pred1, _ = pearson_corr_matrix(target1_np, pred1_np)
-            corr_pred2, _ = pearson_corr_matrix(target2_np, pred2_np)
+            # Calculate Cosine Similarity
+            cos_sim_pred1 = cosine_similarity(pred1_np, target1_np).item()
+            cos_sim_pred2 = cosine_similarity(pred2_np, target2_np).item()
 
-            all_pearson_corrs_pred1.append(corr_pred1)
-            all_pearson_corrs_pred2.append(corr_pred2)
+            # Calculate RMSE
+            rmse_pred1 = np.sqrt(np.mean((pred1_np - target1_np) ** 2)).item()
+            rmse_pred2 = np.sqrt(np.mean((pred2_np - target2_np) ** 2)).item()
 
-    avg_corr_pred1 = np.mean(all_pearson_corrs_pred1)
-    avg_corr_pred2 = np.mean(all_pearson_corrs_pred2)
+            all_cos_sim_pred1.append(cos_sim_pred1)
+            all_cos_sim_pred2.append(cos_sim_pred2)
+            all_rmse_pred1.append(rmse_pred1)
+            all_rmse_pred2.append(rmse_pred2)
+
+    avg_cos_sim_pred1 = np.mean(all_cos_sim_pred1)
+    avg_cos_sim_pred2 = np.mean(all_cos_sim_pred2)
+    avg_rmse_pred1 = np.mean(all_rmse_pred1)
+    avg_rmse_pred2 = np.mean(all_rmse_pred2)
 
     results = {
-        'average_pearson_corr_pred1': avg_corr_pred1,
-        'average_pearson_corr_pred2': avg_corr_pred2
+        'average_cos_sim_pred1': avg_cos_sim_pred1,
+        'average_cos_sim_pred2': avg_cos_sim_pred2,
+        'average_rmse_pred1': avg_rmse_pred1,
+        'average_rmse_pred2': avg_rmse_pred2
     }
 
     with open(os.path.join(output_folder, 'results.json'), 'w') as f:
@@ -190,7 +199,7 @@ def visualize_and_save_results(test_data, model, output_folder):
 
 
 if __name__ == "__main__":
-    with open('../dataset/dataset_preprocess/C6 + hpts/dataset_info.json', 'r') as f:
+    with open(r'C:\Users\xiao\PycharmProjects\TsyFSpectrumClassify\dataset\dataset_preprocess\C6 + hpts\dataset_info.json', 'r') as f:
         dataset_info = json.load(f)
 
     with open('../config.json', 'r') as config_file:
@@ -203,8 +212,10 @@ if __name__ == "__main__":
         best_model_path = train_model(fold_data)
         best_models_paths.append(best_model_path)
 
-    overall_avg_corr_pred1 = 0
-    overall_avg_corr_pred2 = 0
+    overall_avg_cos_sim_pred1 = 0
+    overall_avg_cos_sim_pred2 = 0
+    overall_avg_rmse_pred1 = 0
+    overall_avg_rmse_pred2 = 0
 
     for current_fold in range(len(dataset_info)):
         best_model_path = best_models_paths[current_fold]
@@ -218,15 +229,21 @@ if __name__ == "__main__":
 
         with open(os.path.join(fold_output_folder, 'results.json'), 'r') as f:
             fold_results = json.load(f)
-            overall_avg_corr_pred1 += fold_results['average_pearson_corr_pred1']
-            overall_avg_corr_pred2 += fold_results['average_pearson_corr_pred2']
+            overall_avg_cos_sim_pred1 += fold_results['average_cos_sim_pred1']
+            overall_avg_cos_sim_pred2 += fold_results['average_cos_sim_pred2']
+            overall_avg_rmse_pred1 += fold_results['average_rmse_pred1']
+            overall_avg_rmse_pred2 += fold_results['average_rmse_pred2']
 
-    overall_avg_corr_pred1 /= len(dataset_info)
-    overall_avg_corr_pred2 /= len(dataset_info)
+    overall_avg_cos_sim_pred1 /= len(dataset_info)
+    overall_avg_cos_sim_pred2 /= len(dataset_info)
+    overall_avg_rmse_pred1 /= len(dataset_info)
+    overall_avg_rmse_pred2 /= len(dataset_info)
 
     overall_results = {
-        'overall_average_pearson_corr_pred1': overall_avg_corr_pred1,
-        'overall_average_pearson_corr_pred2': overall_avg_corr_pred2
+        'overall_average_cos_sim_pred1': overall_avg_cos_sim_pred1,
+        'overall_average_cos_sim_pred2': overall_avg_cos_sim_pred2,
+        'overall_average_rmse_pred1': overall_avg_rmse_pred1,
+        'overall_average_rmse_pred2': overall_avg_rmse_pred2
     }
 
     with open(os.path.join(output_folder, 'overall_results.json'), 'w') as f:
