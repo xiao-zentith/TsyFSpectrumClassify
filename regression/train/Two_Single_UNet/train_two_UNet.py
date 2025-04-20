@@ -1,33 +1,49 @@
+from datetime import datetime
 import json
-import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-import torch.nn.functional as F
 
 from Utils.cosine_similarity import cosine_similarity
-from regression.CustomDataset import CustomDataset
-from regression.regression_model.DualUNet_magic import DualUNetSharedEncoder
+from regression.utils.CustomDataset import CustomDataset
+from regression.regression_model.DualUNet import DualUNet
 
-def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, patience=20):
+
+def train_model(fold_data, output_folder, current_fold, num_epochs=200, batch_size=5, learning_rate=1e-3, patience=20):
+    os.makedirs(output_folder, exist_ok=True)
+
     train_dataset = CustomDataset(fold_data['train'])
     val_dataset = CustomDataset(fold_data['validation'])
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
-    model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
-
+    model = DualUNet(in_channels=1, out_channels=1)
     rmse_criterion = nn.MSELoss()
     mae_criterion = nn.L1Loss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
     best_val_loss = float('inf')
     epochs_no_improve = 0
-    best_model_path = f'best_model_fold_{current_fold}.pth'
+    best_model_path = os.path.join(output_folder, f'best_model_fold_{current_fold}.pth')
+
+    # 初始化训练日志
+    train_log = {
+        'train_loss': [],
+        'val_loss': [],
+        'train_rmse1': [],
+        'train_mae1': [],
+        'train_rmse2': [],
+        'train_mae2': [],
+        'val_rmse1': [],
+        'val_mae1': [],
+        'val_rmse2': [],
+        'val_mae2': [],
+        'converged_epoch': num_epochs  # 默认完整训练
+    }
 
     for epoch in range(num_epochs):
         model.train()
@@ -99,21 +115,64 @@ def train_model(fold_data, num_epochs=200, batch_size=5, learning_rate=1e-3, pat
         print(
             f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MAE Loss: {val_epoch_mae_loss1:.4f}, {val_epoch_mae_loss2:.4f}')
 
-        # Early stopping logic
+        # 记录训练指标
+        train_log['train_rmse1'].append(epoch_rmse_loss1)
+        train_log['train_mae1'].append(epoch_mae_loss1)
+        train_log['train_rmse2'].append(epoch_rmse_loss2)
+        train_log['train_mae2'].append(epoch_mae_loss2)
+        train_total_loss = epoch_rmse_loss1 + epoch_mae_loss1 + epoch_rmse_loss2 + epoch_mae_loss2
+        train_log['train_loss'].append(train_total_loss)
+
+        # 记录验证指标
+        train_log['val_rmse1'].append(val_epoch_rmse_loss1)
+        train_log['val_mae1'].append(val_epoch_mae_loss1)
+        train_log['val_rmse2'].append(val_epoch_rmse_loss2)
+        train_log['val_mae2'].append(val_epoch_mae_loss2)
+        train_log['val_loss'].append(val_total_loss)
+
+        # Early stopping逻辑
         if val_total_loss < best_val_loss:
             best_val_loss = val_total_loss
             epochs_no_improve = 0
-            torch.save(model.state_dict(), best_model_path)  # Save the best model
+            torch.save(model.state_dict(), best_model_path)
         else:
             epochs_no_improve += 1
             if epochs_no_improve >= patience:
+                train_log['converged_epoch'] = epoch + 1
                 print(f"Early stopping after {epoch + 1} epochs")
                 break
 
-    return best_model_path
+        # 保存训练日志
+    with open(os.path.join(output_folder, f'fold_{current_fold}_train_log.json'), 'w') as f:
+        json.dump(train_log, f, indent=4)
+
+        # 绘制损失曲线
+    plt.figure(figsize=(12, 6))
+    plt.plot(train_log['train_loss'], label='Train Loss')
+    plt.plot(train_log['val_loss'], label='Validation Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.title(f'Fold {current_fold} Training/Validation Loss')
+    plt.legend()
+    plt.savefig(os.path.join(output_folder, f'fold_{current_fold}_loss_curve.png'))
+    plt.close()
+    return best_model_path, train_log
+
+        # # Early stopping logic
+        # if val_total_loss < best_val_loss:
+        #     best_val_loss = val_total_loss
+        #     epochs_no_improve = 0
+        #     torch.save(model.state_dict(), best_model_path)  # Save the best model
+        # else:
+        #     epochs_no_improve += 1
+        #     if epochs_no_improve >= patience:
+        #         print(f"Early stopping after {epoch + 1} epochs")
+        #         break
+
+    # return best_model_path
 
 
-def visualize_and_save_results(test_data, model, output_folder):
+def visualize_and_save_results(test_data, model, output_folder, current_fold):
     test_dataset = CustomDataset(test_data)
     test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
@@ -194,60 +253,91 @@ def visualize_and_save_results(test_data, model, output_folder):
         'average_rmse_pred2': avg_rmse_pred2
     }
 
-    with open(os.path.join(output_folder, 'results.json'), 'w') as f:
+    # 在保存结果时添加fold编号
+    with open(os.path.join(output_folder, f'fold_{current_fold}_results.json'), 'w') as f:
         json.dump(results, f, indent=4)
+
+    return results
 
 
 if __name__ == "__main__":
-    with open(r'C:\Users\xiao\PycharmProjects\TsyFSpectrumClassify\dataset\dataset_preprocess\C6 + hpts\dataset_info.json', 'r') as f:
+    with open(r'dataset_info_C6_HPTS.json', 'r') as f:
         dataset_info = json.load(f)
 
-    with open('../config.json', 'r') as config_file:
+    with open('config_C6_HPTS.json', 'r') as config_file:
         config = json.load(config_file)
         output_folder = config.get("dataset_result", "results")
 
+    # 创建带有时间戳的结果文件夹
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_folder = os.path.join(config["dataset_result"], f"training_{timestamp}")
+    os.makedirs(output_folder, exist_ok=True)
+
+    all_results = []
+    convergence_speeds = []
     best_models_paths = []
-    for current_fold in range(len(dataset_info)):
-        fold_data = dataset_info[current_fold]
-        best_model_path = train_model(fold_data)
-        best_models_paths.append(best_model_path)
-
-    overall_avg_cos_sim_pred1 = 0
-    overall_avg_cos_sim_pred2 = 0
-    overall_avg_rmse_pred1 = 0
-    overall_avg_rmse_pred2 = 0
 
     for current_fold in range(len(dataset_info)):
-        best_model_path = best_models_paths[current_fold]
-        model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
-        model.load_state_dict(torch.load(best_model_path, weights_only=True))  # Load the best model safely
-
-        # Assuming the last fold's test set is used for final evaluation
-        test_data = dataset_info[current_fold]['test']
         fold_output_folder = os.path.join(output_folder, f'fold_{current_fold}')
-        visualize_and_save_results(test_data, model, fold_output_folder)
+        os.makedirs(fold_output_folder, exist_ok=True)
 
-        with open(os.path.join(fold_output_folder, 'results.json'), 'r') as f:
-            fold_results = json.load(f)
-            overall_avg_cos_sim_pred1 += fold_results['average_cos_sim_pred1']
-            overall_avg_cos_sim_pred2 += fold_results['average_cos_sim_pred2']
-            overall_avg_rmse_pred1 += fold_results['average_rmse_pred1']
-            overall_avg_rmse_pred2 += fold_results['average_rmse_pred2']
+        # 训练模型
+        best_model_path, train_log = train_model(
+            dataset_info[current_fold],
+            fold_output_folder,
+            current_fold
+        )
+        best_models_paths.append(best_model_path)
+        convergence_speeds.append(train_log['converged_epoch'])
 
-    overall_avg_cos_sim_pred1 /= len(dataset_info)
-    overall_avg_cos_sim_pred2 /= len(dataset_info)
-    overall_avg_rmse_pred1 /= len(dataset_info)
-    overall_avg_rmse_pred2 /= len(dataset_info)
+        # 测试模型
+        model = DualUNet(in_channels=1, out_channels=1)
+        import torch
 
-    overall_results = {
-        'overall_average_cos_sim_pred1': overall_avg_cos_sim_pred1,
-        'overall_average_cos_sim_pred2': overall_avg_cos_sim_pred2,
-        'overall_average_rmse_pred1': overall_avg_rmse_pred1,
-        'overall_average_rmse_pred2': overall_avg_rmse_pred2
+        model.load_state_dict(torch.load(best_model_path, map_location=torch.device('cpu'), weights_only=True))
+
+        test_results = visualize_and_save_results(
+            dataset_info[current_fold]['test'],
+            model,
+            fold_output_folder,
+            current_fold
+        )
+        all_results.append(test_results)
+
+        # 保存单折完整日志
+        fold_summary = {
+            'best_model_path': best_model_path,
+            'convergence_epoch': train_log['converged_epoch'],
+            'training_log': train_log,
+            'test_results': test_results
+        }
+        with open(os.path.join(fold_output_folder, f'fold_{current_fold}_summary.json'), 'w') as f:
+            json.dump(fold_summary, f, indent=4)
+
+    # 生成总报告
+    overall_report = {
+        'average_metrics': {
+            'cos_sim_pred1': np.mean([r['average_cos_sim_pred1'] for r in all_results]),
+            'cos_sim_pred2': np.mean([r['average_cos_sim_pred2'] for r in all_results]),
+            'rmse_pred1': np.mean([r['average_rmse_pred1'] for r in all_results]),
+            'rmse_pred2': np.mean([r['average_rmse_pred2'] for r in all_results])
+        },
+        'best_metrics': {
+            'cos_sim_pred1': max([r['average_cos_sim_pred1'] for r in all_results]),
+            'cos_sim_pred2': max([r['average_cos_sim_pred2'] for r in all_results]),
+            'rmse_pred1': min([r['average_rmse_pred1'] for r in all_results]),
+            'rmse_pred2': min([r['average_rmse_pred2'] for r in all_results])
+        },
+        'convergence': {
+            'average_epochs': np.mean(convergence_speeds),
+            'epochs_per_fold': convergence_speeds
+        },
+        'best_models': best_models_paths,
+        'training_time': timestamp
     }
 
-    with open(os.path.join(output_folder, 'overall_results.json'), 'w') as f:
-        json.dump(overall_results, f, indent=4)
+    with open(os.path.join(output_folder, 'overall_report.json'), 'w') as f:
+        json.dump(overall_report, f, indent=4)
 
 
 

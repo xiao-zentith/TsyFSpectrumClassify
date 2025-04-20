@@ -9,7 +9,7 @@ import os
 
 from Utils.cosine_similarity import cosine_similarity
 from regression.utils.CustomDataset import CustomDataset
-from regression.regression_model.DualUNet_magic import DualUNetSharedEncoder
+from regression.regression_model.ResUNet_co_encoder import DualResNetSharedEncoder
 
 
 def train_model(fold_data, output_folder, current_fold, num_epochs=200, batch_size=5, learning_rate=1e-3, patience=20):
@@ -21,7 +21,7 @@ def train_model(fold_data, output_folder, current_fold, num_epochs=200, batch_si
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
-    model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
+    model = DualResNetSharedEncoder(in_channels=1, out_channels=1)
     rmse_criterion = nn.MSELoss()
     mae_criterion = nn.L1Loss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
@@ -291,7 +291,7 @@ if __name__ == "__main__":
         convergence_speeds.append(train_log['converged_epoch'])
 
         # 测试模型
-        model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
+        model = DualResNetSharedEncoder(in_channels=1, out_channels=1)
         import torch
 
         model.load_state_dict(torch.load(best_model_path, map_location=torch.device('cpu'), weights_only=True))
