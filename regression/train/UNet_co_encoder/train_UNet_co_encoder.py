@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 import numpy as np
 import os
-from regression.model.DualUNet_without_batchnorm import DualUNetSharedEncoder
+from regression.model.DualUNet_co_encoder import DualUNetSharedEncoder
 from regression.train.test_model import visualize_and_save_results
 from regression.train.train_model import train_model
 

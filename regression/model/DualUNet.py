@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
-from regression.regression_model.UNet import UNET
-from regression.regression_model.UNet_no_skip import UNETNoSkip
+from regression.model.UNet import UNET
 
 
 class DualUNet(nn.Module):
