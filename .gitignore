@@ -1,11 +1,26 @@
-# 排除所有.txt文件
-*.txt
+#忽略掉json文件
+*.json
 
-# 排除所有.xlsx文件
+#忽略掉.gitignore文件
+.gitignore
+
+#忽略掉.zip文件
+*.zip
+
+#忽略掉.pth文件
+*.pth
+
+#忽略掉.log文件
+*.log
+
+#忽略掉.png文件
+*.png
+
+#忽略掉.npz文件
+*.npz
+
+#忽略掉.xlsx文件
 *.xlsx
 
-# 排除所有.xlsx文件
-*.bat
-
-# 如果你有目录专门存放这些文件，也可以直接排除整个目录
-dataset
+#忽略掉.txt文件
+*.txt
