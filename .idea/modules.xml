@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TsyFSpectrumClassify.iml" filepath="$PROJECT_DIR$/.idea/TsyFSpectrumClassify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TsyFSpectrumClassify_remote.iml" filepath="$PROJECT_DIR$/.idea/TsyFSpectrumClassify_remote.iml" />
     </modules>
   </component>
 </project>

@@ -3,7 +3,6 @@ import json
 from itertools import combinations
 from sklearn.model_selection import train_test_split, KFold
 
-
 def list_xlsx_files(folder_path):
     return [f for f in os.listdir(folder_path) if f.endswith('.xlsx')]
 
