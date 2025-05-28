@@ -7,15 +7,17 @@ import matplotlib.pyplot as plt
 import os
 from regression.training.CustomDataset import CustomDataset
 
+
 def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch_size, patience, learning_rate=1e-3):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model.to(device)  # 将模型移动到设备（GPU/CPU）
+    model.to(device)
 
     os.makedirs(output_folder, exist_ok=True)
     train_dataset = CustomDataset(fold_data['train'])
     val_dataset = CustomDataset(fold_data['validation'])
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+
     rmse_criterion = nn.MSELoss()
     mae_criterion = nn.L1Loss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
@@ -24,107 +26,99 @@ def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch
     epochs_no_improve = 0
     best_model_path = os.path.join(output_folder, f'best_model_fold_{current_fold}.pth')
 
-    # 初始化训练日志
+    # 自动检测 target 数量
+    sample_input, *sample_targets = next(iter(train_loader))
+    num_targets = len(sample_targets)
+
+    # 初始化训练日志（动态生成）
     train_log = {
         'train_loss': [],
         'val_loss': [],
-        'train_rmse1': [],
-        'train_mae1': [],
-        'train_rmse2': [],
-        'train_mae2': [],
-        'val_rmse1': [],
-        'val_mae1': [],
-        'val_rmse2': [],
-        'val_mae2': [],
-        'converged_epoch': num_epochs  # 默认完整训练
+        'train_rmse': [[] for _ in range(num_targets)],
+        'train_mae': [[] for _ in range(num_targets)],
+        'val_rmse': [[] for _ in range(num_targets)],
+        'val_mae': [[] for _ in range(num_targets)],
+        'converged_epoch': num_epochs
     }
 
     for epoch in range(num_epochs):
         model.train()
-        running_rmse_loss1, running_mae_loss1 = 0.0, 0.0
-        running_rmse_loss2, running_mae_loss2 = 0.0, 0.0
+        running_rmse = [0.0 for _ in range(num_targets)]
+        running_mae = [0.0 for _ in range(num_targets)]
 
-        for inputs, outputs1, outputs2 in train_loader:
-            inputs, outputs1, outputs2 = inputs.to(device), outputs1.to(device), outputs2.to(device)  # 将输入数据移动到设备
+        for batch in train_loader:
+            inputs, *targets = batch
+            inputs = inputs.to(device)
+            targets = [t.to(device) for t in targets]
 
             optimizer.zero_grad()
+            preds = model(inputs)
 
-            preds1, preds2 = model(inputs)
+            if isinstance(preds, torch.Tensor):  # 兼容单输出模型
+                preds = [preds]
 
-            rmse_loss1 = torch.sqrt(rmse_criterion(preds1, outputs1))
-            mae_loss1 = mae_criterion(preds1, outputs1)
+            rmse_losses = []
+            mae_losses = []
 
-            rmse_loss2 = torch.sqrt(rmse_criterion(preds2, outputs2))
-            mae_loss2 = mae_criterion(preds2, outputs2)
+            for i, (pred, target) in enumerate(zip(preds, targets)):
+                rmse_loss = torch.sqrt(rmse_criterion(pred, target))
+                mae_loss = mae_criterion(pred, target)
+                rmse_losses.append(rmse_loss)
+                mae_losses.append(mae_loss)
+                running_rmse[i] += rmse_loss.item() * inputs.size(0)
+                running_mae[i] += mae_loss.item() * inputs.size(0)
 
-            total_loss = rmse_loss1 + mae_loss1 + rmse_loss2 + mae_loss2
+            total_loss = sum(rmse_losses + mae_losses)
             total_loss.backward()
             optimizer.step()
 
-            running_rmse_loss1 += rmse_loss1.item() * inputs.size(0)
-            running_mae_loss1 += mae_loss1.item() * inputs.size(0)
-            running_rmse_loss2 += rmse_loss2.item() * inputs.size(0)
-            running_mae_loss2 += mae_loss2.item() * inputs.size(0)
+        # 计算平均损失
+        epoch_rmse = [rm / len(train_dataset) for rm in running_rmse]
+        epoch_mae = [ma / len(train_dataset) for ma in running_mae]
 
-        epoch_rmse_loss1 = running_rmse_loss1 / len(train_dataset)
-        epoch_mae_loss1 = running_mae_loss1 / len(train_dataset)
-        epoch_rmse_loss2 = running_rmse_loss2 / len(train_dataset)
-        epoch_mae_loss2 = running_mae_loss2 / len(train_dataset)
+        print(f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Train RMSE: {[f"{x:.4f}" for x in epoch_rmse]}')
+        print(f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Train MAE: {[f"{x:.4f}" for x in epoch_mae]}')
 
-        print(
-            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Train rmse Loss: {epoch_rmse_loss1:.4f}, {epoch_rmse_loss2:.4f}')
-        print(
-            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Train MAE Loss: {epoch_mae_loss1:.4f}, {epoch_mae_loss2:.4f}')
-
+        # 验证阶段
         model.eval()
-        val_running_rmse_loss1, val_running_mae_loss1 = 0.0, 0.0
-        val_running_rmse_loss2, val_running_mae_loss2 = 0.0, 0.0
+        val_running_rmse = [0.0 for _ in range(num_targets)]
+        val_running_mae = [0.0 for _ in range(num_targets)]
 
         with torch.no_grad():
-            for inputs, outputs1, outputs2 in val_loader:
-                inputs, outputs1, outputs2 = inputs.to(device), outputs1.to(device), outputs2.to(device)  # 将输入数据移动到设备
+            for batch in val_loader:
+                inputs, *targets = batch
+                inputs = inputs.to(device)
+                targets = [t.to(device) for t in targets]
 
-                preds1, preds2 = model(inputs)
+                preds = model(inputs)
 
-                rmse_loss1 = torch.sqrt(rmse_criterion(preds1, outputs1))
-                mae_loss1 = mae_criterion(preds1, outputs1)
+                if isinstance(preds, torch.Tensor):
+                    preds = [preds]
 
-                rmse_loss2 = torch.sqrt(rmse_criterion(preds2, outputs2))
-                mae_loss2 = mae_criterion(preds2, outputs2)
+                for i, (pred, target) in enumerate(zip(preds, targets)):
+                    rmse_loss = torch.sqrt(rmse_criterion(pred, target))
+                    mae_loss = mae_criterion(pred, target)
+                    val_running_rmse[i] += rmse_loss.item() * inputs.size(0)
+                    val_running_mae[i] += mae_loss.item() * inputs.size(0)
 
-                val_running_rmse_loss1 += rmse_loss1.item() * inputs.size(0)
-                val_running_mae_loss1 += mae_loss1.item() * inputs.size(0)
-                val_running_rmse_loss2 += rmse_loss2.item() * inputs.size(0)
-                val_running_mae_loss2 += mae_loss2.item() * inputs.size(0)
+        val_epoch_rmse = [vr / len(val_dataset) for vr in val_running_rmse]
+        val_epoch_mae = [vm / len(val_dataset) for vm in val_running_mae]
+        val_total_loss = sum(val_epoch_rmse + val_epoch_mae)
 
-        val_epoch_rmse_loss1 = val_running_rmse_loss1 / len(val_dataset)
-        val_epoch_mae_loss1 = val_running_mae_loss1 / len(val_dataset)
-        val_epoch_rmse_loss2 = val_running_rmse_loss2 / len(val_dataset)
-        val_epoch_mae_loss2 = val_running_mae_loss2 / len(val_dataset)
+        print(f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val RMSE: {[f"{x:.4f}" for x in val_epoch_rmse]}')
+        print(f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MAE: {[f"{x:.4f}" for x in val_epoch_mae]}')
 
-        val_total_loss = val_epoch_rmse_loss1 + val_epoch_mae_loss1 + val_epoch_rmse_loss2 + val_epoch_mae_loss2
+        # 更新日志
+        for i in range(num_targets):
+            train_log['train_rmse'][i].append(epoch_rmse[i])
+            train_log['train_mae'][i].append(epoch_mae[i])
+            train_log['val_rmse'][i].append(val_epoch_rmse[i])
+            train_log['val_mae'][i].append(val_epoch_mae[i])
 
-        print(
-            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val rmse Loss: {val_epoch_rmse_loss1:.4f}, {val_epoch_rmse_loss2:.4f}')
-        print(
-            f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MAE Loss: {val_epoch_mae_loss1:.4f}, {val_epoch_mae_loss2:.4f}')
-
-        # 记录训练指标
-        train_log['train_rmse1'].append(epoch_rmse_loss1)
-        train_log['train_mae1'].append(epoch_mae_loss1)
-        train_log['train_rmse2'].append(epoch_rmse_loss2)
-        train_log['train_mae2'].append(epoch_mae_loss2)
-        train_total_loss = epoch_rmse_loss1 + epoch_mae_loss1 + epoch_rmse_loss2 + epoch_mae_loss2
-        train_log['train_loss'].append(train_total_loss)
-
-        # 记录验证指标
-        train_log['val_rmse1'].append(val_epoch_rmse_loss1)
-        train_log['val_mae1'].append(val_epoch_mae_loss1)
-        train_log['val_rmse2'].append(val_epoch_rmse_loss2)
-        train_log['val_mae2'].append(val_epoch_mae_loss2)
+        train_log['train_loss'].append(sum(epoch_rmse + epoch_mae))
         train_log['val_loss'].append(val_total_loss)
 
-        # Early stopping逻辑
+        # Early stopping
         if val_total_loss < best_val_loss:
             best_val_loss = val_total_loss
             epochs_no_improve = 0
@@ -136,11 +130,11 @@ def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch
                 print(f"Early stopping after {epoch + 1} epochs")
                 break
 
-        # 保存训练日志
+    # 保存日志
     with open(os.path.join(output_folder, f'fold_{current_fold}_train_log.json'), 'w') as f:
         json.dump(train_log, f, indent=4)
 
-        # 绘制损失曲线
+    # 绘制损失曲线
     plt.figure(figsize=(12, 6))
     plt.plot(train_log['train_loss'], label='Train Loss')
     plt.plot(train_log['val_loss'], label='Validation Loss')
@@ -150,7 +144,5 @@ def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch
     plt.legend()
     plt.savefig(os.path.join(output_folder, f'fold_{current_fold}_loss_curve.png'))
     plt.close()
+
     return best_model_path, train_log
-
-
-

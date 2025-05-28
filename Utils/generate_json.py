@@ -28,7 +28,7 @@ def simple_data_split(xlsx_files, data_split):
     return train_files, val_files, test_files
 
 
-def nested_cross_validation(xlsx_files, data_split, processed_folder, target_folders):
+def nested_cross_validation(is_mixup, xlsx_files, data_split, processed_folder, target_folders):
     outer_cv = KFold(n_splits=4, shuffle=True, random_state=42)
     dataset_info_list = []
 
@@ -47,7 +47,10 @@ def nested_cross_validation(xlsx_files, data_split, processed_folder, target_fol
             augmented_files = generate_mixup_filenames(train_file_pairs)
 
             # Include original train files in the augmented files
-            all_train_files = train_files + augmented_files
+            if is_mixup:
+                all_train_files = train_files + augmented_files
+            else:
+                all_train_files = train_files
 
             # Record the paths along with their corresponding target files
             dataset_info = {
@@ -75,15 +78,15 @@ def main(config_file):
 
     input_folder = config["dataset_raw"]
     processed_folder = config["dataset_processed"]
-    target_folders = [config["dataset_target1"], config["dataset_target2"]]
+    target_folders = [config["dataset_target1"], config["dataset_target2"], config["dataset_target3"], config["dataset_target4"]]
     data_split = config["data_split"]
     is_cross_validation = config["is_cross_validation"]
     output_json =  "../dataset_info.json"
-
+    is_mixup = config["is_mixup"]
     xlsx_files = list_xlsx_files(input_folder)
 
     if is_cross_validation:
-        dataset_info_list = nested_cross_validation(xlsx_files, data_split, processed_folder, target_folders)
+        dataset_info_list = nested_cross_validation(is_mixup, xlsx_files, data_split, processed_folder, target_folders)
     else:
         train_files, val_files, test_files = simple_data_split(xlsx_files, data_split)
 
@@ -92,7 +95,10 @@ def main(config_file):
         augmented_files = generate_mixup_filenames(train_file_pairs)
 
         # Include original train files in the augmented files
-        all_train_files = train_files + augmented_files
+        if is_mixup:
+            all_train_files = train_files + augmented_files
+        else:
+            all_train_files = train_files
 
         # Record the paths along with their corresponding target files
         dataset_info = {

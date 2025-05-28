@@ -14,34 +14,21 @@ class CustomDataset(Dataset):
     def __getitem__(self, idx):
         item = self.data_list[idx]
 
-        # Read Excel files skipping the first row and excluding the first column
+        # 读取输入数据
         input_df = pd.read_excel(item['input'], header=None, usecols=lambda x: x != 0, skiprows=1)
-        output_df1 = pd.read_excel(item['targets'][0], header=None, usecols=lambda x: x != 0, skiprows=1)
-        output_df2 = pd.read_excel(item['targets'][1], header=None, usecols=lambda x: x != 0, skiprows=1)
-
-        # Convert to NumPy array
         input_matrix = input_df.to_numpy()
-        output_matrix1 = output_df1.to_numpy()
-        output_matrix2 = output_df2.to_numpy()
+        input_tensor = torch.from_numpy(input_matrix).float().unsqueeze(0).unsqueeze(0)  # (1, 1, H, W)
 
-        # Convert to tensor and add channel dimension
-        input_tensor = torch.from_numpy(input_matrix).float().unsqueeze(0).unsqueeze(0)
-        output_tensor1 = torch.from_numpy(output_matrix1).float().unsqueeze(0).unsqueeze(0)
-        output_tensor2 = torch.from_numpy(output_matrix2).float().unsqueeze(0).unsqueeze(0)
+        # Resize 输入到 63x63
+        input_tensor_resized = F.interpolate(input_tensor, size=(360, 360), mode='bilinear', align_corners=False).squeeze(0)
 
-        # return input_tensor, output_tensor1, output_tensor2
+        # 动态读取所有 targets
+        target_tensors = []
+        for target_path in item['targets']:
+            df = pd.read_excel(target_path, header=None, usecols=lambda x: x != 0, skiprows=1)
+            matrix = df.to_numpy()
+            tensor = torch.from_numpy(matrix).float().unsqueeze(0).unsqueeze(0)  # (1, 1, H, W)
+            resized_tensor = F.interpolate(tensor, size=(360, 360), mode='bilinear', align_corners=False).squeeze(0)
+            target_tensors.append(resized_tensor)
 
-        # Resize tensors to 63x63 using bilinear interpolation
-        input_tensor_resized = F.interpolate(input_tensor, size=(63, 63), mode='bilinear', align_corners=False)
-        output_tensor1_resized = F.interpolate(output_tensor1, size=(63, 63), mode='bilinear', align_corners=False)
-        output_tensor2_resized = F.interpolate(output_tensor2, size=(63, 63), mode='bilinear', align_corners=False)
-
-        # Remove batch dimension
-        input_tensor_resized = input_tensor_resized.squeeze(0)
-        output_tensor1_resized = output_tensor1_resized.squeeze(0)
-        output_tensor2_resized = output_tensor2_resized.squeeze(0)
-
-        return input_tensor_resized, output_tensor1_resized, output_tensor2_resized
-
-
-
+        return input_tensor_resized, *target_tensors

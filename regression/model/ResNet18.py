@@ -1,47 +1,50 @@
 from torch import nn
 import torch
 import torchvision.models as models
-
+import torch.nn.functional as F
 
 class ResNet18(nn.Module):
-    def __init__(self, is_norm, in_channels, out_channels):
+    def __init__(self, is_norm, in_channels, out_channels, branch_number):
+        """
+        :param branch_number: 分支数量，如 2、3 等
+        :param is_norm: 是否启用 BatchNorm
+        :param in_channels: 输入通道数
+        :param out_channels: 输出通道数
+        """
         super(ResNet18, self).__init__()
-        # 加载未预训练的ResNet18模型，并移除最后的全连接层
-        resnet18_1 = models.resnet18(pretrained=False)
-        resnet18_2 = models.resnet18(pretrained=False)
-
-        if is_norm:
-            resnet18_1 = remove_batchnorm(resnet18_1)
-            resnet18_2 = remove_batchnorm(resnet18_2)
-
-        print(resnet18_1)
-
-        if in_channels != 3:
-            # 如果输入通道数不是3，则需要修改第一层卷积层以适应不同的输入通道数
-            resnet18_1.conv1 = nn.Conv2d(in_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
-            resnet18_2.conv1 = nn.Conv2d(in_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
-
-        # 替换最后一个全连接层以适应输出通道数
-        num_ftrs = resnet18_1.fc.in_features
-        resnet18_1.fc = nn.Linear(num_ftrs, out_channels * 63 * 63)
-        resnet18_2.fc = nn.Linear(num_ftrs, out_channels * 63 * 63)
-
-        self.branch1 = resnet18_1
-        self.branch2 = resnet18_2
-
+        self.branches = nn.ModuleList()
         self.out_channels = out_channels
 
+        for _ in range(branch_number):
+            branch = models.resnet18(pretrained=False)
+
+            if is_norm:
+                branch = remove_batchnorm(branch)
+
+            # 修改第一层卷积以适配输入通道数
+            if in_channels != 3:
+                branch.conv1 = nn.Conv2d(in_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
+
+            # 替换最后的全连接层以适配输出尺寸
+            num_ftrs = branch.fc.in_features
+            branch.fc = nn.Linear(num_ftrs, out_channels * 60 * 60)
+
+            self.branches.append(branch)
+
     def forward(self, x):
-        # 并行处理输入
-        output1 = self.branch1(x)
-        output2 = self.branch2(x)
-
-        # 还原为原始形状
-        batch_size = x.size(0)
-        output1 = output1.view(batch_size, self.out_channels, 63, 63)
-        output2 = output2.view(batch_size, self.out_channels, 63, 63)
-
-        return output1, output2
+        outputs = []
+        original_shape = x.shape  # 保留原始输入形状
+        # 获取原始输入的高度和宽度
+        original_height = original_shape[2]
+        original_width = original_shape[3]
+        for branch in self.branches:
+            out = branch(x)
+            batch_size = x.size(0)
+            out = out.view(batch_size, self.out_channels, 60, 60)
+            # 插值
+            out = F.interpolate(out, size=(original_height, original_width), mode='bilinear', align_corners=False)
+            outputs.append(out)
+        return outputs  # 返回 list of tensors
 
 def remove_batchnorm(m):
     if isinstance(m, nn.BatchNorm2d):
@@ -68,17 +71,15 @@ def remove_batchnorm(m):
 
 # 使用示例
 if __name__ == "__main__":
-    model = ResNet18(is_norm= False, in_channels=1, out_channels=1)
+    model = ResNet18(is_norm= False, in_channels=1, out_channels=1, branch_number=6)
 
     # 输入示例：51x51 的单通道图像
-    input_tensor = torch.randn(5, 1, 63, 63)
+    input_tensor = torch.randn(5, 1, 360, 360)
 
-    # 前向传播，得到两个输出
-    out1, out2 = model(input_tensor)
+    outputs = model(input_tensor)
 
-    print("输入形状:", input_tensor.shape)
-    print("分支1输出形状:", out1.shape)  # 应为 (5, 1, 63, 63)
-    print("分支2输出形状:", out2.shape)  # 应为 (5, 1, 63, 63)
+    print("输出数量:", len(outputs))  # 应为 3
+    print("每个输出形状:", [out.shape for out in outputs])
 
 
 

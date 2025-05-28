@@ -30,7 +30,11 @@ class AdaptiveCNN(nn.Module):
 
         if self.is_norm:
             # 编码部分（卷积+池化）
-            x = self.pool1(F.relu(self.bn1(self.conv1(x))))  # 第一层卷积+池化
+            # x = self.pool1(F.relu(self.bn1(self.conv1(x))))  # 第一层卷积+池化
+            x = self.conv1(x)
+            x = self.bn1(x)
+            x = F.relu(x)
+            x = self.pool1(x)
             x = self.pool2(F.relu(self.bn2(self.conv2(x))))  # 第二层卷积+池化
         else:
             # 编码部分（卷积+池化）
@@ -50,7 +54,10 @@ class AdaptiveCNN(nn.Module):
         original_width = original_shape[3]
 
         # 还原为原始输入图像大小
-        x = x.view(batch_size, self.out_channels, original_height, original_width)
+        x = x.view(batch_size, self.out_channels, 60, 60)
+
+        # 插值
+        x = F.interpolate(x, size=(original_height, original_width), mode='bilinear', align_corners=False)
 
         return x
 

@@ -1,9 +1,8 @@
 {
-  "dataset_raw" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_raw\\C6 + hpts",
-  "dataset_processed" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_preprocess\\C6 + hpts",
-  "dataset_target1" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_target\\C6 + hpts\\Component1",
-  "dataset_target2" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_target\\C6 + hpts\\Component2",
-  "dataset_result" : "./dataset_result/C6 + HPTS",
+  "dataset_raw" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_raw/C6 + HPTS",
+  "dataset_processed" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_preprocessed/C6 + HPTS",
+  "dataset_target1" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/C6 + HPTS/Component1",
+  "dataset_target2" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/C6 + HPTS/Component2",
   "data_split" : {
     "train" : 0.7,
     "val" : 0.2,

@@ -68,18 +68,18 @@ class FVGG11(nn.Module):
         # ---------------------------
         # full connection layer
         # ---------------------------
-        self.linear1 = nn.Linear(512, 2048)  # 输入通道, 输出通道
+        self.linear1 = nn.Linear(512 * 11 * 11, 2048)  # 输入通道, 输出通道
         self.relu6 = nn.ReLU(inplace=True)
         self.dropout1 = nn.Dropout(0.5)
         self.linear2 = nn.Linear(2048, 1024)  # 输入通道, 输出通道
         self.relu7 = nn.ReLU(inplace=True)
         self.dropout2 = nn.Dropout(0.5)
-        self.linear3 = nn.Linear(1024, 3969)  # 输入通道, 输出通道
+        self.linear3 = nn.Linear(1024, 3600)  # 输入通道, 输出通道
 
     # 会被自动调用, module(xxx)  -->  module.forward(xxx)
     def forward(self, x):
-        out_shape = x.shape[2:]
-        batch_size = x.size(0)
+        original_shape = x.shape  # 保留原始输入形状
+        batch_size = original_shape[0]
         # layer 1
         out = self.conv1(x)  # 输出: batch_size * 64 * (60 - 2 + 2*1)/1 * 60
         if self.is_norm:
@@ -115,7 +115,7 @@ class FVGG11(nn.Module):
         out = self.relu5(out)  # 输出: batch_size * 512 * 3 * 3
         out = self.maxpooling5(out)  # 输出: batch_size * 512 * 1 * 1
 
-        out = out.view(-1, 512 * 1 * 1)
+        out = out.view(batch_size, 512 * 11 * 11)
 
         out = self.linear1(out)
 
@@ -132,34 +132,45 @@ class FVGG11(nn.Module):
         out = self.linear3(out)
 
         # 还原为原始形状
-        out = out.view(batch_size, self.out_channels, *out_shape)
+        out = out.view(batch_size, self.out_channels, 60, 60)
+
+        # 获取原始输入的高度和宽度
+        original_height = original_shape[2]
+        original_width = original_shape[3]
+
+        # 插值
+        out = F.interpolate(out, size=(original_height, original_width), mode='bilinear', align_corners=False)
 
         return out
 
 class DualFVGG11(nn.Module):
-    def __init__(self, is_norm, in_channels, out_channels):
+    def __init__(self, is_norm, in_channels, out_channels, branch_number):
         super(DualFVGG11, self).__init__()
-        # 创建两个独立的分支
-        self.branch1 = FVGG11(is_norm, in_channels, out_channels)
-        self.branch2 = FVGG11(is_norm, in_channels, out_channels)
+        """
+                     :param branch_number: 分支数量，如 2、3 等
+                     :param is_norm: 是否启用 BatchNorm
+                     :param in_channels: 输入通道数
+                     :param out_channels: 输出通道数
+                     """
+        self.branches = nn.ModuleList()
+
+        for _ in range(branch_number):
+            self.branches.append(FVGG11(is_norm, in_channels, out_channels))
 
     def forward(self, x):
-        # 并行处理输入
-        output1 = self.branch1(x)
-        output2 = self.branch2(x)
-        return output1, output2
+        outputs = [branch(x) for branch in self.branches]
+        return outputs  # 返回 list 形式：[output1, output2, ...]
 
 
 # 使用示例
 if __name__ == "__main__":
-    model = DualFVGG11(is_norm = False, in_channels=1, out_channels=1)
+    model = DualFVGG11(is_norm = False, in_channels=1, out_channels=1, branch_number=5)
 
     # 输入示例：51x51 的单通道图像
-    input_tensor = torch.randn(5, 1, 63, 63)
+    input_tensor = torch.randn(5, 1, 360, 360)
 
-    # 前向传播，得到两个输出
-    out1, out2 = model(input_tensor)
+    # 前向传播，得到n个输出
+    outputs = model(input_tensor)
 
-    print("输入形状:", input_tensor.shape)
-    print("分支1输出形状:", out1.shape)  # 应为 (1, 1, 63, 63)
-    print("分支2输出形状:", out2.shape)  # 应为 (1, 1, 63, 63)
+    print("输出数量:", len(outputs))  # 应为 3
+    print("每个输出形状:", [out.shape for out in outputs])

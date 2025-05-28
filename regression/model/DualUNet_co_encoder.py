@@ -3,6 +3,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
 class DoubleConv(nn.Module):
     def __init__(self, is_norm, in_channels, out_channels):
         super(DoubleConv, self).__init__()
@@ -22,6 +27,7 @@ class DoubleConv(nn.Module):
                 nn.Conv2d(out_channels, out_channels, 3, 1, 1, bias=False),
                 nn.ReLU(inplace=True)
             )
+
     def forward(self, x):
         return self.conv(x)
 
@@ -30,7 +36,6 @@ class UNETDecoder(nn.Module):
     def __init__(self, is_norm, features, out_channels):
         super(UNETDecoder, self).__init__()
         self.ups = nn.ModuleList()
-        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
 
         # Up part of UNET
         for feature in reversed(features):
@@ -67,7 +72,14 @@ class UNETDecoder(nn.Module):
 
 
 class DualUNetSharedEncoder(nn.Module):
-    def __init__(self, is_norm, in_channels, out_channels, features=[16, 32, 64]):
+    def __init__(self, is_norm, in_channels, out_channels, branch_number, features=[16, 32, 64]):
+        """
+        :param branch_number: 分支数量
+        :param is_norm: 是否使用 BatchNorm
+        :param in_channels: 输入通道数
+        :param out_channels: 每个分支的输出通道数
+        :param features: 编码器中每层的通道数列表
+        """
         super(DualUNetSharedEncoder, self).__init__()
 
         # Shared encoder
@@ -81,35 +93,40 @@ class DualUNetSharedEncoder(nn.Module):
         # Bottleneck layer
         self.bottleneck = DoubleConv(is_norm, features[-1], features[-1] * 2)
 
-        # Two separate decoders
-        self.decoder1 = UNETDecoder(is_norm, features, out_channels)
-        self.decoder2 = UNETDecoder(is_norm, features, out_channels)
+        # 动态创建多个解码器
+        self.decoders = nn.ModuleList([
+            UNETDecoder(is_norm, features, out_channels) for _ in range(branch_number)
+        ])
 
     def forward(self, x):
-        skip_connections1 = []
-        skip_connections2 = []
+        skip_connections = []
 
+        # Encoder
         for down in self.downs:
             x = down(x)
-            skip_connections1.append(x)
-            skip_connections2.append(x)
+            skip_connections.append(x)
             x = self.pool(x)
 
         x = self.bottleneck(x)
 
-        output1 = self.decoder1(x, skip_connections1)
-        output2 = self.decoder2(x, skip_connections2)
+        # Decoder
+        outputs = []
+        for decoder in self.decoders:
+            output = decoder(x, skip_connections)
+            outputs.append(output)
 
-        return output1, output2
+        return outputs  # 返回 list of tensors
+
 
 
 # Example usage
 if __name__ == "__main__":
-    model = DualUNetSharedEncoder(in_channels=1, out_channels=1)
+    model = DualUNetSharedEncoder(is_norm = True, in_channels=1, out_channels=1, branch_number=8)
     x = torch.randn((1, 1, 64, 21))  # Batch size, channels, height, width
     outputs = model(x)
-    print(outputs[0].shape)  # Output should be (1, 1, 64, 21)
-    print(outputs[1].shape)  # Output should be (1, 1, 64, 21)
+
+    print("输出数量:", len(outputs))  # 应为 3
+    print("每个输出形状:", [out.shape for out in outputs])
 
 
 

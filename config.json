@@ -1,13 +1,15 @@
 {
-  "dataset_raw" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_raw\\C6 + hpts",
-  "dataset_processed" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_preprocess\\C6 + hpts",
-  "dataset_target1" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_target\\C6 + hpts\\Component1",
-  "dataset_target2" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_target\\C6 + hpts\\Component2",
-  "dataset_result" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_result\\C6 + hpts",
+  "dataset_raw" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_raw/Fish",
+  "dataset_processed" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_preprocess/Fish",
+  "dataset_target1" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/Fish/Component1",
+  "dataset_target2" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/Fish/Component2",
+  "dataset_target3" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/Fish/Component3",
+  "dataset_target4" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/Fish/Component4",
   "data_split" : {
     "train" : 0.7,
     "val" : 0.2,
     "test" : 0.1
   },
-  "is_cross_validation" : true
+  "is_cross_validation" : false,
+  "is_mixup" : false
 }

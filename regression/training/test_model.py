@@ -7,6 +7,7 @@ import json
 from regression.utils.cosine_similarity import cosine_similarity
 from regression.training.CustomDataset import CustomDataset
 
+
 def visualize_and_save_results(model, test_data, output_folder, current_fold):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -17,84 +18,85 @@ def visualize_and_save_results(model, test_data, output_folder, current_fold):
         os.makedirs(output_folder)
 
     model.eval()
-    all_cos_sim_pred1 = []
-    all_cos_sim_pred2 = []
-    all_rmse_pred1 = []
-    all_rmse_pred2 = []
+
+    # 存储所有 target 的指标
+    all_cos_sim = []  # 每个 target 一个 list
+    all_rmse = []
 
     with torch.no_grad():
-        for i, (inputs, targets1, targets2) in enumerate(test_loader):
-            inputs, targets1, targets2 = inputs.to(device), targets1.to(device), targets2.to(device)  # 将输入数据移动到设备
+        for i, batch in enumerate(test_loader):
+            inputs, *targets = batch
+            inputs = inputs.to(device)
+            targets = [t.to(device) for t in targets]
+            num_targets = len(targets)
 
-            preds1, preds2 = model(inputs)
+            # 初始化列表
+            if not all_cos_sim:
+                all_cos_sim = [[] for _ in range(num_targets)]
+                all_rmse = [[] for _ in range(num_targets)]
+
+            preds = model(inputs)
+
+            if isinstance(preds, torch.Tensor):  # 兼容单输出模型
+                preds = [preds]
 
             input_np = inputs.squeeze().cpu().numpy()
-            target1_np = targets1.squeeze().cpu().numpy()
-            target2_np = targets2.squeeze().cpu().numpy()
-            pred1_np = preds1.squeeze().cpu().numpy()
-            pred2_np = preds2.squeeze().cpu().numpy()
 
-            fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+            # 可视化设置（支持多个 target）
+            rows = (num_targets + 1) // 2 + 1  # 计算需要多少行来展示输入+预测+真实值
+            fig, axes = plt.subplots(rows, 3, figsize=(15, 5 * rows))
+            axes = axes if isinstance(axes[0], np.ndarray) else np.array([axes])
 
+            # 输入图像
             axes[0, 0].imshow(input_np, cmap='viridis')
             axes[0, 0].set_title('Input')
             axes[0, 0].axis('off')
 
-            axes[0, 1].imshow(target1_np, cmap='viridis')
-            axes[0, 1].set_title('Target 1')
-            axes[0, 1].axis('off')
+            # 真实值与预测值
+            for j in range(num_targets):
+                pred_j = preds[j].squeeze().cpu().numpy()
+                target_j = targets[j].squeeze().cpu().numpy()
 
-            axes[0, 2].imshow(pred1_np, cmap='viridis')
-            axes[0, 2].set_title('Predicted 1')
-            axes[0, 2].axis('off')
+                # 绘图
+                row = (j // 2) + 1
+                col = j % 2 * 2
 
-            axes[1, 1].imshow(target2_np, cmap='viridis')
-            axes[1, 1].set_title('Target 2')
-            axes[1, 1].axis('off')
+                axes[row, col].imshow(target_j, cmap='viridis')
+                axes[row, col].set_title(f'Target {j + 1}')
+                axes[row, col].axis('off')
 
-            axes[1, 2].imshow(pred2_np, cmap='viridis')
-            axes[1, 2].set_title('Predicted 2')
-            axes[1, 2].axis('off')
+                axes[row, col + 1].imshow(pred_j, cmap='viridis')
+                axes[row, col + 1].set_title(f'Predicted {j + 1}')
+                axes[row, col + 1].axis('off')
+
+                # 保存数据
+                np.savez(os.path.join(output_folder, f'test_sample_{i}_target_{j}.npz'),
+                         input=input_np,
+                         target=target_j,
+                         pred=pred_j)
+
+                # 计算指标
+                cos_sim_j = cosine_similarity(pred_j, target_j).item()
+                rmse_j = np.sqrt(np.mean((pred_j - target_j) ** 2)).item()
+
+                all_cos_sim[j].append(cos_sim_j)
+                all_rmse[j].append(rmse_j)
 
             plt.tight_layout()
             plt.savefig(os.path.join(output_folder, f'test_sample_{i}.png'))
             plt.close(fig)
 
-            # Save predictions and targets to files
-            np.savez(os.path.join(output_folder, f'test_sample_{i}_data.npz'),
-                     input=input_np, target1=target1_np, target2=target2_np,
-                     pred1=pred1_np, pred2=pred2_np)
-
-            # Calculate Cosine Similarity
-            cos_sim_pred1 = cosine_similarity(pred1_np, target1_np).item()
-            cos_sim_pred2 = cosine_similarity(pred2_np, target2_np).item()
-
-            # Calculate RMSE
-            rmse_pred1 = np.sqrt(np.mean((pred1_np - target1_np) ** 2)).item()
-            rmse_pred2 = np.sqrt(np.mean((pred2_np - target2_np) ** 2)).item()
-
-            all_cos_sim_pred1.append(cos_sim_pred1)
-            all_cos_sim_pred2.append(cos_sim_pred2)
-            all_rmse_pred1.append(rmse_pred1)
-            all_rmse_pred2.append(rmse_pred2)
-
-    avg_cos_sim_pred1 = np.mean(all_cos_sim_pred1)
-    avg_cos_sim_pred2 = np.mean(all_cos_sim_pred2)
-    avg_rmse_pred1 = np.mean(all_rmse_pred1)
-    avg_rmse_pred2 = np.mean(all_rmse_pred2)
+    # 计算平均指标
+    avg_cos_sim = [np.mean(scores) for scores in all_cos_sim]
+    avg_rmse = [np.mean(errors) for errors in all_rmse]
 
     results = {
-        'average_cos_sim_pred1': avg_cos_sim_pred1,
-        'average_cos_sim_pred2': avg_cos_sim_pred2,
-        'average_rmse_pred1': avg_rmse_pred1,
-        'average_rmse_pred2': avg_rmse_pred2
+        'cos_sim': avg_cos_sim,
+        'rmse': avg_rmse
     }
 
-    # 在保存结果时添加fold编号
+    # 保存测试结果
     with open(os.path.join(output_folder, f'fold_{current_fold}_results.json'), 'w') as f:
         json.dump(results, f, indent=4)
 
     return results
-
-
-

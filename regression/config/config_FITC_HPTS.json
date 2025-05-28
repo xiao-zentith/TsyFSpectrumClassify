@@ -1,9 +1,8 @@
 {
-  "dataset_raw" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_raw\\FITC + hpts",
-  "dataset_processed" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_preprocess\\FITC + hpts",
-  "dataset_target1" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_target\\FITC + hpts\\Component1",
-  "dataset_target2" : "C:\\Users\\xiao\\PycharmProjects\\TsyFSpectrumClassify\\dataset\\dataset_target\\FITC + hpts\\Component2",
-  "dataset_result" : "./dataset_result/FITC + HPTS",
+  "dataset_raw" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_raw/FITC + HPTS",
+  "dataset_processed" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_preprocessed/FITC + HPTS",
+  "dataset_target1" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/FITC + HPTS/Component1",
+  "dataset_target2" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/dataset/dataset_target/FITC + HPTS/Component2",
   "data_split" : {
     "train" : 0.7,
     "val" : 0.2,
