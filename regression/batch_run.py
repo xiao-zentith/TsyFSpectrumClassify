@@ -4,7 +4,8 @@ import sys
 from itertools import product
 
 def main():
-    configs = ["C6_FITC", "C6_HPTS", "FITC_HPTS"]
+    # configs = ["C6_FITC", "C6_HPTS", "FITC_HPTS"]
+    configs = ["Fish"]
     models = ["DualSimpleCNN", "VGG11", "ResNet18", "DualUNet", "DualUNetSharedEncoder"]
     is_norm_values = [True, False]
 
@@ -21,6 +22,7 @@ def main():
                     ["/home/asus515/anaconda3/envs/EEM/bin/python", "run_training.py",
                      "--config", config,
                      "--model", model,
+                     "--is_fold", str(False),
                      "--is_norm", str(is_norm)],
                     check=True,
                     stdout=subprocess.PIPE,

@@ -145,7 +145,7 @@ if __name__ == "__main__":
         elif args.model == 'VGG11':
             model = DualFVGG11(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
         elif args.model == 'ResNet18':
-            model = ResNet18(in_channels=1, out_channels=1, branch_number=branch_number).to(device)
+            model = ResNet18(args.isnorm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
         elif args.model == 'DualUNet':
             model = DualUNet(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
         elif args.model == 'DualUNetSharedEncoder':
@@ -192,27 +192,33 @@ if __name__ == "__main__":
     # === 收集所有 fold 的结果 ===
     avg_cos_sim = [[] for _ in range(num_targets)]
     avg_rmse = [[] for _ in range(num_targets)]
+    avg_wmae = [[] for _ in range(num_targets)]
 
     for result in all_results:
         for i in range(num_targets):
             avg_cos_sim[i].append(result['cos_sim'][i])
             avg_rmse[i].append(result['rmse'][i])
+            avg_wmae[i].append(result['wmae'][i])
 
     # === 计算平均值和最优值 ===
     mean_cos_sim = [np.mean(scores) for scores in avg_cos_sim]
     max_cos_sim = [max(scores) for scores in avg_cos_sim]
     mean_rmse = [np.mean(errors) for errors in avg_rmse]
     min_rmse = [min(errors) for errors in avg_rmse]
+    mean_wmae = [np.mean(errors) for errors in avg_wmae]
+    min_wmae = [min(errors) for errors in avg_wmae]
 
     # === 构建动态报告 ===
     average_metrics = {
         'cos_sim': mean_cos_sim,
-        'rmse': mean_rmse
+        'rmse': mean_rmse,
+        'wmae': mean_wmae
     }
 
     best_metrics = {
         'cos_sim': max_cos_sim,
-        'rmse': min_rmse
+        'rmse': min_rmse,
+        'wmae': min_wmae
     }
 
     overall_report = {
@@ -223,16 +229,15 @@ if __name__ == "__main__":
             'average_epochs': np.mean(convergence_speeds),
             'epochs_per_fold': convergence_speeds
         },
-        'folds': [
-            {
-                'fold_number': i,
-                'best_model_path': best_models_paths[i],
-                'convergence_epoch': convergence_speeds[i],
-                'training_log': all_results[i]['training_log'],
-                'test_results': all_results[i]
-            }
-            for i in range(len(all_results))
-        ],
+        # 'folds': [
+        #     {
+        #         'fold_number': i,
+        #         'best_model_path': best_models_paths[i],
+        #         'convergence_epoch': convergence_speeds[i],
+        #         'test_results': all_results[i]
+        #     }
+        #     for i in range(len(all_results))
+        # ],
         'best_models': best_models_paths,
         'training_time': timestamp
     }
