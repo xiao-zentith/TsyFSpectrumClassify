@@ -8,10 +8,10 @@ from regression.training.test_model import visualize_and_save_results
 from regression.training.train_model import train_model
 
 if __name__ == "__main__":
-    with open('../../config/dataset_info_C6_FITC.json') as f:
+    with open('../../../config/dataset_info_C6_FITC.json') as f:
         dataset_info = json.load(f)
 
-    with open('../../config/config_C6_FITC.json') as config_file:
+    with open('../../../config/config_C6_FITC.json') as config_file:
         config = json.load(config_file)
         output_folder = config.get("dataset_result", "results")
 

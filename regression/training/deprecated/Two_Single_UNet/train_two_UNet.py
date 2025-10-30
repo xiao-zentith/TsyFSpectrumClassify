@@ -1,18 +1,16 @@
 from datetime import datetime
 import json
-import torch
 import numpy as np
 import os
-
-from regression.model.FVGG11 import DualFVGG11
 from regression.training.test_model import visualize_and_save_results
 from regression.training.train_model import train_model
+from regression.model.DualUNet import DualUNet
 
 if __name__ == "__main__":
-    with open('../../config/dataset_info_C6_FITC.json') as f:
+    with open('../../../config/dataset_info_FITC_HPTS.json') as f:
         dataset_info = json.load(f)
 
-    with open('../../config/config_C6_FITC.json') as config_file:
+    with open('../../../config/config_FITC_HPTS.json') as config_file:
         config = json.load(config_file)
         output_folder = config.get("dataset_result", "results")
 
@@ -30,23 +28,21 @@ if __name__ == "__main__":
         os.makedirs(fold_output_folder, exist_ok=True)
 
         # 训练模型
-        model = DualFVGG11(isNorm= False, in_channels=1, out_channels=1)
+        model = DualUNet(in_channels=1, out_channels=1)
         best_model_path, train_log = train_model(
             model,
             dataset_info[current_fold],
             fold_output_folder,
-            current_fold,
-            200,
-            5,
-            20
+            current_fold
         )
         best_models_paths.append(best_model_path)
         convergence_speeds.append(train_log['converged_epoch'])
 
         # 测试模型
-        model = DualFVGG11(isNorm = False, in_channels=1, out_channels=1)
+        model = DualUNet(in_channels=1, out_channels=1)
+        import torch
 
-        model.load_state_dict(torch.load(best_model_path))
+        model.load_state_dict(torch.load(best_model_path, map_location=torch.device('cpu'), weights_only=True))
 
         test_results = visualize_and_save_results(
             dataset_info[current_fold]['test'],
