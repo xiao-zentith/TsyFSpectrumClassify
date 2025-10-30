@@ -38,7 +38,7 @@ def read_npz_file(file_path):
 def plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pred2_data):
     # 定义横坐标和纵坐标的范围
     emission_wavelengths = np.arange(310, 621, 5)  # 激发光谱：300-500nm，间隔为5nm
-    excitation_wavelengths = np.arange(300, 501, 10)   # 发射光谱：310-620nm，间隔为5nm
+    excitation_wavelengths = np.arange(300, 921, 10)   # 发射光谱：310-620nm，间隔为5nm
 
     # 创建网格
     X, Y = np.meshgrid(excitation_wavelengths, emission_wavelengths)
@@ -68,32 +68,32 @@ def plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pre
     ax1 = fig.add_subplot(2, 3, 2)
     contour1 = ax1.contourf(X, Y, target1_data, cmap=cmap, levels=500)
     ax1.set_title('PARAFAC 1 Spectra Contour')
-    ax1.set_xlabel('Excitation Wavelength /nm')
-    ax1.set_ylabel('Emission Wavelength /nm')
+    ax1.set_xlabel('Excitation Wavelength (nm)')
+    ax1.set_ylabel('Emission Wavelength (nm)')
     fig.colorbar(contour1, ax=ax1, orientation='vertical')
 
     # Target2 等高线图
     ax2 = fig.add_subplot(2, 3, 5)
     contour2 = ax2.contourf(X, Y, target2_data, cmap=cmap, levels=500)
     ax2.set_title('PARAFAC 2 Spectra Contour')
-    ax2.set_xlabel('Excitation Wavelength /nm')
-    ax2.set_ylabel('Emission Wavelength /nm')
+    ax2.set_xlabel('Excitation Wavelength (nm)')
+    ax2.set_ylabel('Emission Wavelength (nm)')
     fig.colorbar(contour2, ax=ax2, orientation='vertical')
 
     # Pred1 等高线图
     ax3 = fig.add_subplot(2, 3, 3)
     contour3 = ax3.contourf(X, Y, pred1_data, cmap=cmap, levels=500)
     ax3.set_title('UNet 1 Spectra Contour')
-    ax3.set_xlabel('Excitation Wavelength /nm')
-    ax3.set_ylabel('Emission Wavelength /nm')
+    ax3.set_xlabel('Excitation Wavelength (nm)')
+    ax3.set_ylabel('Emission Wavelength (nm)')
     fig.colorbar(contour3, ax=ax3, orientation='vertical')
 
     # Pred2 等高线图
     ax4 = fig.add_subplot(2, 3, 6)
     contour4 = ax4.contourf(X, Y, pred2_data, cmap=cmap, levels=500)
     ax4.set_title('UNet 2 Spectra Contour')
-    ax4.set_xlabel('Excitation Wavelength /nm')
-    ax4.set_ylabel('Emission Wavelength /nm')
+    ax4.set_xlabel('Excitation Wavelength (nm)')
+    ax4.set_ylabel('Emission Wavelength (nm)')
     fig.colorbar(contour4, ax=ax4, orientation='vertical')
 
     plt.tight_layout()
@@ -106,7 +106,7 @@ def plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pre
 
 
 # 示例用法
-file_path = r'..\regression_dataset\dataset_result\C6 + HPTS\fold_0\test_sample_1_data.npz'  # 替换为你的.npz文件路径
+file_path = r'/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/regression/dataset_result/C6 + FITC/DualUNetSharedEncoder/training_20250527_001819/fold_10/test_sample_0_data.npz'  # 替换为你的.npz文件路径
 read_npz_file(file_path)
 
 

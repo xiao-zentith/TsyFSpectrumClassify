@@ -1,3 +1,4 @@
+import random
 import sys
 from datetime import datetime
 import json
@@ -35,10 +36,12 @@ def parse_args():
                         help='Batch size for training.')
     parser.add_argument('--patience', type=int, default=35,
                         help='Patience for early stopping.')
-    parser.add_argument('--branch_number', type=int, default=4,
+    parser.add_argument('--branch_number', type=int, default=2,
                         help='The number of targets.')
-    parser.add_argument('--is_fold', type=str2bool, default=False,
-                        help='Whether or not to use batch normalization.')
+    parser.add_argument('--loss_type', type=str, default='mae',
+                        help='Loss type (e.g., weighted_mae).')
+    parser.add_argument('--fold_number', type=str2int, default=20,
+                        help='The number of folds.')
     parser.add_argument('--is_norm', type=str2bool, default=True,
                         help='Whether or not to use round-robin cross-validation.')
 
@@ -54,10 +57,15 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
+def str2int(v) :
+    return int(v)
+
 
 if __name__ == "__main__":
     args = parse_args()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # torch.cuda.set_device(1)
+    # device = "cuda:1"
 
     with open(r"./config/dataset_info_" + args.config + ".json") as f:
         dataset_info = json.load(f)
@@ -76,67 +84,22 @@ if __name__ == "__main__":
     best_models_paths = []
     branch_number = args.branch_number
 
-    # 判断是否使用分折数据
-    if args.is_fold:
-        print("Using K-fold cross-validation.")
-        for current_fold in range(len(dataset_info)):
-            fold_output_folder = os.path.join(output_folder, f'fold_{current_fold}')
-            os.makedirs(fold_output_folder, exist_ok=True)
+    total_folds = len(dataset_info)
 
-            # 构建模型
-            model = None
-            if args.model == 'DualSimpleCNN':
-                model = DualSimpleCNN(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
-            elif args.model == 'VGG11':
-                model = DualFVGG11(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
-            elif args.model == 'ResNet18':
-                model = ResNet18(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
-            elif args.model == 'DualUNet':
-                model = DualUNet(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
-            elif args.model == 'DualUNetSharedEncoder':
-                model = DualUNetSharedEncoder(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
-            else:
-                raise ValueError(f"Unsupported model: {args.model}")
-
-            # 训练模型
-            best_model_path, train_log = train_model(
-                model,
-                dataset_info[current_fold],
-                fold_output_folder,
-                current_fold,
-                args.epoch,
-                args.batch_size,
-                args.patience
-            )
-            best_models_paths.append(best_model_path)
-            convergence_speeds.append(train_log['converged_epoch'])
-
-            # 加载最佳模型并测试
-            model.load_state_dict(torch.load(best_model_path))
-            test_results = visualize_and_save_results(
-                model,
-                dataset_info[current_fold]['test'],
-                fold_output_folder,
-                current_fold,
-            )
-            all_results.append(test_results)
-
-            # 保存单折日志
-            fold_summary = {
-                'best_model_path': best_model_path,
-                'convergence_epoch': train_log['converged_epoch'],
-                'training_log': train_log,
-                'test_results': test_results
-            }
-            with open(os.path.join(fold_output_folder, f'fold_{current_fold}_summary.json'), 'w') as f:
-                json.dump(fold_summary, f, indent=4)
-
+    random.seed(42)
+    # === 使用 fold_number 控制训练多少折，并随机选择 ===
+    if args.fold_number > 0:
+        # 确保 fold_number 不超过总折数
+        selected_folds = random.sample(range(total_folds), min(args.fold_number, total_folds))
     else:
-        print("Training without folds (single split).")
-        fold_output_folder = output_folder
-        os.makedirs(fold_output_folder, exist_ok=True)
+        # 如果 fold_number <= 0，则只训练一次（不分折）
+        selected_folds = [0]
 
-        fold_data = dataset_info[0]
+    print(f"Training on {len(selected_folds)} folds: {selected_folds}")
+
+    for current_fold in selected_folds:
+        fold_output_folder = os.path.join(output_folder, f'fold_{current_fold}')
+        os.makedirs(fold_output_folder, exist_ok=True)
 
         # 构建模型
         model = None
@@ -145,7 +108,7 @@ if __name__ == "__main__":
         elif args.model == 'VGG11':
             model = DualFVGG11(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
         elif args.model == 'ResNet18':
-            model = ResNet18(args.isnorm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
+            model = ResNet18(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
         elif args.model == 'DualUNet':
             model = DualUNet(args.is_norm, in_channels=1, out_channels=1, branch_number=branch_number).to(device)
         elif args.model == 'DualUNetSharedEncoder':
@@ -156,12 +119,13 @@ if __name__ == "__main__":
         # 训练模型
         best_model_path, train_log = train_model(
             model,
-            fold_data,
+            dataset_info[current_fold],
             fold_output_folder,
-            current_fold=0,
-            num_epochs=args.epoch,
-            batch_size=args.batch_size,
-            patience=args.patience
+            current_fold,
+            args.loss_type,
+            args.epoch,
+            args.batch_size,
+            args.patience
         )
         best_models_paths.append(best_model_path)
         convergence_speeds.append(train_log['converged_epoch'])
@@ -170,20 +134,20 @@ if __name__ == "__main__":
         model.load_state_dict(torch.load(best_model_path))
         test_results = visualize_and_save_results(
             model,
-            fold_data['test'],
+            dataset_info[current_fold]['test'],
             fold_output_folder,
-            current_fold=0
+            current_fold,
         )
         all_results.append(test_results)
 
-        # 保存日志
+        # 保存单折日志
         fold_summary = {
             'best_model_path': best_model_path,
             'convergence_epoch': train_log['converged_epoch'],
             'training_log': train_log,
             'test_results': test_results
         }
-        with open(os.path.join(fold_output_folder, f'single_split_summary.json'), 'w') as f:
+        with open(os.path.join(fold_output_folder, f'fold_{current_fold}_summary.json'), 'w') as f:
             json.dump(fold_summary, f, indent=4)
 
     # === 根据第一个结果推断目标数量 ===
@@ -192,31 +156,36 @@ if __name__ == "__main__":
     # === 收集所有 fold 的结果 ===
     avg_cos_sim = [[] for _ in range(num_targets)]
     avg_rmse = [[] for _ in range(num_targets)]
+    avg_nrmse = [[] for _ in range(num_targets)]
     avg_wmae = [[] for _ in range(num_targets)]
 
     for result in all_results:
         for i in range(num_targets):
             avg_cos_sim[i].append(result['cos_sim'][i])
             avg_rmse[i].append(result['rmse'][i])
+            avg_nrmse[i].append(result['nrmse'][i])
             avg_wmae[i].append(result['wmae'][i])
 
     # === 计算平均值和最优值 ===
     mean_cos_sim = [np.mean(scores) for scores in avg_cos_sim]
     max_cos_sim = [max(scores) for scores in avg_cos_sim]
-    mean_rmse = [np.mean(errors) for errors in avg_rmse]
-    min_rmse = [min(errors) for errors in avg_rmse]
-    mean_wmae = [np.mean(errors) for errors in avg_wmae]
-    min_wmae = [min(errors) for errors in avg_wmae]
+    mean_rmse = [np.mean(rmses) for rmses in avg_rmse]
+    min_rmse = [min(rmses) for rmses in avg_rmse]
+    mean_nrmse = [np.mean(nrmses) for nrmses in avg_nrmse]
+    min_nrmse = [min(nrmses) for nrmses in avg_nrmse]
+    mean_wmae = [np.mean(wmaes) for wmaes in avg_wmae]
+    min_wmae = [min(wmaes) for wmaes in avg_wmae]
 
-    # === 构建动态报告 ===
     average_metrics = {
         'cos_sim': mean_cos_sim,
         'rmse': mean_rmse,
+        'nrmse': mean_nrmse,
         'wmae': mean_wmae
     }
 
     best_metrics = {
         'cos_sim': max_cos_sim,
+        'nrmse': min_nrmse,
         'rmse': min_rmse,
         'wmae': min_wmae
     }
@@ -229,15 +198,7 @@ if __name__ == "__main__":
             'average_epochs': np.mean(convergence_speeds),
             'epochs_per_fold': convergence_speeds
         },
-        # 'folds': [
-        #     {
-        #         'fold_number': i,
-        #         'best_model_path': best_models_paths[i],
-        #         'convergence_epoch': convergence_speeds[i],
-        #         'test_results': all_results[i]
-        #     }
-        #     for i in range(len(all_results))
-        # ],
+        'folds_used': selected_folds,
         'best_models': best_models_paths,
         'training_time': timestamp
     }

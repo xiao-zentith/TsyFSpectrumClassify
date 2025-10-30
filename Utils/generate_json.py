@@ -28,8 +28,9 @@ def simple_data_split(xlsx_files, data_split):
     return train_files, val_files, test_files
 
 
-def nested_cross_validation(is_mixup, xlsx_files, data_split, processed_folder, target_folders):
-    outer_cv = KFold(n_splits=4, shuffle=True, random_state=42)
+#生成嵌套交叉验证的数据集
+def nested_cross_validation(is_mixup, xlsx_files, processed_folder, target_folders):
+    outer_cv = KFold(n_splits=5, shuffle=True, random_state=42)
     dataset_info_list = []
 
     for fold_idx, (train_val_indices, test_indices) in enumerate(outer_cv.split(xlsx_files)):
@@ -86,7 +87,7 @@ def main(config_file):
     xlsx_files = list_xlsx_files(input_folder)
 
     if is_cross_validation:
-        dataset_info_list = nested_cross_validation(is_mixup, xlsx_files, data_split, processed_folder, target_folders)
+        dataset_info_list = nested_cross_validation(is_mixup, xlsx_files, processed_folder, target_folders)
     else:
         train_files, val_files, test_files = simple_data_split(xlsx_files, data_split)
 

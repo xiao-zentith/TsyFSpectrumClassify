@@ -31,7 +31,7 @@ def modify_first_column_name_in_xlsx_files(directory):
 
 
 # 使用示例：请将'/path/to/your/directory'替换为实际的目录路径
-modify_first_column_name_in_xlsx_files(r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\FITC + hpts_Component\Component2')
+modify_first_column_name_in_xlsx_files(r'C:\Users\xiao\Desktop\academic_papers\data\dataset_EEM\EEM_xlsx\FITC + hpts_Component\Component2')
 
 
 

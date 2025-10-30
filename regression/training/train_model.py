@@ -8,7 +8,7 @@ import os
 from regression.training.CustomDataset import CustomDataset
 
 
-def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch_size, patience, learning_rate=1e-3):
+def train_model(model, fold_data, output_folder, current_fold, loss_type, num_epochs, batch_size, patience, learning_rate=1e-3):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
@@ -68,7 +68,8 @@ def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch
                 running_rmse[i] += rmse_loss.item() * inputs.size(0)
                 running_mae[i] += mae_loss.item() * inputs.size(0)
 
-            total_loss = sum(rmse_losses + mae_losses)
+            # total_loss = sum(rmse_losses + mae_losses)
+            total_loss = get_total_loss(rmse_losses, mae_losses, loss_type)
             total_loss.backward()
             optimizer.step()
 
@@ -103,7 +104,8 @@ def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch
 
         val_epoch_rmse = [vr / len(val_dataset) for vr in val_running_rmse]
         val_epoch_mae = [vm / len(val_dataset) for vm in val_running_mae]
-        val_total_loss = sum(val_epoch_rmse + val_epoch_mae)
+        # val_total_loss = sum(val_epoch_rmse + val_epoch_mae)
+        val_total_loss = get_total_loss(val_epoch_rmse, val_epoch_mae, loss_type)
 
         print(f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val RMSE: {[f"{x:.4f}" for x in val_epoch_rmse]}')
         print(f'Fold {current_fold}, Epoch {epoch + 1}/{num_epochs} - Val MAE: {[f"{x:.4f}" for x in val_epoch_mae]}')
@@ -146,3 +148,11 @@ def train_model(model, fold_data, output_folder, current_fold, num_epochs, batch
     plt.close()
 
     return best_model_path, train_log
+
+def get_total_loss(rmse_losses, mae_losses, loss_type) :
+    if loss_type == 'rmse':
+        return sum(rmse_losses)
+    elif loss_type == 'mae':
+        return sum(mae_losses)
+    else:
+        return sum(rmse_losses) + sum(mae_losses)

@@ -70,11 +70,11 @@ def process_excel(input_file, output_folder_c1, output_folder_c2, output_folder_
 
 
 # 使用示例
-input_file = r'C:\Users\xiao\Desktop\Draw-flatbread\data\open_dataset\fish\EEM\2025-05-24 4-component result.xlsx'  # 替换为你的输入文件名
-output_folder_c1 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\open_dataset\fish\EEM\target\target1'  # 替换为你想要保存Weighted_C1文件的文件夹名
-output_folder_c2 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\open_dataset\fish\EEM\target\target2'  # 替换为你想要保存Weighted_C2文件的文件夹名
-output_folder_c3 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\open_dataset\fish\EEM\target\target3'
-output_folder_c4 = r'C:\Users\xiao\Desktop\Draw-flatbread\data\open_dataset\fish\EEM\target\target4'
+input_file = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\EEM\2025-05-24 4-component result.xlsx'  # 替换为你的输入文件名
+output_folder_c1 = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\EEM\target\target1'  # 替换为你想要保存Weighted_C1文件的文件夹名
+output_folder_c2 = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\EEM\target\target2'  # 替换为你想要保存Weighted_C2文件的文件夹名
+output_folder_c3 = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\EEM\target\target3'
+output_folder_c4 = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\EEM\target\target4'
 process_excel(input_file, output_folder_c1, output_folder_c2, output_folder_c3, output_folder_c4)
 
 

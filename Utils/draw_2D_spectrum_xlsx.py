@@ -3,19 +3,14 @@ import matplotlib.pyplot as plt
 from cycler import cycler
 import numpy as np
 from scipy.signal import savgol_filter  # 需要安装scipy
-
+import pandas as pd
 
 def read_spectrum_data(file_path):
-    x = []
-    y = []
-    with open(file_path, 'r') as file:
-        for line in file:
-            data = line.strip().split()
-            if len(data) == 2:
-                x.append(float(data[0]))
-                y.append(float(data[1]))
-    return np.array(x), np.array(y)
-
+    df = pd.read_excel(file_path, header=None)
+    # 默认第一列是波长，第二列是强度
+    x = df.iloc[:, 0].iloc[1:].to_numpy()
+    y = df.iloc[:, 1].iloc[1:].to_numpy()
+    return x, y
 
 def plot_spectra(folder_path, window_length=11, polyorder=3):
     # 设置全局字体为Arial
@@ -26,12 +21,12 @@ def plot_spectra(folder_path, window_length=11, polyorder=3):
     plt.rc('axes', prop_cycle=cycler(color=colors))
 
     # 创建figure并设置尺寸
-    fig = plt.figure(figsize=(8, 6), dpi=300)
+    fig = plt.figure(figsize=(16, 12), dpi=300)
     ax = fig.add_subplot(111)
 
     # 读取并绘制数据
     for filename in sorted(os.listdir(folder_path)):
-        if filename.endswith('.txt'):
+        if filename.endswith('.xlsx'):
             file_path = os.path.join(folder_path, filename)
             x, y = read_spectrum_data(file_path)
 
@@ -75,7 +70,8 @@ def plot_spectra(folder_path, window_length=11, polyorder=3):
     plt.grid(True, linestyle='--', alpha=0.3)
 
     # 设置坐标轴范围
-    plt.xlim(left=min(x), right=max(x))
+    if 'x' in locals() and len(x) > 0:
+        plt.xlim(left=min(x), right=max(x))
 
     # 调整布局
     plt.tight_layout()
@@ -87,5 +83,5 @@ def plot_spectra(folder_path, window_length=11, polyorder=3):
 
 
 # 使用示例：
-folder_path = r'C:\Users\xiao\Desktop\academic_papers\data\em_spectrum'
+folder_path = r'C:\Users\xiao\Desktop\academic_papers\data\dataset_EEM\dataset_460\All'
 plot_spectra(folder_path)

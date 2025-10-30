@@ -55,6 +55,6 @@ def read_tsf_to_xlsx(source_folder, target_folder):
                 df.to_excel(xlsx_file_path, engine='openpyxl')
 
 # 示例调用
-source_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\dataset_EEM'
-target_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\dataset'
+source_folder = r'C:\Users\xiao\Desktop\academic_papers\data\dataset_EEM\dataset_EEM'
+target_folder = r'C:\Users\xiao\Desktop\academic_papers\data\dataset_EEM\dataset'
 read_tsf_to_xlsx(source_folder, target_folder)

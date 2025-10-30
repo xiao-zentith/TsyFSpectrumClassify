@@ -13,9 +13,9 @@ class FVGG11(nn.Module):
         # ---------------------------
         # first layer
         # ---------------------------
-        self.conv1 = nn.Conv2d(in_channels, out_channels=64, kernel_size=3, padding=1, stride=1)
+        self.conv1 = nn.Conv2d(in_channels, out_channels=32, kernel_size=3, padding=1, stride=1)
 
-        self.bn1 = nn.BatchNorm2d(64, affine=True)
+        self.bn1 = nn.BatchNorm2d(32, affine=True)
 
         self.relu1 = nn.ReLU(inplace=True)
 
@@ -24,9 +24,9 @@ class FVGG11(nn.Module):
         # ---------------------------
         # second layer
         # ---------------------------
-        self.conv2 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3, padding=1, stride=1)
+        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1, stride=1)
 
-        self.bn2 = nn.BatchNorm2d(128, affine=True)
+        self.bn2 = nn.BatchNorm2d(64, affine=True)
 
         self.relu2 = nn.ReLU(inplace=True)
 
@@ -35,9 +35,9 @@ class FVGG11(nn.Module):
         # ---------------------------
         # third layer
         # ---------------------------
-        self.conv3 = nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, padding=1, stride=1)
+        self.conv3 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3, padding=1, stride=1)
 
-        self.bn3 = nn.BatchNorm2d(256, affine=True)
+        self.bn3 = nn.BatchNorm2d(128, affine=True)
 
         self.relu3 = nn.ReLU(inplace=True)
 
@@ -46,9 +46,9 @@ class FVGG11(nn.Module):
         # ---------------------------
         # fourth layer
         # ---------------------------
-        self.conv4 = nn.Conv2d(in_channels=256, out_channels=512, kernel_size=3, padding=1, stride=1)
+        self.conv4 = nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, padding=1, stride=1)
 
-        self.bn4 = nn.BatchNorm2d(512, affine=True)
+        self.bn4 = nn.BatchNorm2d(256, affine=True)
 
         self.relu4 = nn.ReLU(inplace=True)
 
@@ -57,9 +57,9 @@ class FVGG11(nn.Module):
         # ---------------------------
         # fifth layer
         # ---------------------------
-        self.conv5 = nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, padding=1, stride=1)
+        self.conv5 = nn.Conv2d(in_channels=256, out_channels=256, kernel_size=3, padding=1, stride=1)
 
-        self.bn5 = nn.BatchNorm2d(512, affine=True)
+        self.bn5 = nn.BatchNorm2d(256, affine=True)
 
         self.relu5 = nn.ReLU(inplace=True)
 
@@ -68,7 +68,8 @@ class FVGG11(nn.Module):
         # ---------------------------
         # full connection layer
         # ---------------------------
-        self.linear1 = nn.Linear(512 * 11 * 11, 2048)  # 输入通道, 输出通道
+        # self.linear1 = nn.Linear(256 * 11 * 11, 2048)  # 输入通道, 输出通道
+        self.linear1 = nn.Linear(256 * 1 * 1, 2048)
         self.relu6 = nn.ReLU(inplace=True)
         self.dropout1 = nn.Dropout(0.5)
         self.linear2 = nn.Linear(2048, 1024)  # 输入通道, 输出通道
@@ -115,7 +116,7 @@ class FVGG11(nn.Module):
         out = self.relu5(out)  # 输出: batch_size * 512 * 3 * 3
         out = self.maxpooling5(out)  # 输出: batch_size * 512 * 1 * 1
 
-        out = out.view(batch_size, 512 * 11 * 11)
+        out = out.view(batch_size, -1)
 
         out = self.linear1(out)
 
@@ -164,9 +165,10 @@ class DualFVGG11(nn.Module):
 
 # 使用示例
 if __name__ == "__main__":
-    model = DualFVGG11(is_norm = False, in_channels=1, out_channels=1, branch_number=5)
+    model = DualFVGG11(is_norm = True, in_channels=1, out_channels=1, branch_number=5)
 
     # 输入示例：51x51 的单通道图像
+    # input_tensor = torch.randn(5, 1, 360, 360)
     input_tensor = torch.randn(5, 1, 360, 360)
 
     # 前向传播，得到n个输出

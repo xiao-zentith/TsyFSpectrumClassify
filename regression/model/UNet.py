@@ -86,7 +86,7 @@ class UNET(nn.Module):
 # Example usage
 if __name__ == "__main__":
     model = UNET(in_channels=1, out_channels=1)
-    x = torch.randn((3, 3, 161, 161))  # Batch size, channels, height, width
+    x = torch.randn((3, 3, 63, 63))  # Batch size, channels, height, width
     print(model(x).shape)  # Output should be (3, 1, 161, 161)
 
 

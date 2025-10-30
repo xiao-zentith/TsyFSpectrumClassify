@@ -19,7 +19,8 @@ class AdaptiveCNN(nn.Module):
         self.dropout = nn.Dropout(0.5)
 
         # 固定全连接层
-        self.fc1 = nn.Linear(64 * 88 * 88, 128)  # 假设输入尺寸为 63x63，经过两次池化后变为 13x13
+        # self.fc1 = nn.Linear(64 * 88 * 88, 128)  # 假设输入尺寸为 360x360，经过两次池化后变为 88x88
+        self.fc1 = nn.Linear(64 * 14 * 14, 128)  # 假设输入尺寸为 63x63，经过两次池化后变为 13x13
         self.fc2 = nn.Linear(128, 256)
         self.fc3 = nn.Linear(256, 3600)  # 特征数固定为 63 * 63
 

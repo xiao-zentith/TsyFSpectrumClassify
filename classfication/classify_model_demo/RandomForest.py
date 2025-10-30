@@ -277,7 +277,7 @@ def main(data_folder, num_runs=10):
     print(f"Average F1 Score: {np.mean(all_f1s):.4f} ± {np.std(all_f1s):.4f}")
 
 # 设置数据集文件夹路径
-dataset_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_K\dataset_TsyF'
+dataset_folder = r'C:\Users\xiao\Desktop\academic_papers\data\dataset_K\dataset_TsyF'
 
 # 调用主函数
 main(dataset_folder)

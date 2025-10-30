@@ -53,7 +53,7 @@ def merge_txt_files(folder_path, output_file):
 
 
 # 使用示例
-folder_path = r'C:\Users\xiao\Desktop\Draw-flatbread\data\em_spectrum'  # 替换为你的文件夹路径
+folder_path = r'C:\Users\xiao\Desktop\academic_papers\data\em_spectrum'  # 替换为你的文件夹路径
 output_file = 'merged_output.txt'  # 合并后文件名
 merge_txt_files(folder_path, output_file)
 

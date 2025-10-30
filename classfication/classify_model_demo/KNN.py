@@ -210,7 +210,7 @@ def main(data_folder, num_runs=10):
     #调用plot方法展示结果
 
 # 设置输入文件夹路径
-data_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_K\dataset_TsyF'
+data_folder = r'C:\Users\xiao\Desktop\academic_papers\data\dataset_K\dataset_TsyF'
 
 # 调用主函数
 main(data_folder, num_runs=5)

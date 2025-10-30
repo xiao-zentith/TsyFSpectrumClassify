@@ -159,7 +159,7 @@ def nested_k_fold_cross_validation(dataset_folder, k_outer=5, k_inner=5, random_
     print(f"Average F1 Score: {avg_f1:.4f}")
 
 
-dataset_folder = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_K\dataset_TsyF'
+dataset_folder = r'C:\Users\xiao\Desktop\academic_papers\data\dataset_K\dataset_TsyF'
 nested_k_fold_cross_validation(dataset_folder)
 
 

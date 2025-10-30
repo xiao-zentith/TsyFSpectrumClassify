@@ -10,6 +10,6 @@
     "val" : 0.2,
     "test" : 0.1
   },
-  "is_cross_validation" : false,
+  "is_cross_validation" : true,
   "is_mixup" : false
 }

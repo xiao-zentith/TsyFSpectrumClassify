@@ -4,7 +4,7 @@ import pandas as pd
 from scipy.io import loadmat
 
 # 加载.mat文件
-mat_file_path = r'C:\Users\xiao\Desktop\Draw-flatbread\data\open_dataset\fish\CMA1_fluo\CMA1_fluo.mat'  # 替换为你的.mat文件路径
+mat_file_path = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\CMA1_fluo\CMA1_fluo.mat'  # 替换为你的.mat文件路径
 data = loadmat(mat_file_path)
 
 # 提取所需的数据
@@ -17,7 +17,7 @@ if all_sample_x.shape != (105, 4303):
     raise ValueError("AllSample_X does not have the expected shape of (105, 4303)")
 
 # 创建输出目录（如果不存在）
-output_dir = r'C:\Users\xiao\Desktop\Draw-flatbread\data\open_dataset\fish\xlsx'
+output_dir = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\xlsx'
 os.makedirs(output_dir, exist_ok=True)
 
 # 将每个样本转换为13x331矩阵并保存为单独的.xlsx文件

@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 读取Excel文件中的二维矩阵数据
-file_path = r'C:\Users\xiao\Desktop\Draw-flatbread\data\dataset_EEM\EEM_xlsx\new_matrix\C1 + F9_extracted.xlsx'  # 替换为你的Excel文件路径
+file_path = r'C:\Users\xiao\Desktop\academic_papers\data\open_dataset\fish\xlsx\sample_69.xlsx'  # 替换为你的Excel文件路径
 sheet_name = 'Sheet1'    # 替换为你的工作表名称
 
 # 使用pandas读取Excel文件
