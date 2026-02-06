@@ -1,0 +1,13 @@
+{
+  "dataset_raw" : "get_data_path("raw")",
+  "dataset_processed" : "get_data_path("raw")",
+  "dataset_target1" : "get_data_path("raw")",
+  "dataset_target2" : "get_data_path("raw")",
+  "dateset_result" : "./dataset_result/ALL",
+  "data_split" : {
+    "train" : 0.7,
+    "val" : 0.2,
+    "test" : 0.1
+  },
+  "is_cross_validation" : true
+}

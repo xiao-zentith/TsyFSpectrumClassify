@@ -19,7 +19,7 @@ class DualUNet(nn.Module):
 # Example usage
 if __name__ == "__main__":
     model = DualUNet(is_norm = False, in_channels=3, out_channels=1, branch_number=3)
-    x = torch.randn((3, 3, 161, 161))  # Batch size, channels, height, width
+    x = torch.randn((3, 3, 60, 60))  # Batch size, channels, height, width
     # 前向传播，得到n个输出
     outputs = model(x)
 

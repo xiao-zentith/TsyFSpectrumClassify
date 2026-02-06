@@ -1,0 +1,48 @@
+项目重构测试报告
+==================================================
+
+测试时间: 2025年 10月 30日 星期四 14:45:54 CST
+
+目录结构测试结果:
+------------------------------
+FAIL: src - 目录不存在
+FAIL: src/utils - 目录不存在
+FAIL: src/utils/data_io - 目录不存在
+FAIL: src/utils/visualization - 目录不存在
+FAIL: src/utils/metrics - 目录不存在
+FAIL: src/utils/file_operations - 目录不存在
+FAIL: src/classification - 目录不存在
+FAIL: src/classification/models - 目录不存在
+FAIL: src/classification/models/demo - 目录不存在
+FAIL: src/classification/utils - 目录不存在
+FAIL: src/regression - 目录不存在
+FAIL: src/regression/models - 目录不存在
+FAIL: src/regression/training - 目录不存在
+FAIL: src/regression/utils - 目录不存在
+FAIL: src/augmentation - 目录不存在
+FAIL: src/preprocessing - 目录不存在
+FAIL: src/ui - 目录不存在
+FAIL: notebooks - 目录不存在
+FAIL: tests - 目录不存在
+FAIL: configs - 目录不存在
+FAIL: scripts - 目录不存在
+FAIL: data - 目录不存在
+
+文件存在性测试结果:
+------------------------------
+FAIL: src/utils/data_io/mat_reader.py - 文件不存在
+FAIL: src/utils/visualization/spectrum_plotter.py - 文件不存在
+FAIL: src/classification/models/cnn_2d_v1.py - 文件不存在
+FAIL: src/regression/models/unet.py - 文件不存在
+FAIL: src/preprocessing/data_augmenter.py - 文件不存在
+FAIL: requirements.txt - 文件不存在
+FAIL: README.md - 文件不存在
+PASS: .gitignore - 文件存在
+
+导入测试结果:
+------------------------------
+FAIL: src.utils.data_io - 导入失败: No module named 'src'
+FAIL: src.utils.visualization - 导入失败: No module named 'src'
+FAIL: src.classification.models - 导入失败: No module named 'src'
+FAIL: src.regression.models - 导入失败: No module named 'src'
+FAIL: src.preprocessing - 导入失败: No module named 'src'

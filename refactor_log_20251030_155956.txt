@@ -1,0 +1,520 @@
+[2025-10-30 15:59:56] 🎯 开始全面项目重构
+[2025-10-30 15:59:56] ============================================================
+[2025-10-30 15:59:56] 🔍 分析文件命名问题...
+[2025-10-30 15:59:57] 
+📊 命名问题分析结果:
+[2025-10-30 15:59:57]   irregular_python_files: 199 个问题
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/__init__.py
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/training/CustomDataset.py
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/training/__init__.py
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/training/deprecated/__init__.py
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/training/deprecated/FVGG11/__init__.py
+[2025-10-30 15:59:57]     ... 还有 194 个
+[2025-10-30 15:59:57]   typos: 2 个问题
+[2025-10-30 15:59:57]     - backup_20251030_145600/classfication
+[2025-10-30 15:59:57]     - origin/classfication
+[2025-10-30 15:59:57]   case_issues: 248 个问题
+[2025-10-30 15:59:57]     - backup_20251030_145600/UI_version
+[2025-10-30 15:59:57]     - backup_20251030_145600/Utils
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/training/deprecated/FVGG11
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/training/deprecated/CNN
+[2025-10-30 15:59:57]     - backup_20251030_145600/regression/training/deprecated/ResNet-UNet
+[2025-10-30 15:59:57]     ... 还有 243 个
+[2025-10-30 15:59:57] 
+📋 生成重命名计划...
+[2025-10-30 15:59:57]   生成了 201 个重命名操作
+[2025-10-30 15:59:57] 
+🔍 扫描硬编码路径...
+[2025-10-30 16:00:54]   发现 246 个文件包含硬编码路径
+[2025-10-30 16:00:54] 
+👀 预览所有更改:
+[2025-10-30 16:00:54] ============================================================
+[2025-10-30 16:00:54] 
+📁 文件重命名 (201 个):
+[2025-10-30 16:00:54]   __init__.py → init.py
+[2025-10-30 16:00:54]   CustomDataset.py → customdataset.py
+[2025-10-30 16:00:54]   __init__.py → init.py
+[2025-10-30 16:00:54]   __init__.py → init.py
+[2025-10-30 16:00:54]   __init__.py → init.py
+[2025-10-30 16:00:54]   train_VGG11.py → train_vgg11.py
+[2025-10-30 16:00:54]   train_CNN.py → train_cnn.py
+[2025-10-30 16:00:54]   __init__.py → init.py
+[2025-10-30 16:00:54]   __init__.py → init.py
+[2025-10-30 16:00:54]   train_ResNet.py → train_resnet.py
+[2025-10-30 16:00:54]   ... 还有 191 个重命名操作
+[2025-10-30 16:00:54] 
+🔧 硬编码路径修复 (246 个文件):
+[2025-10-30 16:00:54]   comprehensive_refactor.py
+[2025-10-30 16:00:54]   config.json
+[2025-10-30 16:00:54]   dataset_info.json
+[2025-10-30 16:00:54]   backup_20251030_145600/config.json
+[2025-10-30 16:00:54]   backup_20251030_145600/dataset_info.json
+[2025-10-30 16:00:54]   backup_20251030_145600/import_update_report.txt
+[2025-10-30 16:00:54]   backup_20251030_145600/restructure_project.py
+[2025-10-30 16:00:54]   backup_20251030_145600/regression/config/dataset_info_C6_FITC.json
+[2025-10-30 16:00:54]   backup_20251030_145600/regression/config/config_FITC_HPTS.json
+[2025-10-30 16:00:54]   backup_20251030_145600/regression/config/config_C6_FITC.json
+[2025-10-30 16:00:54]   ... 还有 236 个文件
+[2025-10-30 16:00:54] ============================================================
+[2025-10-30 16:01:07] 
+🚀 开始执行重构...
+[2025-10-30 16:01:07] 
+📁 执行文件重命名...
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_VGG11.py → train_vgg11.py
+[2025-10-30 16:01:07]   ✅ train_CNN.py → train_cnn.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_ResNet.py → train_resnet.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_UNet.py → train_unet.py
+[2025-10-30 16:01:07]   ✅ train_UNet_co_encoder.py → train_unet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_two_UNet.py → train_two_unet.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_ViTUNet.py → train_vitunet.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ ResNet18.py → resnet18.py
+[2025-10-30 16:01:07]   ✅ UNet.py → unet.py
+[2025-10-30 16:01:07]   ✅ DualSimpleCNN.py → dualsimplecnn.py
+[2025-10-30 16:01:07]   ✅ DualUNet.py → dualunet.py
+[2025-10-30 16:01:07]   ✅ DualUNet_co_encoder.py → dualunet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ FVGG11.py → fvgg11.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ ResUNet_co_encoder.py → resunet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ UNet_no_skip.py → unet_no_skip.py
+[2025-10-30 16:01:07]   ✅ ViTUNet.py → vitunet.py
+[2025-10-30 16:01:07]   ✅ DualUNet_without_batchnorm.py → dualunet_without_batchnorm.py
+[2025-10-30 16:01:07]   ✅ ResUNet.py → resunet.py
+[2025-10-30 16:01:07]   ✅ RandomForest.py → randomforest.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN.py → 2d_cnn.py
+[2025-10-30 16:01:07]   ✅ Transformer.py → transformer.py
+[2025-10-30 16:01:07]   ✅ KNN.py → knn.py
+[2025-10-30 16:01:07]   ✅ Moe.py → moe.py
+[2025-10-30 16:01:07]   ✅ SimpleCNN.py → simplecnn.py
+[2025-10-30 16:01:07]   ✅ SimpleLSTM.py → simplelstm.py
+[2025-10-30 16:01:07]   ✅ RF1.py → random_forest_v1.py
+[2025-10-30 16:01:07]   ✅ GateNetWork.py → gatenetwork.py
+[2025-10-30 16:01:07]   ✅ SimpleTransformer.py → simpletransformer.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN1.py → cnn_2d_v1.py
+[2025-10-30 16:01:07]   ✅ Transformer1.py → transformer_v1.py
+[2025-10-30 16:01:07]   ✅ LSTM1.py → lstm_v1.py
+[2025-10-30 16:01:07]   ✅ KNN1.py → knn_v1.py
+[2025-10-30 16:01:07]   ✅ ImageDataset.py → imagedataset.py
+[2025-10-30 16:01:07]   ✅ read)mat.py → read_mat.py
+[2025-10-30 16:01:07]   ✅ draw_2D_spectrum_xlsx.py → draw_2d_spectrum_xlsx.py
+[2025-10-30 16:01:07]   ✅ draw_2D_spectrum.py → draw_2d_spectrum.py
+[2025-10-30 16:01:07]   ✅ spectrum_2_tsyF.py → spectrum_2_tsyf.py
+[2025-10-30 16:01:07]   ✅ ZScore_norm.py → zscore_norm.py
+[2025-10-30 16:01:07]   ✅ RandomForest.py → randomforest.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN.py → 2d_cnn.py
+[2025-10-30 16:01:07]   ✅ Transformer_kimi.py → transformer_kimi.py
+[2025-10-30 16:01:07]   ✅ Transformer.py → transformer.py
+[2025-10-30 16:01:07]   ✅ feature_engineering_and_CNN.py → feature_engineering_and_cnn.py
+[2025-10-30 16:01:07]   ✅ KNN.py → knn.py
+[2025-10-30 16:01:07]   ✅ LSTM.py → lstm.py
+[2025-10-30 16:01:07]   ✅ 1D-CNN.py → cnn_1d.py
+[2025-10-30 16:01:07]   ✅ PLS-DA.py → pls_da.py
+[2025-10-30 16:01:07]   ✅ VAE.py → vae.py
+[2025-10-30 16:01:07]   ✅ MixUp.py → mixup.py
+[2025-10-30 16:01:07]   ✅ GMM.py → gmm.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_VGG11.py → train_vgg11.py
+[2025-10-30 16:01:07]   ✅ train_CNN.py → train_cnn.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_ResNet.py → train_resnet.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_UNet.py → train_unet.py
+[2025-10-30 16:01:07]   ✅ train_UNet_co_encoder.py → train_unet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_two_UNet.py → train_two_unet.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_ViTUNet.py → train_vitunet.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ ResNet18.py → resnet18.py
+[2025-10-30 16:01:07]   ✅ UNet.py → unet.py
+[2025-10-30 16:01:07]   ✅ DualSimpleCNN.py → dualsimplecnn.py
+[2025-10-30 16:01:07]   ✅ DualUNet.py → dualunet.py
+[2025-10-30 16:01:07]   ✅ DualUNet_co_encoder.py → dualunet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ FVGG11.py → fvgg11.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ ResUNet_co_encoder.py → resunet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ UNet_no_skip.py → unet_no_skip.py
+[2025-10-30 16:01:07]   ✅ ViTUNet.py → vitunet.py
+[2025-10-30 16:01:07]   ✅ DualUNet_without_batchnorm.py → dualunet_without_batchnorm.py
+[2025-10-30 16:01:07]   ✅ ResUNet.py → resunet.py
+[2025-10-30 16:01:07]   ✅ RandomForest.py → randomforest.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN.py → 2d_cnn.py
+[2025-10-30 16:01:07]   ✅ Transformer.py → transformer.py
+[2025-10-30 16:01:07]   ✅ KNN.py → knn.py
+[2025-10-30 16:01:07]   ✅ Moe.py → moe.py
+[2025-10-30 16:01:07]   ✅ SimpleCNN.py → simplecnn.py
+[2025-10-30 16:01:07]   ✅ SimpleLSTM.py → simplelstm.py
+[2025-10-30 16:01:07]   ✅ RF1.py → random_forest_v1.py
+[2025-10-30 16:01:07]   ✅ GateNetWork.py → gatenetwork.py
+[2025-10-30 16:01:07]   ✅ SimpleTransformer.py → simpletransformer.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN1.py → cnn_2d_v1.py
+[2025-10-30 16:01:07]   ✅ Transformer1.py → transformer_v1.py
+[2025-10-30 16:01:07]   ✅ LSTM1.py → lstm_v1.py
+[2025-10-30 16:01:07]   ✅ KNN1.py → knn_v1.py
+[2025-10-30 16:01:07]   ✅ ImageDataset.py → imagedataset.py
+[2025-10-30 16:01:07]   ✅ read)mat.py → read_mat.py
+[2025-10-30 16:01:07]   ✅ draw_2D_spectrum_xlsx.py → draw_2d_spectrum_xlsx.py
+[2025-10-30 16:01:07]   ✅ draw_2D_spectrum.py → draw_2d_spectrum.py
+[2025-10-30 16:01:07]   ✅ spectrum_2_tsyF.py → spectrum_2_tsyf.py
+[2025-10-30 16:01:07]   ✅ ZScore_norm.py → zscore_norm.py
+[2025-10-30 16:01:07]   ✅ RandomForest.py → randomforest.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN.py → 2d_cnn.py
+[2025-10-30 16:01:07]   ✅ Transformer_kimi.py → transformer_kimi.py
+[2025-10-30 16:01:07]   ✅ Transformer.py → transformer.py
+[2025-10-30 16:01:07]   ✅ feature_engineering_and_CNN.py → feature_engineering_and_cnn.py
+[2025-10-30 16:01:07]   ✅ KNN.py → knn.py
+[2025-10-30 16:01:07]   ✅ LSTM.py → lstm.py
+[2025-10-30 16:01:07]   ✅ 1D-CNN.py → cnn_1d.py
+[2025-10-30 16:01:07]   ✅ PLS-DA.py → pls_da.py
+[2025-10-30 16:01:07]   ✅ VAE.py → vae.py
+[2025-10-30 16:01:07]   ✅ MixUp.py → mixup.py
+[2025-10-30 16:01:07]   ✅ GMM.py → gmm.py
+[2025-10-30 16:01:07]   ✅ RandomForest.py → randomforest.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN.py → 2d_cnn.py
+[2025-10-30 16:01:07]   ✅ Transformer_kimi.py → transformer_kimi.py
+[2025-10-30 16:01:07]   ✅ Transformer.py → transformer.py
+[2025-10-30 16:01:07]   ✅ feature_engineering_and_CNN.py → feature_engineering_and_cnn.py
+[2025-10-30 16:01:07]   ✅ KNN.py → knn.py
+[2025-10-30 16:01:07]   ✅ LSTM.py → lstm.py
+[2025-10-30 16:01:07]   ✅ 1D-CNN.py → cnn_1d.py
+[2025-10-30 16:01:07]   ✅ PLS-DA.py → pls_da.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_VGG11.py → train_vgg11.py
+[2025-10-30 16:01:07]   ✅ train_CNN.py → train_cnn.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_ResNet.py → train_resnet.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_UNet.py → train_unet.py
+[2025-10-30 16:01:07]   ✅ train_UNet_co_encoder.py → train_unet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_two_UNet.py → train_two_unet.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ train_ViTUNet.py → train_vitunet.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ ResNet18.py → resnet18.py
+[2025-10-30 16:01:07]   ✅ UNet.py → unet.py
+[2025-10-30 16:01:07]   ✅ DualSimpleCNN.py → dualsimplecnn.py
+[2025-10-30 16:01:07]   ✅ DualUNet.py → dualunet.py
+[2025-10-30 16:01:07]   ✅ DualUNet_co_encoder.py → dualunet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ FVGG11.py → fvgg11.py
+[2025-10-30 16:01:07]   ✅ CustomDataset.py → customdataset.py
+[2025-10-30 16:01:07]   ✅ ResUNet_co_encoder.py → resunet_co_encoder.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ UNet_no_skip.py → unet_no_skip.py
+[2025-10-30 16:01:07]   ✅ ViTUNet.py → vitunet.py
+[2025-10-30 16:01:07]   ✅ DualUNet_without_batchnorm.py → dualunet_without_batchnorm.py
+[2025-10-30 16:01:07]   ✅ ResUNet.py → resunet.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ ZScore_norm.py → zscore_norm.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ ImageDataset.py → imagedataset.py
+[2025-10-30 16:01:07]   ✅ SimpleCNN.py → simplecnn.py
+[2025-10-30 16:01:07]   ✅ SimpleLSTM.py → simplelstm.py
+[2025-10-30 16:01:07]   ✅ RF1.py → random_forest_v1.py
+[2025-10-30 16:01:07]   ✅ GateNetWork.py → gatenetwork.py
+[2025-10-30 16:01:07]   ✅ SimpleTransformer.py → simpletransformer.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN1.py → cnn_2d_v1.py
+[2025-10-30 16:01:07]   ✅ Transformer1.py → transformer_v1.py
+[2025-10-30 16:01:07]   ✅ LSTM1.py → lstm_v1.py
+[2025-10-30 16:01:07]   ✅ KNN1.py → knn_v1.py
+[2025-10-30 16:01:07]   ✅ RandomForest.py → randomforest.py
+[2025-10-30 16:01:07]   ✅ 2D_CNN.py → 2d_cnn.py
+[2025-10-30 16:01:07]   ✅ Transformer.py → transformer.py
+[2025-10-30 16:01:07]   ✅ KNN.py → knn.py
+[2025-10-30 16:01:07]   ✅ Moe.py → moe.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ VAE.py → vae.py
+[2025-10-30 16:01:07]   ✅ MixUp.py → mixup.py
+[2025-10-30 16:01:07]   ✅ __init__.py → init.py
+[2025-10-30 16:01:07]   ✅ GMM.py → gmm.py
+[2025-10-30 16:01:07]   ✅ classfication → classification
+[2025-10-30 16:01:07]   ✅ classfication → classification
+[2025-10-30 16:01:07]   重命名成功: 201/201
+[2025-10-30 16:01:07] 
+🔧 修复硬编码路径...
+[2025-10-30 16:01:07]   ✅ 修复文件: comprehensive_refactor.py
+[2025-10-30 16:01:07]   ✅ 修复文件: config.json
+[2025-10-30 16:01:07]   ✅ 修复文件: dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/config.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/import_update_report.txt
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/restructure_project.py
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/dataset_info_C6_FITC.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/config_FITC_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/config_C6_FITC.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/config_ALL.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/config_C6_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/dataset_info_ALL.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/dataset_info_FITC_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/config_Fish.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/dataset_info_C6_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/config/dataset_info_Fish.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/regression/training/test_model.py
+[2025-10-30 16:01:07]   ❌ 修复文件失败 backup_20251030_145600/classfication/Utils/dataset_info.json: [Errno 2] No such file or directory: '/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/backup_20251030_145600/classfication/Utils/dataset_info.json'
+[2025-10-30 16:01:07]   ❌ 修复文件失败 backup_20251030_145600/classfication/Utils/generate_category_json.py: [Errno 2] No such file or directory: '/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/backup_20251030_145600/classfication/Utils/generate_category_json.py'
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/Utils/read_npz.py
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/Utils/merge_json.py
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/Utils/batch_test.py
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/Utils/remove_txt_name.py
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/Utils/merged_output.json
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/Utils/resize.py
+[2025-10-30 16:01:07]   ✅ 修复文件: backup_20251030_145600/Utils/temp.py
+[2025-10-30 16:01:07]   ✅ 修复文件: data/dataset/dataset_preprocess/C6 + FITC/dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: data/dataset/dataset_preprocess/C6 + hpts/dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: data/dataset_classify/config.json
+[2025-10-30 16:01:07]   ✅ 修复文件: data/dataset_classify/dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/dataset_info_C6_FITC.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/config_FITC_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/config_C6_FITC.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/config_ALL.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/config_C6_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/dataset_info_ALL.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/dataset_info_FITC_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/config_Fish.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/dataset_info_C6_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/config/dataset_info_Fish.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/test_model.py
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ❌ 修复文件失败 origin/classfication/Utils/dataset_info.json: [Errno 2] No such file or directory: '/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/origin/classfication/Utils/dataset_info.json'
+[2025-10-30 16:01:07]   ❌ 修复文件失败 origin/classfication/Utils/generate_category_json.py: [Errno 2] No such file or directory: '/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/origin/classfication/Utils/generate_category_json.py'
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/restructure_scripts/import_update_report.txt
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/restructure_scripts/restructure_project.py
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/Utils/read_npz.py
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/Utils/merge_json.py
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/Utils/batch_test.py
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/Utils/remove_txt_name.py
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/Utils/merged_output.json
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/Utils/resize.py
+[2025-10-30 16:01:07]   ✅ 修复文件: origin/Utils/temp.py
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_config_ALL.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_config_FITC_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_dataset_info_C6_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_dataset_info_Fish.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_config_C6_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_config_Fish.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_config_C6_FITC.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_dataset_info_ALL.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_dataset_info_FITC_HPTS.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/regression/regression_dataset_info_C6_FITC.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/preprocessing/dataset_info_c6_fitc_preprocess.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/preprocessing/dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/preprocessing/dataset_info_c6_hpts_preprocess.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/classification/dataset_classify_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: configs/classification/classification_dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: scripts/evaluation/batch_test.py
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/test_model.py
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + HPTS/training_20250325_214457/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/ResNet-UNet/dataset_result/C6 + FITC/training_20250325_223800/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + HPTS/training_20250325_213919/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/UNet_without_batchnorm/dataset_result/C6 + FITC/training_20250325_223638/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/overall_report.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_4/fold_4_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_14/fold_14_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_7/fold_7_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_11/fold_11_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_3/fold_3_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_13/fold_13_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_1/fold_1_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_6/fold_6_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_12/fold_12_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_2/fold_2_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_8/fold_8_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_10/fold_10_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_0/fold_0_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_9/fold_9_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_15/fold_15_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/regression/training/deprecated/Two_Single_UNet/dataset_result/C6 + HPTS/training_20250325_224944/fold_5/fold_5_summary.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/classification/utils/dataset_info.json
+[2025-10-30 16:01:07]   ✅ 修复文件: src/classification/utils/generate_category_json.py
+[2025-10-30 16:01:07]   ✅ 修复文件: src/utils/file_operations/remove_txt_name.py
+[2025-10-30 16:01:07]   ✅ 修复文件: src/utils/file_operations/resize.py
+[2025-10-30 16:01:07]   ✅ 修复文件: src/utils/data_io/read_npz.py
+[2025-10-30 16:01:07]   ✅ 修复文件: src/utils/data_io/merge_json.py
+[2025-10-30 16:01:07]   修复了 242 个文件
+[2025-10-30 16:01:07] 
+🛠️ 创建路径配置系统...
+[2025-10-30 16:01:07]   ✅ 创建路径配置文件: /home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/configs/paths.json
+[2025-10-30 16:01:07]   ✅ 创建路径管理器: /home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/src/utils/path_manager.py
+[2025-10-30 16:01:07] 
+🎉 重构完成!
+[2025-10-30 16:01:07] 📄 详细日志: /home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/refactor_log_20251030_155956.txt

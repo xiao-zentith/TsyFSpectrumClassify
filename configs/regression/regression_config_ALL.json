@@ -1,0 +1,12 @@
+{
+  "dataset_name": "ALL",
+  "dataset_raw": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_raw/ALL",
+  "dataset_processed": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_preprocess/ALL",
+  "is_cross_validation": true,
+  "is_mixup": true,
+  "batch_size": 32,
+  "epochs": 100,
+  "learning_rate": 0.001,
+  "dataset_target1": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/ALL/Component1",
+  "dataset_target2": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/ALL/Component2"
+}

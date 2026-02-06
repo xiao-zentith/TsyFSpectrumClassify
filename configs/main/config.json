@@ -1,0 +1,15 @@
+{
+  "dataset_raw": "./data/dataset/dataset_raw/Fish",
+  "dataset_processed": "./data/dataset/dataset_preprocess/Fish",
+  "dataset_target1": "./data/dataset/dataset_target/Fish/Component1",
+  "dataset_target2": "./data/dataset/dataset_target/Fish/Component2",
+  "dataset_target3": "./data/dataset/dataset_target/Fish/Component3",
+  "dataset_target4": "./data/dataset/dataset_target/Fish/Component4",
+  "data_split": {
+    "train": 0.7,
+    "val": 0.2,
+    "test": 0.1
+  },
+  "is_cross_validation": true,
+  "is_mixup": false
+}

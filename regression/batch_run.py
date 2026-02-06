@@ -4,12 +4,13 @@ import sys
 from itertools import product
 
 def main():
-    configs = ["C6_FITC", "C6_HPTS", "FITC_HPTS", "ALL"]
+    # configs = ["C6_FITC", "C6_HPTS", "FITC_HPTS", "ALL"]
+    configs = ["C6_HPTS_FITC"]
     # configs = ["Fish"]
     # configs = ["ALL"]
     # models = ["DualSimpleCNN", "VGG11", "ResNet18", "DualUNet", "DualUNetSharedEncoder"]
     # models = ["DualUNet", "DualUNetSharedEncoder"]
-    models = ["DualSimpleCNN", "VGG11", "ResNet18"]
+    models = ["DualSimpleCNN"]
     is_norm_values = [True, False]
     # is_norm_values = [False]
     # loss_types = ["rmse", "mae", "rmse + mae"]
@@ -25,7 +26,7 @@ def main():
             print(f"Starting training for config={config}, model={model}, is_norm={is_norm}, loss_type={loss_type}")
             try:
                 result = subprocess.run(
-                    ["/home/asus515/anaconda3/envs/EEM/bin/python", "run_training.py",
+                    ["/home/asus515/anaconda3/envs/EEM/bin/python", "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/regression/run_training.py",
                      "--config", config,
                      "--model", model,
                      "--loss_type", loss_type,

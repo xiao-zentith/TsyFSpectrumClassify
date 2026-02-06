@@ -32,11 +32,11 @@ def parse_args():
                         help='Model to use (e.g., DualSimpleCNN).')
     parser.add_argument('--epoch', type=int, default=200,
                         help='Epochs for training.')
-    parser.add_argument('--batch_size', type=int, default=5,
+    parser.add_argument('--batch_size', type=int, default=32,
                         help='Batch size for training.')
     parser.add_argument('--patience', type=int, default=35,
                         help='Patience for early stopping.')
-    parser.add_argument('--branch_number', type=int, default=2,
+    parser.add_argument('--branch_number', type=int, default=3,
                         help='The number of targets.')
     parser.add_argument('--loss_type', type=str, default='mae',
                         help='Loss type (e.g., weighted_mae).')
@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # torch.cuda.set_device(1)
     # device = "cuda:1"
 
-    with open(r"./config/dataset_info_" + args.config + ".json") as f:
+    with open("/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/configs/regression/regression_dataset_info_" + args.config + ".json") as f:
         dataset_info = json.load(f)
 
-    with open(r"./config/config_" + args.config + ".json") as config_file:
+    with open("/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/configs/regression/regression_config_" + args.config + ".json") as config_file:
         config = json.load(config_file)
         output_folder = config.get("dataset_result", "results")
 

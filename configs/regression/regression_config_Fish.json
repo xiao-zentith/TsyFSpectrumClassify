@@ -1,0 +1,14 @@
+{
+  "dataset_name": "Fish",
+  "dataset_raw": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_raw/Fish",
+  "dataset_processed": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_preprocess/Fish",
+  "is_cross_validation": false,
+  "is_mixup": false,
+  "batch_size": 32,
+  "epochs": 100,
+  "learning_rate": 0.001,
+  "dataset_target1": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/Fish/Component1",
+  "dataset_target2": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/Fish/Component2",
+  "dataset_target3": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/Fish/Component3",
+  "dataset_target4": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/Fish/Component4"
+}

@@ -122,7 +122,7 @@ class DualUNetSharedEncoder(nn.Module):
 # Example usage
 if __name__ == "__main__":
     model = DualUNetSharedEncoder(is_norm = True, in_channels=1, out_channels=1, branch_number=8)
-    x = torch.randn((1, 1, 64, 21))  # Batch size, channels, height, width
+    x = torch.randn((1, 1, 63, 63))  # Batch size, channels, height, width
     outputs = model(x)
 
     print("输出数量:", len(outputs))  # 应为 3

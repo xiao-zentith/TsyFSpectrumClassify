@@ -1,0 +1,14 @@
+{
+  "dataset_raw" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/C6_HPTS_FITC",
+  "dataset_processed" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/preprocess/C6_HPTS_FITC",
+  "dataset_target1" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/C6_HPTS_FITC/Component1",
+  "dataset_target2" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/C6_HPTS_FITC/Component2",
+  "dataset_target3" : "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/C6_HPTS_FITC/Component3",
+  "data_split" : {
+    "train" : 0.7,
+    "val" : 0.2,
+    "test" : 0.1
+  },
+  "is_cross_validation": true,
+  "is_mixup": true
+}

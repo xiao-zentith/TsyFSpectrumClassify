@@ -1,0 +1,11 @@
+{
+  "dataset_raw": "./data/dataset_classify/dataset_raw",
+  "dataset_processed": "./data/dataset_classify/dataset_preprocess",
+  "dataset_result": "dataset_result",
+  "data_split": {
+    "train": 0.7,
+    "val": 0.2,
+    "test": 0.1
+  },
+  "is_cross_validation": true
+}

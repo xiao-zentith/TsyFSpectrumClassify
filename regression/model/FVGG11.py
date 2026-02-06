@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
     # 输入示例：51x51 的单通道图像
     # input_tensor = torch.randn(5, 1, 360, 360)
-    input_tensor = torch.randn(5, 1, 360, 360)
+    input_tensor = torch.randn(5, 1, 63, 63)
 
     # 前向传播，得到n个输出
     outputs = model(input_tensor)

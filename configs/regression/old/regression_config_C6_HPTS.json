@@ -1,0 +1,12 @@
+{
+  "dataset_name": "C6_HPTS",
+  "dataset_raw": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_raw/C6_HPTS",
+  "dataset_processed": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_preprocess/C6_HPTS",
+  "is_cross_validation": true,
+  "is_mixup": true,
+  "batch_size": 32,
+  "epochs": 100,
+  "learning_rate": 0.001,
+  "dataset_target1": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/C6_HPTS/Component1",
+  "dataset_target2": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset/dataset_target/C6_HPTS/Component2"
+}

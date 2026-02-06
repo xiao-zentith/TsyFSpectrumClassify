@@ -15,8 +15,8 @@ def train_model(model, fold_data, output_folder, current_fold, loss_type, num_ep
     os.makedirs(output_folder, exist_ok=True)
     train_dataset = CustomDataset(fold_data['train'])
     val_dataset = CustomDataset(fold_data['validation'])
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=0, pin_memory=True)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=0, pin_memory=True)
 
     rmse_criterion = nn.MSELoss()
     mae_criterion = nn.L1Loss()

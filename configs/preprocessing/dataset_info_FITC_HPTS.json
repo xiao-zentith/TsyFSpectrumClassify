@@ -1,0 +1,1462 @@
+[
+  {
+    "fold": 0,
+    "inner_fold": 0,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 0,
+    "inner_fold": 1,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 0,
+    "inner_fold": 2,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 0,
+    "inner_fold": 3,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 1,
+    "inner_fold": 0,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 1,
+    "inner_fold": 1,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 1,
+    "inner_fold": 2,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 1,
+    "inner_fold": 3,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 2,
+    "inner_fold": 0,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 2,
+    "inner_fold": 1,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 2,
+    "inner_fold": 2,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 2,
+    "inner_fold": 3,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 3,
+    "inner_fold": 0,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 3,
+    "inner_fold": 1,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 3,
+    "inner_fold": 2,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 3,
+    "inner_fold": 3,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 4,
+    "inner_fold": 0,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 4,
+    "inner_fold": 1,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 4,
+    "inner_fold": 2,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      }
+    ]
+  },
+  {
+    "fold": 4,
+    "inner_fold": 3,
+    "train": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_4_HPTS_6.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_7_HPTS_3.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_7_HPTS_3_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_8_HPTS_2.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_4_HPTS_6_with_FITC_8_HPTS_2.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_3_HPTS_7.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/FITC_3_HPTS_7.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/FITC_3_HPTS_7.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_6_HPTS_4.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_6_HPTS_4_with_FITC_7_HPTS_3.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_9_HPTS_1.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_5_HPTS_5_with_FITC_9_HPTS_1.xlsx"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_1_HPTS_9.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      },
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_5_HPTS_5.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/noise_mixed_FITC_1_HPTS_9_with_FITC_5_HPTS_5.xlsx"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "input": "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/raw/FITC_HPTS/FITC_2_HPTS_8.xlsx",
+        "targets": [
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component1/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx",
+          "/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/data/dataset_regression/target/FITC_HPTS/Component2/mixed_FITC_1_HPTS_9_with_FITC_2_HPTS_8.xlsx"
+        ]
+      }
+    ]
+  }
+]

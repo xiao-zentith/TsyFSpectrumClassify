@@ -4,8 +4,8 @@ from matplotlib.colors import LinearSegmentedColormap
 from sklearn.preprocessing import StandardScaler
 from torch.ao.ns.fx.utils import compute_cosine_similarity
 
-from Utils.compute_pearson import pearson_corr_matrix
-from Utils.compute_relative_error import calculate_relative_error
+# from Utils.compute_pearson import pearson_corr_matrix
+# from Utils.compute_relative_error import calculate_relative_error
 
 
 def read_npz_file(file_path):
@@ -18,7 +18,8 @@ def read_npz_file(file_path):
         print(f"- {key}")
 
     # 检查所需的数组是否存在
-    required_keys = ['input', 'target1', 'target2', 'pred1', 'pred2']
+    # required_keys = ['input', 'target1', 'target2', 'pred1', 'pred2']
+    required_keys = ['input', 'target', 'pred']
     missing_keys = [key for key in required_keys if key not in data.files]
 
     if missing_keys:
@@ -27,18 +28,19 @@ def read_npz_file(file_path):
 
     # 提取所需的数据
     input_data = data['input']
-    target1_data = data['target1']
-    target2_data = data['target2']
-    pred1_data = data['pred1']
-    pred2_data = data['pred2']
-    plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pred2_data)
+    target1_data = data['target']
+    # target2_data = data['target2']
+    pred1_data = data['pred']
+    # pred2_data = data['pred2']
+    plot_spectra_contour(input_data, target1_data, pred1_data)
+    # plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pred2_data)
 
-    return input_data, target1_data, target2_data, pred1_data, pred2_data
+    return input_data, target1_data, pred1_data
 
-def plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pred2_data):
+def plot_spectra_contour(input_data, target1_data, pred1_data):
     # 定义横坐标和纵坐标的范围
-    emission_wavelengths = np.arange(310, 621, 5)  # 激发光谱：300-500nm，间隔为5nm
-    excitation_wavelengths = np.arange(300, 921, 10)   # 发射光谱：310-620nm，间隔为5nm
+    emission_wavelengths = np.arange(310, 625, 5)  # 激发光谱：300-500nm，间隔为5nm
+    excitation_wavelengths = np.arange(300, 615, 5)   # 发射光谱：310-620nm，间隔为5nm
 
     # 创建网格
     X, Y = np.meshgrid(excitation_wavelengths, emission_wavelengths)
@@ -72,13 +74,13 @@ def plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pre
     ax1.set_ylabel('Emission Wavelength (nm)')
     fig.colorbar(contour1, ax=ax1, orientation='vertical')
 
-    # Target2 等高线图
-    ax2 = fig.add_subplot(2, 3, 5)
-    contour2 = ax2.contourf(X, Y, target2_data, cmap=cmap, levels=500)
-    ax2.set_title('PARAFAC 2 Spectra Contour')
-    ax2.set_xlabel('Excitation Wavelength (nm)')
-    ax2.set_ylabel('Emission Wavelength (nm)')
-    fig.colorbar(contour2, ax=ax2, orientation='vertical')
+    # # Target2 等高线图
+    # ax2 = fig.add_subplot(2, 3, 5)
+    # contour2 = ax2.contourf(X, Y, target2_data, cmap=cmap, levels=500)
+    # ax2.set_title('PARAFAC 2 Spectra Contour')
+    # ax2.set_xlabel('Excitation Wavelength (nm)')
+    # ax2.set_ylabel('Emission Wavelength (nm)')
+    # fig.colorbar(contour2, ax=ax2, orientation='vertical')
 
     # Pred1 等高线图
     ax3 = fig.add_subplot(2, 3, 3)
@@ -88,25 +90,26 @@ def plot_spectra_contour(input_data, target1_data, target2_data, pred1_data, pre
     ax3.set_ylabel('Emission Wavelength (nm)')
     fig.colorbar(contour3, ax=ax3, orientation='vertical')
 
-    # Pred2 等高线图
-    ax4 = fig.add_subplot(2, 3, 6)
-    contour4 = ax4.contourf(X, Y, pred2_data, cmap=cmap, levels=500)
-    ax4.set_title('UNet 2 Spectra Contour')
-    ax4.set_xlabel('Excitation Wavelength (nm)')
-    ax4.set_ylabel('Emission Wavelength (nm)')
-    fig.colorbar(contour4, ax=ax4, orientation='vertical')
+    # # Pred2 等高线图
+    # ax4 = fig.add_subplot(2, 3, 6)
+    # contour4 = ax4.contourf(X, Y, pred2_data, cmap=cmap, levels=500)
+    # ax4.set_title('UNet 2 Spectra Contour')
+    # ax4.set_xlabel('Excitation Wavelength (nm)')
+    # ax4.set_ylabel('Emission Wavelength (nm)')
+    # fig.colorbar(contour4, ax=ax4, orientation='vertical')
 
     plt.tight_layout()
     plt.show()
+    print("plot")
 
-    print(np.nanmean(pearson_corr_matrix(target2_data, pred2_data)))
-    print(np.nanstd(pearson_corr_matrix(target2_data, pred2_data)))
-    print(calculate_relative_error(target1_data, pred1_data))
-    print(calculate_relative_error(target1_data, pred1_data))
+    # print(np.nanmean(pearson_corr_matrix(target2_data, pred2_data)))
+    # print(np.nanstd(pearson_corr_matrix(target2_data, pred2_data)))
+    # print(calculate_relative_error(target1_data, pred1_data))
+    # print(calculate_relative_error(target1_data, pred1_data))
 
 
 # 示例用法
-file_path = r'/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/regression/dataset_result/C6 + FITC/DualUNetSharedEncoder/training_20250527_001819/fold_10/test_sample_0_data.npz'  # 替换为你的.npz文件路径
+file_path = r'/home/asus515/PycharmProjects/TsyFSpectrumClassify_remote/results/regression/DualUNetSharedEncoder/training_20251104_004300/fold_12/test_sample_1_target_1.npz'  # 替换为你的.npz文件路径
 read_npz_file(file_path)
 
 

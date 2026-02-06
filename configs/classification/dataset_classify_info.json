@@ -1,0 +1,5882 @@
+[
+    {
+        "fold": 0,
+        "inner_fold": 0,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 0,
+        "inner_fold": 1,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 0,
+        "inner_fold": 2,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 1,
+        "inner_fold": 0,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 1,
+        "inner_fold": 1,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 1,
+        "inner_fold": 2,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 2,
+        "inner_fold": 0,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 2,
+        "inner_fold": 1,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 2,
+        "inner_fold": 2,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 3,
+        "inner_fold": 0,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 3,
+        "inner_fold": 1,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    },
+    {
+        "fold": 3,
+        "inner_fold": 2,
+        "train": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            }
+        ],
+        "validation": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ],
+        "test": [
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "C6 + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "FITC + hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            },
+            {
+                "input": "get_data_path("raw")",
+                "category": "hpts"
+            }
+        ]
+    }
+]

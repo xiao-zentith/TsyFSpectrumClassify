@@ -1,0 +1,42 @@
+{
+  "project_root": ".",
+  "data": {
+    "regression": {
+      "root": "data/dataset_regression",
+      "raw": "data/dataset_regression/raw",
+      "processed": "data/dataset_regression/preprocess",
+      "target": "data/dataset_regression/target"
+    },
+    "classification": {
+      "root": "data/dataset_classify",
+      "raw": "data/dataset_classify/dataset_raw",
+      "processed": "data/dataset_classify/dataset_preprocess",
+      "noise": "data/dataset_classify/dataset_noise"
+    }
+  },
+  "models": {
+    "classification": "models/classification",
+    "regression": "models/regression"
+  },
+  "results": {
+    "classification": "results/classification",
+    "regression": "results/regression",
+    "dataset": "dataset_result"
+  },
+  "configs": {
+    "main": "configs/main",
+    "classification": "configs/classification",
+    "regression": "configs/regression",
+    "preprocessing": "configs/preprocessing"
+  },
+  "logs": "logs",
+  "notebooks": "notebooks",
+  "regression": {
+    "special_configs": {
+      "Fish": {
+        "is_cross_validation": false,
+        "is_mixup": false
+      }
+    }
+  }
+}

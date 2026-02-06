@@ -20,7 +20,7 @@ class AdaptiveCNN(nn.Module):
 
         # 固定全连接层
         # self.fc1 = nn.Linear(64 * 88 * 88, 128)  # 假设输入尺寸为 360x360，经过两次池化后变为 88x88
-        self.fc1 = nn.Linear(64 * 14 * 14, 128)  # 假设输入尺寸为 63x63，经过两次池化后变为 13x13
+        self.fc1 = nn.Linear(64 * 13 * 13, 128)  # 假设输入尺寸为 63x63，经过两次池化后变为 14x14
         self.fc2 = nn.Linear(128, 256)
         self.fc3 = nn.Linear(256, 3600)  # 特征数固定为 63 * 63
 
@@ -85,10 +85,10 @@ class DualSimpleCNN(nn.Module):
 
 # 使用示例
 if __name__ == "__main__":
-    model = DualSimpleCNN(is_norm = False, in_channels=1, out_channels=1, branch_number= 4)
+    model = DualSimpleCNN(is_norm = False, in_channels=1, out_channels=1, branch_number= 3)
 
-    # 输入示例：51x51 的单通道图像
-    input_tensor = torch.randn(5, 1, 360, 360)
+    # 输入示例：60x60 的单通道图像
+    input_tensor = torch.randn(5, 1, 60, 60)
 
     # 前向传播，得到n个输出
     outputs = model(input_tensor)
